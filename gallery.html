@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Curated Gallery — VÉLORA RESERVE</title>
+  <meta name="description" content="Explore the visual journal of VÉLORA RESERVE. Curator-selected resort imagery capturing suites, private dining, sunset yacht cruises, and romantic devotions.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="auth.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✦</text></svg>">
+</head>
+<body>
+  <!-- Preloader -->
+  <div class="preloader">
+    <div class="preloader-logo">VÉLORA</div>
+    <div class="preloader-line"></div>
+  </div>
+
+  <!-- Custom Cursor -->
+  <div class="cursor-dot"></div>
+  <div class="cursor-ring"></div>
+
+  <!-- Navigation -->
+  <nav class="nav" id="main-nav">
+    <a href="index.html" class="nav-logo">
+          <svg class="brand-logo-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M12 2L14.85 8.15L21.6 9.15L16.7 13.93L17.85 20.65L12 17.5L6.15 20.65L7.3 13.93L2.4 9.15L9.15 8.15L12 2Z" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="12" cy="12" r="4" />
+          </svg>
+          <span class="brand-text-velora">VÉLORA</span><span class="brand-text-reserve">RESERVE</span>
+        </a>
+        <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="experiences.html">Experiences</a>
+      <div class="nav-dropdown-wrapper">
+        <a href="suites.html" class="nav-dropdown-toggle">Suites <span class="arrow">▼</span></a>
+        <div class="nav-dropdown-menu">
+          <a href="suites.html">Suites</a>
+          <a href="destinations.html">Destinations</a>
+          <a href="sunsets.html">Sunsets</a>
+          <a href="wedding.html">Weddings</a>
+        </div>
+      </div>
+      <a href="gallery.html" class="active">Gallery</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="contact.html">Contact</a>
+      <div class="nav-profile-wrap">
+        <button class="nav-profile-btn" aria-label="Profile Menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </button>
+        <div class="nav-profile-dropdown"></div>
+      </div>
+      <a href="booking.html" class="nav-book-btn">Book Now</a>
+    </div>
+    <div class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- Mobile Nav -->
+  <div class="mobile-nav" id="mobile-nav">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="experiences.html">Experiences</a>
+    <a href="suites.html">Suites</a>
+    <a href="destinations.html">Destinations</a>
+    <a href="sunsets.html">Sunsets</a>
+    <a href="wedding.html">Weddings</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="reviews.html">Reviews</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="booking.html">Book Now</a>
+  </div>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero page-hero">
+    <div class="hero-bg">
+      <img src="assets/gallery/aerial.png" alt="A breathtaking high-altitude drone capture of VÉLORA RESERVE overwater villas at sunrise">
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-subtitle">✦ Visual Stories ✦</p>
+      <h1 class="hero-title">Our <em>Gallery</em></h1>
+      <p class="hero-description">Every photograph is a curated frame of beauty, structural harmony, and emotional travel memories captured across our sanctuaries.</p>
+    </div>
+  </section>
+
+  <!-- ============ GALLERY SECTION ============ -->
+  <section class="section section-dark">
+    <div class="container">
+      <!-- Editorial Intro -->
+      <div class="section-header reveal" style="margin-bottom: var(--space-xl);">
+        <p class="section-subtitle">Aesthetic Curations</p>
+        <h2 class="section-title">Journal of <em>Light & Shadow</em></h2>
+        <p class="section-description" style="max-width: 600px; margin: 0 auto;">Explore VÉLORA RESERVE through an editorial lens. Our visual chronicle frames quiet retreats, spectacular horizons, and structural luxury designed in unison with nature.</p>
+      </div>
+
+      <!-- Filters -->
+      <div class="gallery-filters reveal">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="suites">Suites</button>
+        <button class="filter-btn" data-filter="dining">Dining</button>
+        <button class="filter-btn" data-filter="nature">Nature</button>
+        <button class="filter-btn" data-filter="experiences">Experiences</button>
+        <button class="filter-btn" data-filter="weddings">Weddings</button>
+      </div>
+
+      <!-- Gallery Grid (Masonry columns:4) -->
+      <div class="gallery-grid">
+        <!-- Item 1 -->
+        <div class="gallery-item reveal" data-category="suites">
+          <img src="assets/gallery/suite.png" alt="The minimalist interior of our Ocean Villa Suite at VÉLORA RESERVE" loading="lazy">
+          <div class="gallery-item-overlay">
+            <span class="gallery-item-title">Ocean Villa Suite</span>
+          </div>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="gallery-item reveal" data-category="dining">
+          <img src="assets/gallery/dining.png" alt="Private white sandbank candlelit dinner setup" loading="lazy">
+          <div class="gallery-item-overlay">
+            <span class="gallery-item-title">Beach Dining</span>
+          </div>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="gallery-item reveal" data-category="nature">
+          <img src="assets/gallery/aerial.png" alt="Breathtaking aerial drone overview of overwater lagoon villas" loading="lazy">
+          <div class="gallery-item-overlay">
+            <span class="gallery-item-title">Island Aerial</span>
+          </div>
+        </div>
+
+        <!-- Item 4 -->
+        <div class="gallery-item reveal" data-category="experiences">
+          <img src="assets/gallery/spa.png" alt="Quiet open-air oceanside massage table pavilion" loading="lazy">
+          <div class="gallery-item-overlay">
+            <span class="gallery-item-title">Oceanside Wellness</span>
+          </div>
+        </div>
+
+        <!-- Item 5 -->
+        <div class="gallery-item reveal" data-category="suites">
+          <img src="assets/gallery/penthouse.png" alt="Architectural design of the rooftop Sky Penthouse terrace" loading="lazy">
+          <div class="gallery-item-overlay">
+            <span class="gallery-item-title">Sky Penthouse</span>
+          </div>
+        </div>
+
+        <!-- Item 6 -->
+        <div class="gallery-item reveal" data-category="nature">
+          <img src="assets/gallery/sunset.png" alt="Liquid gold setting sun over calm ocean waves" loading="lazy">
+          <div class="gallery-item-overlay">
+            <span class="gallery-item-title">Golden Sunset</span>
+          </div>
+        </div>
+
+        <!-- Item 7 -->
+        <div class="gallery-item reveal" data-category="weddings">
+          <img src="assets/gallery/wedding.png" alt="Barefoot beach wedding canopy decorated with white roses" loading="lazy">
+          <div class="gallery-item-overlay">
+            <span class="gallery-item-title">Beach Wedding</span>
+          </div>
+        </div>
+
+        <!-- Item 8 -->
+        <div class="gallery-item reveal" data-category="nature">
+          <img src="assets/gallery/pool.png" alt="Infinity pool edge dissolving seamlessly into twilight lagoon ocean" loading="lazy">
+          <div class="gallery-item-overlay">
+            <span class="gallery-item-title">Infinity Pool</span>
+          </div>
+        </div>
+
+        <!-- Item 9 -->
+        <div class="gallery-item reveal" data-category="experiences">
+          <img src="assets/gallery/ocean.png" alt="Sleek motor catamaran sailing raw ocean horizons" loading="lazy">
+          <div class="gallery-item-overlay">
+            <span class="gallery-item-title">Ocean Adventure</span>
+          </div>
+        </div>
+
+        <!-- Item 10 -->
+        <div class="gallery-item reveal" data-category="suites">
+          <img src="assets/gallery/garden.png" alt="A secluded stone soaking path surrounding the Garden Pavilion" loading="lazy">
+          <div class="gallery-item-overlay">
+            <span class="gallery-item-title">Garden Pavilion</span>
+          </div>
+        </div>
+
+        <!-- Item 11 -->
+        <div class="gallery-item reveal" data-category="nature">
+          <img src="assets/gallery/beach.png" alt="Powder beachfront shoreline pathway framed by palms" loading="lazy">
+          <div class="gallery-item-overlay">
+            <span class="gallery-item-title">Beachfront Walk</span>
+          </div>
+        </div>
+
+        <!-- Item 12 -->
+        <div class="gallery-item reveal" data-category="experiences">
+          <img src="assets/gallery/culture.png" alt="Water flower temple purification ceremony blessing in Bali" loading="lazy">
+          <div class="gallery-item-overlay">
+            <span class="gallery-item-title">Cultural Blessing</span>
+          </div>
+        </div>
+
+        <!-- Item 13 -->
+        <div class="gallery-item reveal" data-category="dining">
+          <img src="assets/gallery/resort.png" alt="The warm glowing outline of overwater villas at twilight" loading="lazy">
+          <div class="gallery-item-overlay">
+            <span class="gallery-item-title">Resort at Dusk</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FULLSCREEN LIGHTBOX ============ -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" aria-label="Close"><svg class="luxury-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    <button class="lightbox-nav lightbox-prev" aria-label="Previous"><svg class="luxury-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="15 18 9 12 15 6"/></svg></button>
+    <img src="" alt="" class="lightbox-image">
+    <button class="lightbox-nav lightbox-next" aria-label="Next"><svg class="luxury-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="9 18 15 12 9 6"/></svg></button>
+    <div class="lightbox-counter"></div>
+  </div>
+
+
+  </section>
+
+  <!-- ============ EDITORIAL PERSPECTIVES & CINEMATIC COLLECTIONS ============ -->
+  <section class="section section-dark" id="cinematic-collage">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-subtitle">Visual Collages</p>
+        <h2 class="section-title">Editorial <em>Photography Showcase</em></h2>
+        <p class="section-description">A curated collage of high-altitude drone perspectives, golden sunset cinematics, and pure editorial landscape frames.</p>
+      </div>
+      <div class="editorial-collage-container">
+        <div class="collage-item span-8 row-2 reveal">
+          <img src="assets/hero/hero-main.png" alt="High altitude drone view of the overwater reserve crescent at VÉLORA RESERVE">
+          <div class="collage-overlay">
+            <span>Drone perspective</span>
+            <h3>Sanctuary Crescent Drone View</h3>
+          </div>
+        </div>
+        <div class="collage-item span-4 reveal">
+          <img src="assets/gallery/sunset.png" alt="Cinematic sunset silhouette reflection at VÉLORA RESERVE">
+          <div class="collage-overlay">
+            <span>Sunset Cinematic</span>
+            <h3>Golden Hour Horizon Silhouette</h3>
+          </div>
+        </div>
+        <div class="collage-item span-4 reveal">
+          <img src="assets/gallery/pool.png" alt="Infinity pool glowing at dusk at VÉLORA RESERVE">
+          <div class="collage-overlay">
+            <span>Editorial Frame</span>
+            <h3>Sanctuary Pool Geometry</h3>
+          </div>
+        </div>
+        <div class="collage-item span-6 reveal">
+          <img src="assets/gallery/wedding.png" alt="Barefoot beach marriage canopy decorated with white roses">
+          <div class="collage-overlay">
+            <span>Romantic Escape</span>
+            <h3>Oceanfront Wedding Canopy</h3>
+          </div>
+        </div>
+        <div class="collage-item span-6 reveal">
+          <img src="assets/gallery/garden.png" alt="Garden pavilion pathway showing raw stone geometry">
+          <div class="collage-overlay">
+            <span>Architectural Geometry</span>
+            <h3>Ubud Stone Garden Pathway</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ VISUAL CHRONICLES & ESCAPE MOMENTS ============ -->
+  <section class="section section-charcoal" id="visual-chronicles">
+    <div class="container">
+      <div class="split">
+        <div class="split-image reveal-left">
+          <img src="assets/gallery/beach.png" alt="A romantic couple walking along a pristine tropical beach path at VÉLORA RESERVE">
+        </div>
+        <div class="split-content reveal-right">
+          <p class="section-subtitle">Chronicles of Escape</p>
+          <h2 class="section-title">Guest Journey <em>Highlights</em></h2>
+          <p class="section-description">Our media curators compile photographic chronicles documenting the quiet, slow escapes of real guests. From romantic walking paths to seasonal beauties, we treat every photograph as a piece of emotional history.</p>
+          <p class="section-description mt-md">Participate in our curated daily **Oceanfront Storytelling** session to compose your own sunset chronicles, guided by our resident editorial artist.</p>
+          <div class="suite-amenities mt-md">
+            <span class="amenity-tag"><span><svg class="luxury-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span> Guest escape chronicles</span>
+            <span class="amenity-tag"><span><svg class="luxury-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/></svg></span> Seasonal beauty index</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ARCHITECTURAL GEOMETRY & SPACES ============ -->
+  <section class="section section-deep" id="architecture-gallery">
+    <div class="container">
+      <div class="split split-reverse">
+        <div class="split-image reveal-right">
+          <img src="assets/about/resort.png" alt="Modern clean biophilic architectural frames at VÉLORA RESERVE">
+        </div>
+        <div class="split-content reveal-left">
+          <p class="section-subtitle">Sanctuary Design</p>
+          <h2 class="section-title">Architectural <em>Geometry & Spaces</em></h2>
+          <p class="section-description">A closer look at the physical craft of VÉLORA. Our **Luxury Architecture Gallery** displays the clean alignment of hand-carved travertine columns, floating timber roofs, and indoor-outdoor volcanic stone showers.</p>
+          <div class="suite-amenities mt-md">
+            <span class="amenity-tag"><span><svg class="luxury-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span> Teakwood and Travertine</span>
+            <span class="amenity-tag"><span><svg class="luxury-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/></svg></span> Teak screen privacy grids</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PARALLAX CTA ============ -->
+  <section class="parallax-section">
+    <div class="parallax-bg">
+      <img src="assets/gallery/sunset.png" alt="Quiet crimson sunset reflecting on warm tidepools at VÉLORA RESERVE">
+    </div>
+    <div class="parallax-overlay"></div>
+    <div class="parallax-content reveal">
+      <h2 class="section-title" style="font-size: var(--text-4xl);">Create Your Own <em>Story</em></h2>
+      <p class="section-description" style="color: rgba(248,245,240,0.8);">Every evening at VÉLORA RESERVE is a masterpiece wait to be added to your life's journal.</p>
+      <a href="booking.html" class="btn btn-gold btn-lg mt-xl">Begin Your Journey</a>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">
+          <svg class="brand-logo-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M12 2L14.85 8.15L21.6 9.15L16.7 13.93L17.85 20.65L12 17.5L6.15 20.65L7.3 13.93L2.4 9.15L9.15 8.15L12 2Z" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="12" cy="12" r="4" />
+          </svg>
+          <span class="brand-text-velora">VÉLORA</span><span class="brand-text-reserve">RESERVE</span>
+        </a>
+          <p>Where every moment is crafted, every view is a masterpiece, and every stay becomes a story.</p>
+          <div class="footer-socials">
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+            <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+            </a>
+            <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l11.733 16h4.267l-11.733 -16z"/><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"/></svg>
+            </a>
+            <a href="https://www.pinterest.com/" target="_blank" rel="noopener noreferrer" aria-label="Pinterest">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.27 2.68 7.9 6.47 9.3.11-.97.21-1.78.68-5.71.05-.42-.08-1.57-.08-1.57s-.17-.34-.17-.83c0-.78.45-1.36.99-1.36.47 0 .7.35.7.77 0 .47-.3 1.18-.46 1.83a.77.77 0 0 0 .79.96c.94 0 1.67-1 1.67-2.44 0-1.28-.92-2.17-2.22-2.17-1.52 0-2.41 1.14-2.41 2.31 0 .46.18.96.4 1.22.04.05.05.1.03.17l-.15.62c-.03.13-.1.17-.23.11-1.07-.5-1.72-2.07-1.72-3.32 0-3.1 2.21-5.19 5.66-5.19 3.09 0 5.28 2.2 5.28 4.95 0 3.07-1.93 5.54-4.62 5.54-.9 0-1.75-.47-2.04-1.02l-.56 2.1c-.2 1.05-.75 2.37-1.12 2.94C10.14 21.89 11.05 22 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-title">Explore</h4>
+          <div class="footer-links">
+            <a href="suites.html">Our Suites</a>
+            <a href="experiences.html">Experiences</a>
+            <a href="destinations.html">Destinations</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="sunsets.html">Sunsets</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-title">Company</h4>
+          <div class="footer-links">
+            <a href="about.html">Our Story</a>
+            <a href="reviews.html">Guest Reviews</a>
+            <a href="wedding.html">Weddings</a>
+            <a href="contact.html">Contact Us</a>
+            <a href="booking.html">Book Now</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-title">Contact</h4>
+          <div class="footer-contact-info">
+            <p>
+              <a href="mailto:concierge@velorareserve.com" aria-label="Email Concierge">
+                <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                concierge@velorareserve.com
+              </a>
+            </p>
+            <p>
+              <a href="tel:+919840012345" aria-label="Call Concierge">
+                <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                +91 98400 12345
+              </a>
+            </p>
+            <p>
+              <a href="contact.html" aria-label="Our Locations">
+                <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                Adyar, Chennai, India
+              </a>
+            </p>
+          </div>
+        </div>
+        <div class="footer-newsletter">
+          <h4 class="footer-title">Newsletter</h4>
+          <p class="newsletter-desc">Curated stories, sunset highlights, and villa private invites.</p>
+          <form class="newsletter-form" onsubmit="event.preventDefault(); this.innerHTML = '<p class=\'newsletter-desc\' style=\'color: var(--gold);\'>Curated invitation sent. Welcome to the Reserve.</p>';">
+            <div class="newsletter-input-wrap">
+              <input type="email" placeholder="Your Email Address" required class="newsletter-input">
+              <button type="submit" class="newsletter-btn">Subscribe</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2026 VÉLORA RESERVE. All rights reserved. Crafted with passion.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <span class="separator">|</span>
+          <a href="#">Terms & Conditions</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Glass Booking Panel -->
+  <div class="floating-booking-panel" id="floating-booking-panel">
+    <form action="booking.html" method="GET" class="floating-booking-bar">
+      <div class="booking-field">
+        <label class="booking-field-label">Destination</label>
+        <select name="destination" class="booking-field-select">
+          <option value="Maldives">VÉLORA Reserve — Maldives</option>
+          <option value="Bali">VÉLORA Reserve — Bali</option>
+          <option value="Santorini">VÉLORA Reserve — Santorini</option>
+          <option value="Amalfi">VÉLORA Reserve — Amalfi Coast</option>
+          <option value="Bora Bora">VÉLORA Reserve — Bora Bora</option>
+          <option value="Seychelles">VÉLORA Reserve — Seychelles</option>
+        </select>
+      </div>
+      <div class="booking-separator"></div>
+      <div class="booking-field">
+        <label class="booking-field-label">Guests</label>
+        <select name="guests" class="booking-field-select">
+          <option value="1">1 Guest</option>
+          <option value="2" selected>2 Guests</option>
+          <option value="3">3 Guests</option>
+          <option value="4">4 Guests</option>
+          <option value="5+">5+ Guests</option>
+        </select>
+      </div>
+      <button type="submit" class="floating-booking-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 14px; height: 14px; margin-right: 4px;"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        Reserve Escape
+      </button>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+  <script src="auth.js"></script>
+</body>
+</html>

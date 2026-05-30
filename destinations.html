@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>World Destinations — VÉLORA RESERVE</title>
+  <meta name="description" content="Discover six extraordinary destinations across the globe. From the Maldives to Santorini, find your perfect luxury escape with VÉLORA RESERVE.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="auth.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✦</text></svg>">
+</head>
+<body class="destinations-page">
+  <!-- Preloader -->
+  <div class="preloader">
+    <div class="preloader-logo">VÉLORA</div>
+    <div class="preloader-line"></div>
+  </div>
+
+  <!-- Custom Cursor -->
+  <div class="cursor-dot"></div>
+  <div class="cursor-ring"></div>
+
+  <!-- Navigation -->
+  <nav class="nav" id="main-nav">
+    <a href="index.html" class="nav-logo">
+          <svg class="brand-logo-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M12 2L14.85 8.15L21.6 9.15L16.7 13.93L17.85 20.65L12 17.5L6.15 20.65L7.3 13.93L2.4 9.15L9.15 8.15L12 2Z" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="12" cy="12" r="4" />
+          </svg>
+          <span class="brand-text-velora">VÉLORA</span><span class="brand-text-reserve">RESERVE</span>
+        </a>
+        <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="experiences.html">Experiences</a>
+      <div class="nav-dropdown-wrapper">
+        <a href="suites.html" class="nav-dropdown-toggle active">Suites <span class="arrow">▼</span></a>
+        <div class="nav-dropdown-menu">
+          <a href="suites.html">Suites</a>
+          <a href="destinations.html" class="active">Destinations</a>
+          <a href="sunsets.html">Sunsets</a>
+          <a href="wedding.html">Weddings</a>
+        </div>
+      </div>
+      <a href="gallery.html">Gallery</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="contact.html">Contact</a>
+      <div class="nav-profile-wrap">
+        <button class="nav-profile-btn" aria-label="Profile Menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </button>
+        <div class="nav-profile-dropdown"></div>
+      </div>
+      <a href="booking.html" class="nav-book-btn">Book Now</a>
+    </div>
+    <div class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- Mobile Nav -->
+  <div class="mobile-nav" id="mobile-nav">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="experiences.html">Experiences</a>
+    <a href="suites.html">Suites</a>
+    <a href="destinations.html">Destinations</a>
+    <a href="sunsets.html">Sunsets</a>
+    <a href="wedding.html">Weddings</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="reviews.html">Reviews</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="booking.html">Book Now</a>
+  </div>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero page-hero">
+    <div class="hero-bg">
+      <img src="assets/destinations/maldives.png" alt="Maldives aerial lagoon view of overwater villas at sunrise">
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-subtitle">✦ Our Worlds ✦</p>
+      <h1 class="hero-title">Discover <em>Destinations</em></h1>
+      <p class="hero-description">Six extraordinary coordinates of natural wonders, spiritual wealth, and architect-designed luxury sanctuaries.</p>
+    </div>
+  </section>
+
+  <!-- ============ DESTINATIONS GRID ============ -->
+  <section class="section section-dark">
+    <div class="container">
+      <div class="section-header reveal" style="margin-bottom: var(--space-2xl);">
+        <p class="section-subtitle">The Collection</p>
+        <h2 class="section-title">Bespoke <em>Resort Escapes</em></h2>
+        <p class="section-description">A carefully curated portfolio of private islands, clifftop sanctuaries, and wilderness retreats designed to touch your soul.</p>
+      </div>
+
+      <div class="grid-3">
+        <!-- Maldives -->
+        <div class="destination-card reveal delay-1">
+          <img src="assets/destinations/maldives.png" alt="VÉLORA Reserve Maldives Lagoon Overview">
+          <div class="destination-card-overlay">
+            <span class="destination-country">Indian Ocean</span>
+            <h3 class="destination-name">Maldives</h3>
+            <p class="destination-info">Shallow crystal lagoons, overwater glass villas, and a private house reef. Average temperature: 28°C</p>
+          </div>
+        </div>
+
+        <!-- Bali -->
+        <div class="destination-card reveal delay-2">
+          <img src="assets/destinations/bali.png" alt="VÉLORA Reserve Bali Temple Path">
+          <div class="destination-card-overlay">
+            <span class="destination-country">Indonesia</span>
+            <h3 class="destination-name">Bali</h3>
+            <p class="destination-info">Sacred rivers, emerald terraced fields, and ancient spiritual sound pavilions. Average temperature: 27°C</p>
+          </div>
+        </div>
+
+        <!-- Santorini -->
+        <div class="destination-card reveal delay-3">
+          <img src="assets/destinations/santorini.png" alt="VÉLORA Reserve Santorini Clifftop Overview">
+          <div class="destination-card-overlay">
+            <span class="destination-country">Greece</span>
+            <h3 class="destination-name">Santorini</h3>
+            <p class="destination-info">Volcanic clifftop terraces, sunset vistas, and Mediterranean stone vaults. Average temperature: 25°C</p>
+          </div>
+        </div>
+
+        <!-- Amalfi Coast -->
+        <div class="destination-card reveal delay-1">
+          <img src="assets/destinations/amalfi.png" alt="VÉLORA Reserve Amalfi Coast Cliffs">
+          <div class="destination-card-overlay">
+            <span class="destination-country">Italy</span>
+            <h3 class="destination-name">Amalfi Coast</h3>
+            <p class="destination-info">Sheer rock faces, citrus groves, and seaside stone terraces overlooking clear waters. Average temperature: 24°C</p>
+          </div>
+        </div>
+
+        <!-- Bora Bora -->
+        <div class="destination-card reveal delay-2">
+          <img src="assets/destinations/borabora.png" alt="VÉLORA Reserve Bora Bora lagoon path">
+          <div class="destination-card-overlay">
+            <span class="destination-country">French Polynesia</span>
+            <h3 class="destination-name">Bora Bora</h3>
+            <p class="destination-info">Mount Otemanu silhouettes, private sand islets, and overwater infinity decks. Average temperature: 27°C</p>
+          </div>
+        </div>
+
+        <!-- Seychelles -->
+        <div class="destination-card reveal delay-3">
+          <img src="assets/destinations/seychelles.png" alt="VÉLORA Reserve Seychelles granite beaches">
+          <div class="destination-card-overlay">
+            <span class="destination-country">East Africa</span>
+            <h3 class="destination-name">Seychelles</h3>
+            <p class="destination-info">Monolithic granite boulders, private coves, and wild jungle paths. Average temperature: 28°C</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FEATURED DESTINATIONS ============ -->
+  <!-- Maldives Detail -->
+  <section class="section section-charcoal">
+    <div class="container">
+      <div class="split">
+        <div class="split-image reveal-left">
+          <img src="assets/destinations/maldives.png" alt="Architectural overwater villas in the Maldives">
+        </div>
+        <div class="split-content reveal-right">
+          <p class="section-subtitle">✦ Flagship Overwater Sanctuary ✦</p>
+          <h2 class="section-title">The Maldives <em>Reserve</em></h2>
+          <p class="section-description">Our flagship private island property rises from the turquoise shallows of the Indian Ocean like a dream. Suspension walkways connect twenty exclusive overwater villas, each wrapping you in absolute wood architecture and private infinity plunge pools. Below your glass floor, a vibrant coral ecosystem and marine sanctuary await, offering an intimate communion with the wild blue.</p>
+          <div class="suite-amenities mt-md">
+            <span class="amenity-tag"><span><svg class="luxury-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M2 20h20M12 20v-8M12 12c2-2 4-2 6-1m-6 1c-2-2-4-2-6-1"/></svg></span> Private Island</span>
+            <span class="amenity-tag"><span><svg class="luxury-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 8h16v6a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V8zM18 8V6a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v2"/></svg></span> House Reef</span>
+            <span class="amenity-tag"><span><svg class="luxury-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M2 4v12a5 5 0 0 0 5 5v-5M7 16V4M12 4v17M18 4v7a3 3 0 0 0 3 3v-7M21 11V4"/></svg></span> 5 Restaurants</span>
+            <span class="amenity-tag"><span><svg class="luxury-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/><path d="M2 12h20"/></svg></span> Overwater Spa</span>
+            <span class="amenity-tag"><span><svg class="luxury-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M2 17h20L18 8H6L2 17zM2 17c4 2 8 2 12 0s8-2 12 0"/></svg></span> Speedboat Transfer</span>
+          </div>
+          <a href="booking.html" class="btn btn-gold mt-xl">Explore Maldives</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Santorini Detail -->
+  <section class="section section-dark">
+    <div class="container">
+      <div class="split split-reverse">
+        <div class="split-image reveal-right">
+          <img src="assets/destinations/santorini.png" alt="Volcanic clifftop pools and suites in Santorini">
+        </div>
+        <div class="split-content reveal-left">
+          <p class="section-subtitle">✦ Volcanic Clifftop Sanctuary ✦</p>
+          <h2 class="section-title">Santorini <em>Caldera</em></h2>
+          <p class="section-description">Carved directly into the sheer volcanic cliffs of Oia, our Santorini sanctuary offers unobstructed, dramatic 270° views of the Aegean Sea. Whitewashed cycladic vaults meet warm, premium contemporary styling, finished with infinity pools that stretch toward the volcanic horizon, pouring directly into the golden path of the setting sun.</p>
+          <div class="suite-amenities mt-md">
+            <span class="amenity-tag"><span><svg class="luxury-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 22V10M20 22V10M2 10l10-8 10 8M6 22v-8M18 22v-8M10 22v-8M14 22v-8M2 22h20"/></svg></span> Caldera View</span>
+            <span class="amenity-tag"><span><svg class="luxury-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 2v10a6 6 0 0 1-6-6h12a6 6 0 0 1-6 6zM12 12v8M8 20h8"/></svg></span> Wine Tours</span>
+            <span class="amenity-tag"><span><svg class="luxury-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 2L2 15h20L12 2zM2 19h20M12 15v4"/></svg></span> Sailing</span>
+            <span class="amenity-tag"><span><svg class="luxury-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><path d="M12 6c3 0 5 2 5 5s-2 5-5 5-5-2-5-5 2-5 5-5z"/></svg></span> Greek Cuisine</span>
+            <span class="amenity-tag"><span><svg class="luxury-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 2v2M4.93 4.93l1.41 1.41M2 12h2M18.36 5.64l1.41-1.41M20 12h2M6.34 17.66l-1.41 1.41M17.66 17.66l1.41 1.41M12 22v-2M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8z"/></svg></span> Sunset Terrace</span>
+          </div>
+          <a href="booking.html" class="btn btn-gold mt-xl">Explore Santorini</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ MAP SECTION ============ -->
+  <section class="section section-charcoal">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-subtitle">Global Presence</p>
+        <h2 class="section-title">Where We <em>Await</em></h2>
+        <p class="section-description">Six extraordinary coordinates spanning three continents, cradled by natural wonders.</p>
+      </div>
+      <div class="map-container reveal" style="height:350px; display:flex; align-items:center; justify-content:center; flex-direction:column; gap:var(--space-md);">
+        <div style="font-size: 4rem; opacity:0.3;"><svg class="luxury-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+        <p style="font-family: var(--font-heading); font-size: var(--text-2xl); color: var(--ivory);">Indian Ocean · Bali · Santorini · Amalfi · Bora Bora · Seychelles</p>
+        <p style="font-size: var(--text-sm); color: var(--gray); opacity:0.6; letter-spacing:0.1em; text-transform:uppercase;">6 Sanctuaries · 3 Continents · 4 Oceans</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ MICROCLIMATE & SANCTUARY ECOLOGY ============ -->
+  <section class="ecology-section">
+    <div class="container">
+      <div class="ecology-banner reveal">
+        <div class="ecology-banner-bg">
+          <img src="assets/destinations/maldives.png" alt="Maldives ocean at VÉLORA RESERVE">
+        </div>
+        <div class="ecology-banner-overlay"></div>
+        <div class="ecology-banner-content">
+          <span class="slow-living-label">Sanctuary Science</span>
+          <h2 class="slow-living-title" style="font-size: var(--text-2xl);">Microclimate &amp; <em>Ecology</em></h2>
+          <p class="slow-living-text" style="font-size: var(--text-sm);">Our locations are selected for their rare natural wind shields, deep water channels, and biological biodiversity. Every sanctuary operates in harmony with the local microclimate, protecting the native environment while providing natural ambient cooling and reef restoration.</p>
+          <div class="ecology-stats">
+            <div class="ecology-stat-item">
+              <span class="ecology-stat-num">98%</span>
+              <span class="ecology-stat-label">Reef Health</span>
+            </div>
+            <div class="ecology-stat-item">
+              <span class="ecology-stat-num">100%</span>
+              <span class="ecology-stat-label">Solar Off-grid</span>
+            </div>
+            <div class="ecology-stat-item">
+              <span class="ecology-stat-num">0%</span>
+              <span class="ecology-stat-label">Plastic Footprint</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PARALLAX CTA ============ -->
+
+  </section>
+
+  <!-- ============ CURATED EXPLORATION COLLECTIONS ============ -->
+  <section class="section section-dark" id="exploration-collections">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-subtitle">Reserve Collections</p>
+        <h2 class="section-title">Curated <em>Exploration Guides</em></h2>
+        <p class="section-description">A set of deeply immersive island guides and scenic escape routes custom-aligned by our naturalists for your active wonder.</p>
+      </div>
+      <div class="explore-guide-grid">
+        <div class="guide-route-card reveal delay-1">
+          <div class="guide-route-header">
+            <span class="guide-duration">4 Days</span>
+            <svg class="brand-logo-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10"/></svg>
+          </div>
+          <h3 class="card-title" style="font-size: var(--text-lg); margin-bottom: var(--space-xs);">Hidden Maldives Atolls</h3>
+          <p class="card-text" style="font-size: var(--text-xs); line-height: 1.6;">Navigate uncharted sandbanks, snorkel alongside whale sharks, and sail into isolated reef bays on our bespoke luxury yacht collection.</p>
+        </div>
+        <div class="guide-route-card reveal delay-2">
+          <div class="guide-route-header">
+            <span class="guide-duration">3 Days</span>
+            <svg class="brand-logo-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10"/></svg>
+          </div>
+          <h3 class="card-title" style="font-size: var(--text-lg); margin-bottom: var(--space-xs);">Bali Jungle & Temple Trails</h3>
+          <p class="card-text" style="font-size: var(--text-xs); line-height: 1.6;">Ascend volcanic peaks at dawn, receive water purifications at sacred rivers, and wander through historic clay pottery villages.</p>
+        </div>
+        <div class="guide-route-card reveal delay-3">
+          <div class="guide-route-header">
+            <span class="guide-duration">5 Days</span>
+            <svg class="brand-logo-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10"/></svg>
+          </div>
+          <h3 class="card-title" style="font-size: var(--text-lg); margin-bottom: var(--space-xs);">Aegean Sunset Sailing</h3>
+          <p class="card-text" style="font-size: var(--text-xs); line-height: 1.6;">Explore volcanic islands in Santorini, swim in hot sulfur springs, and enjoy twilight seafood pairings on secluded coastal decks.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ DESTINATION MOOD STORIES & SCENIC ESCAPES ============ -->
+  <section class="section section-charcoal" id="destination-stories">
+    <div class="container">
+      <div class="split">
+        <div class="split-image reveal-left">
+          <img src="assets/destinations/santorini.png" alt="Spectacular cliffside whitewashed architecture in Santorini looking over the Aegean Sea">
+        </div>
+        <div class="split-content reveal-right">
+          <p class="section-subtitle">Cliffside Wonders</p>
+          <h2 class="section-title">Romantic <em>Destination Mood Stories</em></h2>
+          <p class="section-description">Every VÉLORA sanctuary represents a deep canvas of geographical poetry. From the volcanic caldera structures of Santorini to the quiet emerald rice terraces of Ubud, we construct spaces that frame the slow-motion sunset of your life.</p>
+          <p class="section-description mt-md">Here, **Luxury Island Journeys** are treated as an alchemical release. Watch high-altitude sea eagles glide over cliffside platforms, gather local wild thyme, and let the geographical geometry dissolve your constraints.</p>
+          <div class="suite-amenities mt-md">
+            <span class="amenity-tag"><span><svg class="luxury-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span> Romantic travel inspirations</span>
+            <span class="amenity-tag"><span><svg class="luxury-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/></svg></span> Cliffside wonder platforms</span>
+            <span class="amenity-tag"><span><svg class="luxury-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></span> Luxury Adventure moments</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SEASONAL SPLENDORS & DISCOVERIES ============ -->
+  <section class="section section-deep" id="seasonal-planner">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-subtitle">Optimal Geographies</p>
+        <h2 class="section-title">Seasonal <em>Scenic Highlights</em></h2>
+        <p class="section-description">A predictive guide to the most magnificent atmospheric intervals across our worldwide Reserves.</p>
+      </div>
+      <div class="season-planner-container reveal">
+        <h3 class="slow-living-title" style="font-size: var(--text-2xl); text-align: center; margin-bottom: var(--space-md);">Cinematic Resort Calendar</h3>
+        <div class="season-grid">
+          <div class="season-column">
+            <h4>Nov — Apr</h4>
+            <p style="font-weight: 600; color: var(--ivory); margin-bottom: 4px;">Maldives & Seychelles</p>
+            <p>Pristine glass-calm seas, optimal diving visibility, and cool tropical breezes at the equator.</p>
+          </div>
+          <div class="season-column">
+            <h4>May — Oct</h4>
+            <p style="font-weight: 600; color: var(--ivory); margin-bottom: 4px;">Bali & South Pacific</p>
+            <p>Cool, dry winds framing the sacred volcanic ranges, and optimal bioluminescent tides.</p>
+          </div>
+          <div class="season-column">
+            <h4>Jun — Sep</h4>
+            <p style="font-weight: 600; color: var(--ivory); margin-bottom: 4px;">Santorini & Amalfi Coast</p>
+            <p>Mediterranean warm sunset breezes, clear turquoise waters, and vibrant coastal culture.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PARALLAX CTA ============ -->
+  <section class="parallax-section">
+    <div class="parallax-bg">
+      <img src="assets/destinations/bali.png" alt="Sunset reflecting on Bali jungle pool at VÉLORA RESERVE">
+    </div>
+    <div class="parallax-overlay"></div>
+    <div class="parallax-content reveal">
+      <h2 class="section-title" style="font-size: var(--text-4xl);">Choose Your <em>Paradise</em></h2>
+      <p class="section-description" style="color: rgba(248,245,240,0.8);">Every sanctuary tells a different story of light, beauty, and absolute solitude. Which will be yours?</p>
+      <a href="booking.html" class="btn btn-gold btn-lg mt-xl">Book Your Destination</a>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">
+          <svg class="brand-logo-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M12 2L14.85 8.15L21.6 9.15L16.7 13.93L17.85 20.65L12 17.5L6.15 20.65L7.3 13.93L2.4 9.15L9.15 8.15L12 2Z" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="12" cy="12" r="4" />
+          </svg>
+          <span class="brand-text-velora">VÉLORA</span><span class="brand-text-reserve">RESERVE</span>
+        </a>
+          <p>Where every moment is crafted, every view is a masterpiece, and every stay becomes a story.</p>
+          <div class="footer-socials">
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+            <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+            </a>
+            <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l11.733 16h4.267l-11.733 -16z"/><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"/></svg>
+            </a>
+            <a href="https://www.pinterest.com/" target="_blank" rel="noopener noreferrer" aria-label="Pinterest">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.27 2.68 7.9 6.47 9.3.11-.97.21-1.78.68-5.71.05-.42-.08-1.57-.08-1.57s-.17-.34-.17-.83c0-.78.45-1.36.99-1.36.47 0 .7.35.7.77 0 .47-.3 1.18-.46 1.83a.77.77 0 0 0 .79.96c.94 0 1.67-1 1.67-2.44 0-1.28-.92-2.17-2.22-2.17-1.52 0-2.41 1.14-2.41 2.31 0 .46.18.96.4 1.22.04.05.05.1.03.17l-.15.62c-.03.13-.1.17-.23.11-1.07-.5-1.72-2.07-1.72-3.32 0-3.1 2.21-5.19 5.66-5.19 3.09 0 5.28 2.2 5.28 4.95 0 3.07-1.93 5.54-4.62 5.54-.9 0-1.75-.47-2.04-1.02l-.56 2.1c-.2 1.05-.75 2.37-1.12 2.94C10.14 21.89 11.05 22 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-title">Explore</h4>
+          <div class="footer-links">
+            <a href="suites.html">Our Suites</a>
+            <a href="experiences.html">Experiences</a>
+            <a href="destinations.html">Destinations</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="sunsets.html">Sunsets</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-title">Company</h4>
+          <div class="footer-links">
+            <a href="about.html">Our Story</a>
+            <a href="reviews.html">Guest Reviews</a>
+            <a href="wedding.html">Weddings</a>
+            <a href="contact.html">Contact Us</a>
+            <a href="booking.html">Book Now</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-title">Contact</h4>
+          <div class="footer-contact-info">
+            <p>
+              <a href="mailto:concierge@velorareserve.com" aria-label="Email Concierge">
+                <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                concierge@velorareserve.com
+              </a>
+            </p>
+            <p>
+              <a href="tel:+919840012345" aria-label="Call Concierge">
+                <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                +91 98400 12345
+              </a>
+            </p>
+            <p>
+              <a href="contact.html" aria-label="Our Locations">
+                <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                Adyar, Chennai, India
+              </a>
+            </p>
+          </div>
+        </div>
+        <div class="footer-newsletter">
+          <h4 class="footer-title">Newsletter</h4>
+          <p class="newsletter-desc">Curated stories, sunset highlights, and villa private invites.</p>
+          <form class="newsletter-form" onsubmit="event.preventDefault(); this.innerHTML = '<p class=\'newsletter-desc\' style=\'color: var(--gold);\'>Curated invitation sent. Welcome to the Reserve.</p>';">
+            <div class="newsletter-input-wrap">
+              <input type="email" placeholder="Your Email Address" required class="newsletter-input">
+              <button type="submit" class="newsletter-btn">Subscribe</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2026 VÉLORA RESERVE. All rights reserved. Crafted with passion.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <span class="separator">|</span>
+          <a href="#">Terms & Conditions</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Glass Booking Panel -->
+  <div class="floating-booking-panel" id="floating-booking-panel">
+    <form action="booking.html" method="GET" class="floating-booking-bar">
+      <div class="booking-field">
+        <label class="booking-field-label">Destination</label>
+        <select name="destination" class="booking-field-select">
+          <option value="Maldives">VÉLORA Reserve — Maldives</option>
+          <option value="Bali">VÉLORA Reserve — Bali</option>
+          <option value="Santorini">VÉLORA Reserve — Santorini</option>
+          <option value="Amalfi">VÉLORA Reserve — Amalfi Coast</option>
+          <option value="Bora Bora">VÉLORA Reserve — Bora Bora</option>
+          <option value="Seychelles">VÉLORA Reserve — Seychelles</option>
+        </select>
+      </div>
+      <div class="booking-separator"></div>
+      <div class="booking-field">
+        <label class="booking-field-label">Guests</label>
+        <select name="guests" class="booking-field-select">
+          <option value="1">1 Guest</option>
+          <option value="2" selected>2 Guests</option>
+          <option value="3">3 Guests</option>
+          <option value="4">4 Guests</option>
+          <option value="5+">5+ Guests</option>
+        </select>
+      </div>
+      <button type="submit" class="floating-booking-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 14px; height: 14px; margin-right: 4px;"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        Reserve Escape
+      </button>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+  <script src="auth.js"></script>
+</body>
+</html>

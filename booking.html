@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Your Stay — VÉLORA RESERVE</title>
+  <meta name="description" content="Reserve your luxury escape at VÉLORA RESERVE. Multi-step booking with destination selection, suite choices, and instant confirmation.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="auth.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✦</text></svg>">
+</head>
+<body>
+  <!-- Preloader -->
+  <div class="preloader">
+    <div class="preloader-logo">VÉLORA</div>
+    <div class="preloader-line"></div>
+  </div>
+
+  <!-- Custom Cursor -->
+  <div class="cursor-dot"></div>
+  <div class="cursor-ring"></div>
+
+  <!-- Navigation -->
+  <nav class="nav" id="main-nav">
+    <a href="index.html" class="nav-logo">
+          <svg class="brand-logo-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M12 2L14.85 8.15L21.6 9.15L16.7 13.93L17.85 20.65L12 17.5L6.15 20.65L7.3 13.93L2.4 9.15L9.15 8.15L12 2Z" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="12" cy="12" r="4" />
+          </svg>
+          <span class="brand-text-velora">VÉLORA</span><span class="brand-text-reserve">RESERVE</span>
+        </a>
+        <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="experiences.html">Experiences</a>
+      <div class="nav-dropdown-wrapper">
+        <a href="suites.html" class="nav-dropdown-toggle">Suites <span class="arrow">▼</span></a>
+        <div class="nav-dropdown-menu">
+          <a href="suites.html">Suites</a>
+          <a href="destinations.html">Destinations</a>
+          <a href="sunsets.html">Sunsets</a>
+          <a href="wedding.html">Weddings</a>
+        </div>
+      </div>
+      <a href="gallery.html">Gallery</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="contact.html">Contact</a>
+      <div class="nav-profile-wrap">
+        <button class="nav-profile-btn" aria-label="Profile Menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </button>
+        <div class="nav-profile-dropdown"></div>
+      </div>
+      <a href="booking.html" class="nav-book-btn active">Book Now</a>
+    </div>
+    <div class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- Mobile Nav -->
+  <div class="mobile-nav" id="mobile-nav">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="experiences.html">Experiences</a>
+    <a href="suites.html">Suites</a>
+    <a href="destinations.html">Destinations</a>
+    <a href="sunsets.html">Sunsets</a>
+    <a href="wedding.html">Weddings</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="reviews.html">Reviews</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="booking.html">Book Now</a>
+  </div>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero page-hero">
+    <div class="hero-bg">
+      <img src="assets/hero/hero-main.png" alt="A breathtaking twilight view of VÉLORA RESERVE lagoon overwater villas">
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-subtitle">✦ Reservations ✦</p>
+      <h1 class="hero-title">Reserve Your <em>Escape</em></h1>
+      <p class="hero-description">Begin your journey to absolute solitude in just a few simple steps.</p>
+    </div>
+  </section>
+
+  <!-- ============ BOOKING SEQUENCE ============ -->
+  <section class="section section-dark">
+    <div class="container">
+      <!-- Step Indicators -->
+      <div class="booking-steps reveal">
+        <div class="booking-step active"><span class="step-number">1</span><span>Destination</span></div>
+        <div class="step-connector"></div>
+        <div class="booking-step"><span class="step-number">2</span><span>Suite</span></div>
+        <div class="step-connector"></div>
+        <div class="booking-step"><span class="step-number">3</span><span>Details & Extras</span></div>
+        <div class="step-connector"></div>
+        <div class="booking-step"><span class="step-number">4</span><span>Confirm</span></div>
+      </div>
+
+      <div class="booking-form reveal">
+        <div class="booking-layout">
+          <!-- Main Panel Content -->
+          <div>
+            <!-- Step 1: Destination & Dates -->
+            <div class="step-panel active">
+              <div class="booking-card-glass">
+                <h3>Choose Your <em>Paradise</em></h3>
+                
+                <div class="form-group">
+                  <label class="form-label" for="destination">Destination Sanctuary</label>
+                  <select class="form-input" id="destination" name="destination" required>
+                    <option value="">Select your sanctuary</option>
+                    <option value="Maldives">VÉLORA Reserve — Maldives</option>
+                    <option value="Bali">VÉLORA Reserve — Bali</option>
+                    <option value="Santorini">VÉLORA Reserve — Santorini</option>
+                    <option value="Amalfi">VÉLORA Reserve — Amalfi Coast</option>
+                    <option value="Bora Bora">VÉLORA Reserve — Bora Bora</option>
+                    <option value="Seychelles">VÉLORA Reserve — Seychelles</option>
+                  </select>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label class="form-label" for="checkin">Check-in Date</label>
+                    <input type="date" class="form-input" id="checkin" name="checkin" required>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="checkout">Check-out Date</label>
+                    <input type="date" class="form-input" id="checkout" name="checkout" required>
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label class="form-label" for="adults">Adult Guests</label>
+                    <select class="form-input" id="adults" name="guests">
+                      <option>1</option>
+                      <option selected>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="children">Child Guests</label>
+                    <select class="form-input" id="children">
+                      <option selected>0</option>
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                    </select>
+                  </div>
+                </div>
+
+                <button class="btn btn-gold w-full mt-md btn-next">Continue to Suite Selection →</button>
+              </div>
+            </div>
+
+            <!-- Step 2: Suite Selection -->
+            <div class="step-panel">
+              <div class="booking-card-glass">
+                <h3>Select Your <em>Sanctuary</em></h3>
+                <div class="suite-selection-list">
+                  <!-- Suite 1 -->
+                  <div class="suite-select-card selected">
+                    <img class="suite-select-img" src="assets/suites/ocean-villa.png" alt="Ocean Villa">
+                    <div class="suite-select-info">
+                      <div class="suite-select-name">Ocean Villa</div>
+                      <div class="suite-select-price">₹1,99,999 / night</div>
+                      <div style="font-size:var(--text-xs); color:var(--gray); margin-top:4px;">120m² · Overwater Plunge Pool · Horizon Lagoon Access</div>
+                    </div>
+                  </div>
+
+                  <!-- Suite 2 -->
+                  <div class="suite-select-card">
+                    <img class="suite-select-img" src="assets/suites/garden-pavilion.png" alt="Garden Pavilion">
+                    <div class="suite-select-info">
+                      <div class="suite-select-name">Garden Pavilion</div>
+                      <div class="suite-select-price">₹1,49,999 / night</div>
+                      <div style="font-size:var(--text-xs); color:var(--gray); margin-top:4px;">95m² · Outdoor Stone Bath · Private Bamboo Forest</div>
+                    </div>
+                  </div>
+
+                  <!-- Suite 3 -->
+                  <div class="suite-select-card">
+                    <img class="suite-select-img" src="assets/suites/sky-penthouse.png" alt="Sky Penthouse">
+                    <div class="suite-select-info">
+                      <div class="suite-select-name">Sky Penthouse</div>
+                      <div class="suite-select-price">₹3,49,999 / night</div>
+                      <div style="font-size:var(--text-xs); color:var(--gray); margin-top:4px;">250m² · Rooftop Plunge Pool · 360° Panoramic Vistas</div>
+                    </div>
+                  </div>
+
+                  <!-- Suite 4 -->
+                  <div class="suite-select-card">
+                    <img class="suite-select-img" src="assets/suites/beach-bungalow.png" alt="Beach Bungalow">
+                    <div class="suite-select-info">
+                      <div class="suite-select-name">Beach Bungalow</div>
+                      <div class="suite-select-price">₹1,29,999 / night</div>
+                      <div style="font-size:var(--text-xs); color:var(--gray); margin-top:4px;">85m² · Direct Shoreline Access · Private Fire Pit</div>
+                    </div>
+                  </div>
+
+                  <!-- Suite 5 -->
+                  <div class="suite-select-card">
+                    <img class="suite-select-img" src="assets/suites/royal-suite.png" alt="Royal Suite">
+                    <div class="suite-select-info">
+                      <div class="suite-select-name">Royal Suite</div>
+                      <div class="suite-select-price">₹4,79,999 / night</div>
+                      <div style="font-size:var(--text-xs); color:var(--gray); margin-top:4px;">320m² · 24/7 Butler Curation · Private Dining Salon</div>
+                    </div>
+                  </div>
+
+                  <!-- Suite 6 -->
+                  <div class="suite-select-card">
+                    <img class="suite-select-img" src="assets/suites/overwater-villa.png" alt="Overwater Villa">
+                    <div class="suite-select-info">
+                      <div class="suite-select-name">Overwater Villa</div>
+                      <div class="suite-select-price">₹2,69,999 / night</div>
+                      <div style="font-size:var(--text-xs); color:var(--gray); margin-top:4px;">150m² · Active Glass Floors · Telescope Observation Deck</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="flex gap-sm mt-lg">
+                  <button class="btn btn-outline btn-prev" style="flex:1;">← Back</button>
+                  <button class="btn btn-gold btn-next" style="flex:2;">Continue to Details →</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Step 3: Guest Details & Extra Packages -->
+            <div class="step-panel">
+              <div class="booking-card-glass">
+                <h3>Guest Details & <em>Enhancements</em></h3>
+                
+                <div class="form-row">
+                  <div class="form-group">
+                    <label class="form-label" for="fname">First Name</label>
+                    <input type="text" class="form-input" id="fname" name="fname" placeholder="First name" required>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="lname">Last Name</label>
+                    <input type="text" class="form-input" id="lname" name="lname" placeholder="Last name" required>
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label class="form-label" for="b-email">Email Address</label>
+                    <input type="email" class="form-input" id="b-email" name="email" placeholder="your@email.com" required>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="b-phone">Phone Number</label>
+                    <input type="tel" class="form-input" id="b-phone" name="phone" placeholder="+1 (555) 000-0000">
+                  </div>
+                </div>
+
+                <!-- Cinematic Honeymoon & Couple Packages (STEP 9 Enhancement) -->
+                <h4 class="text-gold mt-xl mb-md" style="font-family: var(--font-display); font-size: var(--text-lg);">Enhance Your Escape</h4>
+                <div class="package-grid">
+                  <!-- Couple Package 1 -->
+                  <label class="package-card suite-select-card">
+                    <input type="checkbox" name="package_honeymoon" value="69999" class="package-checkbox" style="display:none;">
+                    <div class="package-img-wrap">
+                      <img src="assets/gallery/wedding.png" alt="Honeymoon Serenade">
+                      <div class="package-img-overlay"></div>
+                    </div>
+                    <div class="package-content">
+                      <div class="package-title-row">
+                        <span class="package-card-title">Honeymoon Serenade</span>
+                        <span class="package-card-price">+ ₹69,999 / stay</span>
+                      </div>
+                      <p class="package-card-desc">Celebrate your union with a curated tapestry of romance: a vintage chilled bottle of welcome champagne, an opulent bath ceremony under a canopy of orchids, a private sunset portrait session, and a twilight couple's sound healing journey under the stars.</p>
+                      <div class="package-card-checkbox">
+                        <span class="custom-indicator"></span>
+                        <span>Add Enhancement</span>
+                      </div>
+                    </div>
+                  </label>
+
+                  <!-- Couple Package 2 -->
+                  <label class="package-card suite-select-card">
+                    <input type="checkbox" name="package_proposal" value="99999" class="package-checkbox" style="display:none;">
+                    <div class="package-img-wrap">
+                      <img src="assets/experiences/dining.png" alt="Sanctuary Proposal">
+                      <div class="package-img-overlay"></div>
+                    </div>
+                    <div class="package-content">
+                      <div class="package-title-row">
+                        <span class="package-card-title">Sanctuary Proposal</span>
+                        <span class="package-card-price">+ ₹99,999 / stay</span>
+                      </div>
+                      <p class="package-card-desc">Engrave your love in memory with an exclusive cliffside platform takeover: a breath-stopping landscape of bespoke white floristry, a private acoustic string serenade, a 5-course customized fine-dining chef's degustation menu, and a private fire-pit champagne toast.</p>
+                      <div class="package-card-checkbox">
+                        <span class="custom-indicator"></span>
+                        <span>Add Enhancement</span>
+                      </div>
+                    </div>
+                  </label>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="b-requests">Special Requests</label>
+                  <textarea class="form-input" id="b-requests" name="requests" placeholder="Allergies, anniversaries, dietary demands, or airport flight details..."></textarea>
+                </div>
+
+                <div class="flex gap-sm mt-lg">
+                  <button class="btn btn-outline btn-prev" style="flex:1;">← Back</button>
+                  <button class="btn btn-gold btn-confirm" style="flex:2;">Confirm Reservation <svg class="luxury-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg></button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Step 4: Confirmation -->
+            <div class="step-panel">
+              <div class="booking-card-glass">
+                <div class="confirmation-card">
+                  <div class="confirmation-icon"><svg class="luxury-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg></div>
+                  <h3 class="confirmation-title">Reservation <em>Confirmed</em></h3>
+                  <p class="confirmation-text">Your architectural sanctuary has been successfully locked. An immersive travel brochure and confirmation breakdown has been dispatched.</p>
+                  
+                  <div class="booking-id-block mt-lg" style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap;">
+                    <div>
+                      <p style="font-family: var(--font-ui); font-size: var(--text-xs); color: var(--gray); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 2px;">Booking Reference</p>
+                      <p class="booking-id" style="font-family: var(--font-display); font-size: var(--text-2xl); color: var(--gold); font-weight: 700; margin-top: 4px;">VR-XXXXXX</p>
+                    </div>
+                    <div>
+                      <p style="font-family: var(--font-ui); font-size: var(--text-xs); color: var(--gray); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 2px;">Tracking ID</p>
+                      <p class="tracking-id" style="font-family: var(--font-display); font-size: var(--text-2xl); color: var(--beige); font-weight: 700; margin-top: 4px;">TRK-VEL-XXXX</p>
+                    </div>
+                  </div>
+                  <a href="index.html" class="btn btn-outline mt-xl">Return to Home</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pricing Sidebar (Visual Flow) -->
+          <div class="pricing-summary-luxury">
+            <h4>Sanctuary Breakdown</h4>
+            <div class="pricing-row-luxury"><span>Suite</span><span class="pricing-suite-name" style="font-family:var(--font-heading); font-weight:500;">Ocean Villa</span></div>
+            <div class="pricing-row-luxury"><span>Rate</span><span class="pricing-suite-price"> ₹1,99,999 / night</span></div>
+            <div class="pricing-row-luxury"><span>Duration</span><span class="pricing-duration">— nights</span></div>
+            <div class="pricing-row-luxury"><span>Guests</span><span class="pricing-guests">2 Adults</span></div>
+            <div class="pricing-row-luxury"><span>Resort Fee</span><span class="pricing-resort-fee">₹12,500 / night</span></div>
+            <div class="pricing-row-luxury"><span>Taxes</span><span class="pricing-taxes">12%</span></div>
+            
+            <div class="pricing-total-luxury"><span>Total Estimate</span><span class="pricing-grand-total">Select dates</span></div>
+            
+            <div style="height:1px; background:var(--gold); opacity:0.15; margin:var(--space-md) 0;"></div>
+            <div class="flex flex-col gap-sm" style="margin-top: var(--space-md);">
+              <p style="font-size: var(--text-xs); color: var(--gray); line-height: 1.5; display:flex; gap:6px;"><span><svg class="luxury-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg></span> Complimentary airport transfers</p>
+              <p style="font-size: var(--text-xs); color: var(--gray); line-height: 1.5; display:flex; gap:6px;"><span><svg class="luxury-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg></span> Free cancellation 48h prior</p>
+              <p style="font-size: var(--text-xs); color: var(--gray); line-height: 1.5; display:flex; gap:6px;"><span><svg class="luxury-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg></span> Organic welcome champagne</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  </section>
+
+  <!-- ============ BESPOKE PACKAGE SELECTOR & ENHANCEMENTS ============ -->
+  <section class="section section-dark" id="packages-selector">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-subtitle">Exquisite Tiers</p>
+        <h2 class="section-title">Bespoke <em>Sanctuary Packages</em></h2>
+        <p class="section-description">Select an alchemical stay template to enrich your devotion with pre-curated spa treatments, champagne cellars, and ocean charters.</p>
+      </div>
+      <div class="package-selector-grid">
+        <div class="package-selection-card reveal delay-1" id="package-honeymoon">
+          <svg class="luxury-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          <h3>Honeymoon Escape</h3>
+          <p>For lovers beginning forever. Incorporates flower bathes, twilight pier dining, and custom room oils.</p>
+          <div class="package-perks">
+            <span>✦ Daily Champagne breakfast</span>
+            <span>✦ 90-Min Couple Flower Spa</span>
+            <span>✦ Secluded pier dinner</span>
+          </div>
+        </div>
+        <div class="package-selection-card reveal delay-2" id="package-seasonal">
+          <svg class="luxury-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><path d="M12 2v20M2 12h20"/></svg>
+          <h3>Seasonal Scenic Offer</h3>
+          <p>Optimized for weather and local geometries. Highlights wildlife watching, drone filming, and regional tours.</p>
+          <div class="package-perks">
+            <span>✦ Yacht sunset charter</span>
+            <span>✦ Naturalist guided island trek</span>
+            <span>✦ Complimentary drone cinema</span>
+          </div>
+        </div>
+        <div class="package-selection-card reveal delay-3" id="package-signature">
+          <svg class="luxury-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <h3>Ultimate Reserve</h3>
+          <p>Our absolute sanctuary package. Absolute butler alchemist care, daily organic tastings, and unlimited wellness.</p>
+          <div class="package-perks">
+            <span>✦ 24/7 Butler Alchemist</span>
+            <span>✦ Unlimited spa sequences</span>
+            <span>✦ Personal Michelin chef</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PREDICTIVE PRIVILEGES & FLEXIBLE PLANNING ============ -->
+  <section class="section section-charcoal" id="booking-privileges">
+    <div class="container">
+      <div class="split">
+        <div class="split-image reveal-left">
+          <img src="assets/suites/ocean-villa.png" alt="Sleek premium overwater villa deck at VÉLORA RESERVE">
+        </div>
+        <div class="split-content reveal-right">
+          <p class="section-subtitle">Predictive Privileges</p>
+          <h2 class="section-title">Flexible <em>Luxury Planning</em></h2>
+          <p class="section-description">We protect both your serenity and your flexibility. Every booking at the Reserve incorporates our predictive privileges, designed to dissolve the standard friction of high-end travel.</p>
+          <p class="section-description mt-md">From **Curated Stay Recommendations** matched automatically to your flight timeline to flexible cancellation parameters, our planners coordinate with quiet competence.</p>
+          <div class="suite-amenities mt-md">
+            <span class="amenity-tag"><span><svg class="luxury-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span> Flexible deposits & cancellations</span>
+            <span class="amenity-tag"><span><svg class="luxury-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/></svg></span> Priority Villa upgrades</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ BESPOKE PLANNING SERVICES & CONCIERGE ASSISTANCE ============ -->
+  <section class="section section-deep" id="travel-guide">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-subtitle">Travel Preparation</p>
+        <h2 class="section-title">Luxury <em>Travel Planning Guide</em></h2>
+        <p class="section-description">A structured, unhurried timeline checklist to prepare for your arrival at VÉLORA RESERVE.</p>
+      </div>
+      <div class="booking-guide-wrapper reveal">
+        <h3 class="slow-living-title" style="font-size: var(--text-xl); text-align: center; margin-bottom: var(--space-md);">Bespoke Curation Checklist</h3>
+        <div class="planning-steps-list">
+          <div class="planning-step-item">
+            <span class="step-badge">1</span>
+            <div>
+              <p style="font-weight: 600; color: var(--ivory); font-size: var(--text-sm); margin-bottom: 2px;">Sanctuary & Date Lock</p>
+              <p style="font-size: var(--text-xs); color: var(--gray); line-height: 1.6;">Secure your dates and preferred villa tier. Our system locks your coordinates immediately and notifies your butler.</p>
+            </div>
+          </div>
+          <div class="planning-step-item">
+            <span class="step-badge">2</span>
+            <div>
+              <p style="font-weight: 600; color: var(--ivory); font-size: var(--text-sm); margin-bottom: 2px;">Olfactory & Curation Form</p>
+              <p style="font-size: var(--text-xs); color: var(--gray); line-height: 1.6;">A brief, sensory questionnaire detailing pillow height, preferred room fragrances, and dietary coordinates.</p>
+            </div>
+          </div>
+          <div class="planning-step-item">
+            <span class="step-badge">3</span>
+            <div>
+              <p style="font-weight: 600; color: var(--ivory); font-size: var(--text-sm); margin-bottom: 2px;">Flight & Yacht Sync</p>
+              <p style="font-size: var(--text-xs); color: var(--gray); line-height: 1.6;">Submit your flight details. Our concierge handles transfer logistics, matching your landing with our private yacht charters.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">
+          <svg class="brand-logo-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M12 2L14.85 8.15L21.6 9.15L16.7 13.93L17.85 20.65L12 17.5L6.15 20.65L7.3 13.93L2.4 9.15L9.15 8.15L12 2Z" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="12" cy="12" r="4" />
+          </svg>
+          <span class="brand-text-velora">VÉLORA</span><span class="brand-text-reserve">RESERVE</span>
+        </a>
+          <p>Where every moment is crafted, every view is a masterpiece, and every stay becomes a story.</p>
+          <div class="footer-socials">
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+            <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+            </a>
+            <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l11.733 16h4.267l-11.733 -16z"/><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"/></svg>
+            </a>
+            <a href="https://www.pinterest.com/" target="_blank" rel="noopener noreferrer" aria-label="Pinterest">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.27 2.68 7.9 6.47 9.3.11-.97.21-1.78.68-5.71.05-.42-.08-1.57-.08-1.57s-.17-.34-.17-.83c0-.78.45-1.36.99-1.36.47 0 .7.35.7.77 0 .47-.3 1.18-.46 1.83a.77.77 0 0 0 .79.96c.94 0 1.67-1 1.67-2.44 0-1.28-.92-2.17-2.22-2.17-1.52 0-2.41 1.14-2.41 2.31 0 .46.18.96.4 1.22.04.05.05.1.03.17l-.15.62c-.03.13-.1.17-.23.11-1.07-.5-1.72-2.07-1.72-3.32 0-3.1 2.21-5.19 5.66-5.19 3.09 0 5.28 2.2 5.28 4.95 0 3.07-1.93 5.54-4.62 5.54-.9 0-1.75-.47-2.04-1.02l-.56 2.1c-.2 1.05-.75 2.37-1.12 2.94C10.14 21.89 11.05 22 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-title">Explore</h4>
+          <div class="footer-links">
+            <a href="suites.html">Our Suites</a>
+            <a href="experiences.html">Experiences</a>
+            <a href="destinations.html">Destinations</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="sunsets.html">Sunsets</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-title">Company</h4>
+          <div class="footer-links">
+            <a href="about.html">Our Story</a>
+            <a href="reviews.html">Guest Reviews</a>
+            <a href="wedding.html">Weddings</a>
+            <a href="contact.html">Contact Us</a>
+            <a href="booking.html">Book Now</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-title">Contact</h4>
+          <div class="footer-contact-info">
+            <p>
+              <a href="mailto:concierge@velorareserve.com" aria-label="Email Concierge">
+                <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                concierge@velorareserve.com
+              </a>
+            </p>
+            <p>
+              <a href="tel:+919840012345" aria-label="Call Concierge">
+                <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                +91 98400 12345
+              </a>
+            </p>
+            <p>
+              <a href="contact.html" aria-label="Our Locations">
+                <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                Adyar, Chennai, India
+              </a>
+            </p>
+          </div>
+        </div>
+        <div class="footer-newsletter">
+          <h4 class="footer-title">Newsletter</h4>
+          <p class="newsletter-desc">Curated stories, sunset highlights, and villa private invites.</p>
+          <form class="newsletter-form" onsubmit="event.preventDefault(); this.innerHTML = '<p class=\'newsletter-desc\' style=\'color: var(--gold);\'>Curated invitation sent. Welcome to the Reserve.</p>';">
+            <div class="newsletter-input-wrap">
+              <input type="email" placeholder="Your Email Address" required class="newsletter-input">
+              <button type="submit" class="newsletter-btn">Subscribe</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2026 VÉLORA RESERVE. All rights reserved. Crafted with passion.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <span class="separator">|</span>
+          <a href="#">Terms & Conditions</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="auth.js"></script>
+</body>
+</html>

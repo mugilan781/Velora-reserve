@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sunset Experiences — VÉLORA RESERVE</title>
+  <meta name="description" content="Experience golden hour like nowhere else on earth. VÉLORA RESERVE sunset experiences are curated moments of pure magic — dining, cruises, and private terraces.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="auth.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✦</text></svg>">
+</head>
+<body>
+  <!-- Preloader -->
+  <div class="preloader">
+    <div class="preloader-logo">VÉLORA</div>
+    <div class="preloader-line"></div>
+  </div>
+
+  <!-- Custom Cursor -->
+  <div class="cursor-dot"></div>
+  <div class="cursor-ring"></div>
+
+  <!-- Navigation -->
+  <nav class="nav" id="main-nav">
+    <a href="index.html" class="nav-logo">
+          <svg class="brand-logo-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M12 2L14.85 8.15L21.6 9.15L16.7 13.93L17.85 20.65L12 17.5L6.15 20.65L7.3 13.93L2.4 9.15L9.15 8.15L12 2Z" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="12" cy="12" r="4" />
+          </svg>
+          <span class="brand-text-velora">VÉLORA</span><span class="brand-text-reserve">RESERVE</span>
+        </a>
+        <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="experiences.html">Experiences</a>
+      <div class="nav-dropdown-wrapper">
+        <a href="suites.html" class="nav-dropdown-toggle active">Suites <span class="arrow">▼</span></a>
+        <div class="nav-dropdown-menu">
+          <a href="suites.html">Suites</a>
+          <a href="destinations.html">Destinations</a>
+          <a href="sunsets.html" class="active">Sunsets</a>
+          <a href="wedding.html">Weddings</a>
+        </div>
+      </div>
+      <a href="gallery.html">Gallery</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="contact.html">Contact</a>
+      <div class="nav-profile-wrap">
+        <button class="nav-profile-btn" aria-label="Profile Menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </button>
+        <div class="nav-profile-dropdown"></div>
+      </div>
+      <a href="booking.html" class="nav-book-btn">Book Now</a>
+    </div>
+    <div class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- Mobile Nav -->
+  <div class="mobile-nav" id="mobile-nav">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="experiences.html">Experiences</a>
+    <a href="suites.html">Suites</a>
+    <a href="destinations.html">Destinations</a>
+    <a href="sunsets.html">Sunsets</a>
+    <a href="wedding.html">Weddings</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="reviews.html">Reviews</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="booking.html">Book Now</a>
+  </div>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero page-hero">
+    <div class="hero-bg">
+      <img src="assets/hero/sunset-hero.png" alt="Spectacular red and gold sunset reflecting on the lagoon at VÉLORA RESERVE">
+    </div>
+    <div class="hero-overlay" style="background: linear-gradient(180deg, rgba(11,11,15,0.4) 0%, rgba(26,18,10,0.3) 50%, rgba(11,11,15,0.92) 100%);"></div>
+    <div class="hero-content">
+      <p class="hero-subtitle">✦ Golden Hour ✦</p>
+      <h1 class="hero-title">Where Sky Meets <em>Soul</em></h1>
+      <p class="hero-description">At VÉLORA RESERVE, sunset is not just a time of day — it is a sacred ceremony. A daily masterpiece composed across the cosmos, just for you.</p>
+    </div>
+  </section>
+
+  <!-- ============ STORYTELLING SECTION ============ -->
+  <section class="section sunset-warm sunset-glow" id="sunset-philosophy">
+    <div class="container">
+      <div class="split" style="margin-bottom: clamp(3rem, 8vw, var(--space-3xl));">
+        <div class="split-image reveal-left">
+          <img src="assets/gallery/sunset.png" alt="A romantic couple toast under a deep orange sunset at VÉLORA RESERVE">
+        </div>
+        <div class="split-content reveal-right">
+          <p class="section-subtitle">✦ The Daily Miracle ✦</p>
+          <h2 class="section-title">The Magic of <em>Golden Hour</em></h2>
+          <p class="section-description">There is a fleeting moment each day when the natural world holds its breath. When the sun dips low beneath the marine horizon, and every architectural contour of the resort is bathed in liquid gold. At VÉLORA RESERVE, we have shaped our entire philosophy around honoring this celestial transition, offering you privileged sanctuaries to witness nature's final act in supreme stillness.</p>
+        </div>
+      </div>
+
+      <!-- ============ GOLDEN HOUR VIEW SCORE ============ -->
+      <div class="section-header reveal" style="margin-top: clamp(2rem, 6vw, var(--space-3xl)); margin-bottom: var(--space-xl);">
+        <p class="section-subtitle">Aesthetic Metrics</p>
+        <h2 class="section-title" style="font-size: var(--text-2xl);">Tonight's <em>Sunset Index</em></h2>
+      </div>
+
+      <div class="grid-3">
+        <!-- Metric 1 -->
+        <div class="feature-card reveal delay-1" style="background: rgba(26,18,10,0.4); border-color: rgba(214,179,106,0.15);">
+          <span class="feature-card-icon"><svg class="luxury-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m0-12.728l.707.707m11.314 11.314l.707.707M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8z"/></svg></span>
+          <h3 class="feature-card-title">9.8 Clarity Factor</h3>
+          <p class="feature-card-text">Pure sea breezes ensure absolute atmospheric clarity, creating an intense, unhindered spectrum of deep reds and ambers.</p>
+        </div>
+
+        <!-- Metric 2 -->
+        <div class="feature-card reveal delay-2" style="background: rgba(26,18,10,0.4); border-color: rgba(214,179,106,0.15);">
+          <span class="feature-card-icon"><svg class="luxury-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M17.5 19A3.5 3.5 0 0 0 21 15.5c0-2.79-2.54-4.5-5-4.5-.42 0-.83.05-1.22.14a7 7 0 0 0-13.78 1.86A4.5 4.5 0 0 0 5.5 22h12a3.5 3.5 0 0 0 0-3z"/></svg></span>
+          <h3 class="feature-card-title">15% Cloud Scatter</h3>
+          <p class="feature-card-text">Delicate wisps of high-altitude clouds act as perfect prisms, catching and diffusing golden rays across the canvas.</p>
+        </div>
+
+        <!-- Metric 3 -->
+        <div class="feature-card reveal delay-3" style="background: rgba(26,18,10,0.4); border-color: rgba(214,179,106,0.15);">
+          <span class="feature-card-icon"><svg class="luxury-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M5 2h14M5 22h14M19 2l-7 10 7 10M5 2l7 10-7 10"/></svg></span>
+          <h3 class="feature-card-title">42-Min Twilight Glow</h3>
+          <p class="feature-card-text">Our unique geographic alignment provides an extended post-sunset twilight sequence of rare violet and gold hues.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ EXPERIENCE 1: DINING ============ -->
+  <section class="section section-dark">
+    <div class="container">
+      <div class="split">
+        <div class="split-image reveal-left">
+          <img src="assets/experiences/dining.png" alt="A gorgeous table candlelit at the shoreline under sunset">
+        </div>
+        <div class="split-content reveal-right">
+          <p class="section-subtitle">✦ Intimate Culinary Epics ✦</p>
+          <h2 class="section-title">Oceanside Sunset <em>Dining</em></h2>
+          <p class="section-description">As the sun begins its descent, your private candlelit table awaits on the water's edge. Our Executive Chef presents a bespoke five-course tasting menu inspired by the chromatic cycle of twilight — from deep gold to crimson and violet. Each course is synchronized to the changing natural light.</p>
+          <p class="section-description mt-md">Complemented by rare vintages selected by our resident sommelier, this is gastronomy elevated to performance art. Nightly availability is strictly limited to four couples.</p>
+          <div style="display:flex; align-items:center; gap:var(--space-md); margin-top:var(--space-xl);">
+            <span class="card-price" style="font-size: var(--text-2xl); font-family:var(--font-display);">₹39,999 <small>/couple</small></span>
+            <a href="booking.html" class="btn btn-gold">Reserve Experience</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ EXPERIENCE 2: CRUISE ============ -->
+  <section class="section section-charcoal">
+    <div class="container">
+      <div class="split split-reverse">
+        <div class="split-image reveal-right">
+          <img src="assets/experiences/ocean.png" alt="Sailing catamaran at golden hour sunset">
+        </div>
+        <div class="split-content reveal-left">
+          <p class="section-subtitle">✦ Catamaran Expeditions ✦</p>
+          <h2 class="section-title">Champagne Sunset <em>Cruises</em></h2>
+          <p class="section-description">Board our private sleek catamaran for an unforgettable journey across gilded waters. Live acoustic strings set the quiet, romantic mood as chilled champagne flows and the horizon transforms into a glowing canvas of amber and rose. Watch private dolphin schools jump against the golden disk of the setting sun.</p>
+          <p class="section-description mt-md">Optional marine biologist guided dolphin watching is included. Cruise duration is 2.5 hours. Maximum of 12 guests ensuring a premium, quiet atmosphere.</p>
+          <div style="display:flex; align-items:center; gap:var(--space-md); margin-top:var(--space-xl);">
+            <span class="card-price" style="font-size: var(--text-2xl); font-family:var(--font-display);">₹24,999 <small>/person</small></span>
+            <a href="booking.html" class="btn btn-gold">Reserve Experience</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ EXPERIENCE 3: TERRACE ============ -->
+  <section class="section section-dark">
+    <div class="container">
+      <div class="split">
+        <div class="split-image reveal-left">
+          <img src="assets/hero/sunset-hero.png" alt="An elevated private wood deck with pillows looking at sunset">
+        </div>
+        <div class="split-content reveal-right">
+          <p class="section-subtitle">✦ Privileged Elevations ✦</p>
+          <h2 class="section-title">The Secluded Sunset <em>Terrace</em></h2>
+          <p class="section-description">Reserve our exclusive elevated stone terrace with a 270° unobstructed view of the horizon. A private butler caters to your requests while you watch twilight's final act in absolute peace. Includes a curated cocktail collection, organic cheeses, and fresh exotic fruits.</p>
+          <p class="section-description mt-md">This privileged vantage point provides absolute quietude, making it the perfect setting for proposals, milestone anniversaries, or deep cinematic reflection.</p>
+          <div style="display:flex; align-items:center; gap:var(--space-md); margin-top:var(--space-xl);">
+            <span class="card-price" style="font-size: var(--text-2xl); font-family:var(--font-display);">₹54,999 <small>/evening</small></span>
+            <a href="booking.html" class="btn btn-gold">Reserve Experience</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ GALLERY SECTION ============ -->
+  <section class="section section-charcoal">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-subtitle">Golden Moments</p>
+        <h2 class="section-title">Sunset <em>Gallery</em></h2>
+      </div>
+      <div class="grid-3 reveal">
+        <div class="split-image" style="aspect-ratio:4/3;">
+          <img src="assets/hero/sunset-hero.png" alt="A couple holding hands at sunset at VÉLORA RESERVE">
+        </div>
+        <div class="split-image" style="aspect-ratio:4/3;">
+          <img src="assets/experiences/dining.png" alt="Candlelit tables glowing warm at twilight">
+        </div>
+        <div class="split-image" style="aspect-ratio:4/3;">
+          <img src="assets/experiences/ocean.png" alt="Catamaran sails silhouettes against glowing red horizon">
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  </section>
+
+  <!-- ============ TWILIGHT RITUALS & SUNSET CURATION ============ -->
+  <section class="section section-dark" id="twilight-rituals">
+    <div class="container">
+      <div class="split">
+        <div class="split-image reveal-left">
+          <img src="assets/experiences/dining.png" alt="A romantic couple toast under a deep orange sunset at VÉLORA RESERVE">
+        </div>
+        <div class="split-content reveal-right">
+          <p class="section-subtitle">Reserve sunset curation</p>
+          <h2 class="section-title">Luxury <em>Twilight Rituals</em></h2>
+          <p class="section-description">We celebrate the golden hour with an alchemical sequence of sensory events. Every evening at our designated **Signature Sunset Spots**, we host structured **Golden Hour Experiences** — fresh organic cocktail alchemy, acoustic strings, and sunset meditation.</p>
+          <p class="section-description mt-md">For the ultimate devotion, book **Romantic Sunset Dining** situated on a isolated pier-end table, completely wrapped in twilight clouds and glowing horizon lines.</p>
+          <div class="suite-amenities mt-md">
+            <span class="amenity-tag"><span><svg class="luxury-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span> Signature sunset spots</span>
+            <span class="amenity-tag"><span><svg class="luxury-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/></svg></span> Golden Hour Wine alchemy</span>
+            <span class="amenity-tag"><span><svg class="luxury-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></span> Romantic Sunset Dining</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ NIGHTFALL AMBIENCE & EVENING ESCAPES ============ -->
+  <section class="section section-charcoal" id="nightfall-ambience">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-subtitle">Evening Escapes</p>
+        <h2 class="section-title">Luxury <em>Nightfall Ambience</em></h2>
+        <p class="section-description">As golden glow dissolves into quiet velvet night, the sanctuaries transition into firelight and ocean glow serenity.</p>
+      </div>
+      <div class="sunset-lounges-grid">
+        <div class="sunset-lounge-card reveal delay-1">
+          <svg class="luxury-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M17.36 5.64l1.41-1.41"/></svg>
+          <h3>Rooftop Sunset Lounge</h3>
+          <p class="card-text" style="font-size: var(--text-xs); color: var(--gray); line-height: 1.7; margin-top: 4px;">Perched above the canopy with 360° celestial views, plush daybeds, fireside bowls, and vintage champagne cellar pairings.</p>
+        </div>
+        <div class="sunset-lounge-card reveal delay-2">
+          <svg class="luxury-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/><path d="M2 12h20"/></svg>
+          <h3>Ocean Glow & Firelight</h3>
+          <p class="card-text" style="font-size: var(--text-xs); color: var(--gray); line-height: 1.7; margin-top: 4px;">Candlelit sandbanks, private bonfire circles, and bioluminescent ocean swims under a heavy vault of stars.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ EVENING ESCAPE CHRONOLOGY & CAPTURES ============ -->
+  <section class="section section-deep" id="sunset-captures">
+    <div class="container">
+      <div class="split split-reverse">
+        <div class="split-image reveal-right">
+          <img src="assets/hero/sunset-hero.png" alt="A professional camera capturing the twilight gradients of VÉLORA RESERVE">
+        </div>
+        <div class="split-content reveal-left">
+          <p class="section-subtitle">Chronicles of Light</p>
+          <h2 class="section-title">Sunset <em>Photography Moments</em></h2>
+          <p class="section-description">A daily chronology of the sky. We provide guests with curated camera lens systems and in-villa tripods to document the emotional sunset gradients. Collaborate with our on-site media curator to frame your **Evening Escape Storytelling** portraits against liquid gold horizons.</p>
+          <div class="suite-amenities mt-md">
+            <span class="amenity-tag"><span><svg class="luxury-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></span> Curated camera setups</span>
+            <span class="amenity-tag"><span><svg class="luxury-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/></svg></span> Evening Escape Chronology</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PARALLAX CTA ============ -->
+  <section class="parallax-section">
+    <div class="parallax-bg">
+      <img src="assets/hero/sunset-hero.png" alt="Liquid gold ocean reflecting twilight at VÉLORA RESERVE">
+    </div>
+    <div class="parallax-overlay"></div>
+    <div class="parallax-content reveal">
+      <h2 class="section-title" style="font-size: var(--text-4xl);">Your Golden Hour <em>Awaits</em></h2>
+      <p class="section-description" style="color: rgba(248,245,240,0.8);">Don't just watch the sunset — live it in a way you will remember for a lifetime.</p>
+      <a href="booking.html" class="btn btn-gold btn-lg mt-xl">Book Golden Hour</a>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">
+          <svg class="brand-logo-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M12 2L14.85 8.15L21.6 9.15L16.7 13.93L17.85 20.65L12 17.5L6.15 20.65L7.3 13.93L2.4 9.15L9.15 8.15L12 2Z" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="12" cy="12" r="4" />
+          </svg>
+          <span class="brand-text-velora">VÉLORA</span><span class="brand-text-reserve">RESERVE</span>
+        </a>
+          <p>Where every moment is crafted, every view is a masterpiece, and every stay becomes a story.</p>
+          <div class="footer-socials">
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+            <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+            </a>
+            <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l11.733 16h4.267l-11.733 -16z"/><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"/></svg>
+            </a>
+            <a href="https://www.pinterest.com/" target="_blank" rel="noopener noreferrer" aria-label="Pinterest">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.27 2.68 7.9 6.47 9.3.11-.97.21-1.78.68-5.71.05-.42-.08-1.57-.08-1.57s-.17-.34-.17-.83c0-.78.45-1.36.99-1.36.47 0 .7.35.7.77 0 .47-.3 1.18-.46 1.83a.77.77 0 0 0 .79.96c.94 0 1.67-1 1.67-2.44 0-1.28-.92-2.17-2.22-2.17-1.52 0-2.41 1.14-2.41 2.31 0 .46.18.96.4 1.22.04.05.05.1.03.17l-.15.62c-.03.13-.1.17-.23.11-1.07-.5-1.72-2.07-1.72-3.32 0-3.1 2.21-5.19 5.66-5.19 3.09 0 5.28 2.2 5.28 4.95 0 3.07-1.93 5.54-4.62 5.54-.9 0-1.75-.47-2.04-1.02l-.56 2.1c-.2 1.05-.75 2.37-1.12 2.94C10.14 21.89 11.05 22 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-title">Explore</h4>
+          <div class="footer-links">
+            <a href="suites.html">Our Suites</a>
+            <a href="experiences.html">Experiences</a>
+            <a href="destinations.html">Destinations</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="sunsets.html">Sunsets</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-title">Company</h4>
+          <div class="footer-links">
+            <a href="about.html">Our Story</a>
+            <a href="reviews.html">Guest Reviews</a>
+            <a href="wedding.html">Weddings</a>
+            <a href="contact.html">Contact Us</a>
+            <a href="booking.html">Book Now</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-title">Contact</h4>
+          <div class="footer-contact-info">
+            <p>
+              <a href="mailto:concierge@velorareserve.com" aria-label="Email Concierge">
+                <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                concierge@velorareserve.com
+              </a>
+            </p>
+            <p>
+              <a href="tel:+919840012345" aria-label="Call Concierge">
+                <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                +91 98400 12345
+              </a>
+            </p>
+            <p>
+              <a href="contact.html" aria-label="Our Locations">
+                <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                Adyar, Chennai, India
+              </a>
+            </p>
+          </div>
+        </div>
+        <div class="footer-newsletter">
+          <h4 class="footer-title">Newsletter</h4>
+          <p class="newsletter-desc">Curated stories, sunset highlights, and villa private invites.</p>
+          <form class="newsletter-form" onsubmit="event.preventDefault(); this.innerHTML = '<p class=\'newsletter-desc\' style=\'color: var(--gold);\'>Curated invitation sent. Welcome to the Reserve.</p>';">
+            <div class="newsletter-input-wrap">
+              <input type="email" placeholder="Your Email Address" required class="newsletter-input">
+              <button type="submit" class="newsletter-btn">Subscribe</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2026 VÉLORA RESERVE. All rights reserved. Crafted with passion.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <span class="separator">|</span>
+          <a href="#">Terms & Conditions</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Glass Booking Panel -->
+  <div class="floating-booking-panel" id="floating-booking-panel">
+    <form action="booking.html" method="GET" class="floating-booking-bar">
+      <div class="booking-field">
+        <label class="booking-field-label">Destination</label>
+        <select name="destination" class="booking-field-select">
+          <option value="Maldives">VÉLORA Reserve — Maldives</option>
+          <option value="Bali">VÉLORA Reserve — Bali</option>
+          <option value="Santorini">VÉLORA Reserve — Santorini</option>
+          <option value="Amalfi">VÉLORA Reserve — Amalfi Coast</option>
+          <option value="Bora Bora">VÉLORA Reserve — Bora Bora</option>
+          <option value="Seychelles">VÉLORA Reserve — Seychelles</option>
+        </select>
+      </div>
+      <div class="booking-separator"></div>
+      <div class="booking-field">
+        <label class="booking-field-label">Guests</label>
+        <select name="guests" class="booking-field-select">
+          <option value="1">1 Guest</option>
+          <option value="2" selected>2 Guests</option>
+          <option value="3">3 Guests</option>
+          <option value="4">4 Guests</option>
+          <option value="5+">5+ Guests</option>
+        </select>
+      </div>
+      <button type="submit" class="floating-booking-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 14px; height: 14px; margin-right: 4px;"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        Reserve Escape
+      </button>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+  <script src="auth.js"></script>
+</body>
+</html>

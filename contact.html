@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us — VÉLORA RESERVE</title>
+  <meta name="description" content="Get in touch with VÉLORA RESERVE. Reach our concierge team for reservations, inquiries, and bespoke travel planning assistance.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="auth.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✦</text></svg>">
+</head>
+<body class="contact-page">
+  <div class="preloader"><div class="preloader-logo">VÉLORA</div><div class="preloader-line"></div></div>
+  <div class="cursor-dot"></div><div class="cursor-ring"></div>
+
+  <nav class="nav"><a href="index.html" class="nav-logo">
+          <svg class="brand-logo-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M12 2L14.85 8.15L21.6 9.15L16.7 13.93L17.85 20.65L12 17.5L6.15 20.65L7.3 13.93L2.4 9.15L9.15 8.15L12 2Z" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="12" cy="12" r="4" />
+          </svg>
+          <span class="brand-text-velora">VÉLORA</span><span class="brand-text-reserve">RESERVE</span>
+        </a>
+        <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="experiences.html">Experiences</a>
+      <div class="nav-dropdown-wrapper">
+        <a href="suites.html" class="nav-dropdown-toggle">Suites <span class="arrow">▼</span></a>
+        <div class="nav-dropdown-menu">
+          <a href="suites.html">Suites</a>
+          <a href="destinations.html">Destinations</a>
+          <a href="sunsets.html">Sunsets</a>
+          <a href="wedding.html">Weddings</a>
+        </div>
+      </div>
+      <a href="gallery.html">Gallery</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="contact.html" class="active">Contact</a>
+      <div class="nav-profile-wrap">
+        <button class="nav-profile-btn" aria-label="Profile Menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </button>
+        <div class="nav-profile-dropdown"></div>
+      </div>
+      <a href="booking.html" class="nav-book-btn">Book Now</a>
+    </div>
+    <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+  </nav>
+  <div class="mobile-nav" id="mobile-nav"><a href="index.html">Home</a><a href="about.html">About</a><a href="experiences.html">Experiences</a><a href="suites.html">Suites</a><a href="destinations.html">Destinations</a><a href="sunsets.html">Sunsets</a><a href="wedding.html">Weddings</a><a href="gallery.html">Gallery</a><a href="reviews.html">Reviews</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="booking.html">Book Now</a></div>
+
+  <section class="hero page-hero">
+    <div class="hero-bg"><img src="assets/about/resort.png" alt="Resort"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-subtitle">✦ Reach Out ✦</p>
+      <h1 class="hero-title">Get In <em>Touch</em></h1>
+      <p class="hero-description">Our concierge team is available around the clock to assist with reservations, special requests, and bespoke travel planning.</p>
+    </div>
+  </section>
+
+  <!-- Contact Info + Form -->
+  <section class="section section-dark">
+    <div class="container">
+      <div class="grid-2">
+        <!-- Contact Form -->
+        <div class="reveal-left">
+          <h2 class="section-title">Send Us a <em>Message</em></h2>
+          <div class="booking-card-glass contact-booking-card-glass">
+            <form class="contact-form">
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="c-name">Full Name</label>
+                  <input type="text" class="form-input form-input-luxury" id="c-name" name="name" placeholder="Your full name" required>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="c-email">Email</label>
+                  <input type="email" class="form-input form-input-luxury" id="c-email" name="email" placeholder="your@email.com" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="c-subject">Subject</label>
+                <select class="form-input form-input-luxury" id="c-subject" name="subject">
+                  <option value="">Choose a topic</option>
+                  <option>Reservation Inquiry</option>
+                  <option>Wedding Planning</option>
+                  <option>Group Booking</option>
+                  <option>Experience Question</option>
+                  <option>Press & Media</option>
+                  <option>Partnership Opportunity</option>
+                  <option>General Question</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="c-message">Message</label>
+                <textarea class="form-input form-input-luxury" id="c-message" name="message" placeholder="Tell us how we can help..." required></textarea>
+              </div>
+              <button type="submit" class="btn btn-gold btn-lg w-full">Send Message</button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="reveal-right">
+          <h2 class="section-title">Contact <em>Information</em></h2>
+          <div class="concierge-info-grid">
+            <div class="concierge-info-card">
+              <div class="concierge-info-icon"><svg class="luxury-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+              <div>
+                <div class="concierge-info-title">Phone</div>
+                <div class="concierge-info-text"><a href="tel:+919840012345" style="color: inherit; text-decoration: none;">+91 98400 12345</a><br><a href="tel:+919876543210" style="color: inherit; text-decoration: none;">+91 98765 43210</a></div>
+              </div>
+            </div>
+            <div class="concierge-info-card">
+              <div class="concierge-info-icon"><svg class="luxury-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></div>
+              <div>
+                <div class="concierge-info-title">Email</div>
+                <div class="concierge-info-text">reservations@velorareserve.com<br>concierge@velorareserve.com</div>
+              </div>
+            </div>
+            <div class="concierge-info-card">
+              <div class="concierge-info-icon"><svg class="luxury-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"/></svg></div>
+              <div>
+                <div class="concierge-info-title">Headquarters</div>
+                <div class="concierge-info-text">42, Gandhi Nagar Main Road,<br>Adyar, Chennai – 600020,<br>Tamil Nadu, India</div>
+              </div>
+            </div>
+            <div class="concierge-info-card">
+              <div class="concierge-info-icon"><svg class="luxury-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+              <div>
+                <div class="concierge-info-title">Hours</div>
+                <div class="concierge-info-text">Concierge Support: 24/7<br>Office Hours: Mon-Sat 9:00 AM - 7:00 PM IST · Sun 10:00 AM - 5:00 PM IST</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- WhatsApp Private Concierge CTA -->
+          <div class="whatsapp-cta" onclick="window.open('https://wa.me/919500088888', '_blank')">
+            <div class="whatsapp-cta-icon">✦</div>
+            <div class="whatsapp-cta-content">
+              <div class="whatsapp-cta-title">Private Concierge</div>
+              <div class="whatsapp-cta-text">Connect instantly via WhatsApp for customized curation.</div>
+            </div>
+          </div>
+
+          <!-- Social -->
+          <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; text-align: center; margin-top: var(--space-xl);">
+            <h4 class="footer-title" style="color: var(--gray); margin-bottom: var(--space-sm); text-align: center;">Follow Us</h4>
+            <div class="footer-socials" style="justify-content: center; display: flex; gap: var(--space-md);">
+              <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+              </a>
+              <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+              </a>
+              <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l11.733 16h4.267l-11.733 -16z"/><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"/></svg>
+              </a>
+              <a href="https://www.pinterest.com/" target="_blank" rel="noopener noreferrer" aria-label="Pinterest">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.27 2.68 7.9 6.47 9.3.11-.97.21-1.78.68-5.71.05-.42-.08-1.57-.08-1.57s-.17-.34-.17-.83c0-.78.45-1.36.99-1.36.47 0 .7.35.7.77 0 .47-.3 1.18-.46 1.83a.77.77 0 0 0 .79.96c.94 0 1.67-1 1.67-2.44 0-1.28-.92-2.17-2.22-2.17-1.52 0-2.41 1.14-2.41 2.31 0 .46.18.96.4 1.22.04.05.05.1.03.17l-.15.62c-.03.13-.1.17-.23.11-1.07-.5-1.72-2.07-1.72-3.32 0-3.1 2.21-5.19 5.66-5.19 3.09 0 5.28 2.2 5.28 4.95 0 3.07-1.93 5.54-4.62 5.54-.9 0-1.75-.47-2.04-1.02l-.56 2.1c-.2 1.05-.75 2.37-1.12 2.94C10.14 21.89 11.05 22 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2z"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ OUR LOCATIONS (EMBEDDED MAP REFINEMENT) ============ -->
+  <section class="section section-charcoal" id="our-locations-section">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-subtitle">Find Us</p>
+        <h2 class="section-title">Our <em>Locations</em></h2>
+      </div>
+      <div class="reveal locations-card-wrapper">
+        <div class="luxury-location-card">
+          <!-- EMBEDDED GOOGLE MAP -->
+          <div class="location-map-container">
+            <iframe class="location-map-iframe" 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.388835848123!2d80.25261357597148!3d13.010915113941427!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5267bdf8f2bbd3%3A0xe9f79b69b5969562!2sAdyar%2C%20Chennai%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1716942000000!5m2!1sen!2sin" 
+                    allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+          
+          <!-- Location Information Area -->
+          <div class="location-info-area">
+            <h3 class="location-info-title">Main Branch — Adyar</h3>
+            <p class="location-info-address">Adyar, Chennai, Tamil Nadu, India</p>
+            <a href="https://www.google.com/maps/dir/?api=1&destination=Adyar,+Chennai,+Tamil+Nadu" 
+               target="_blank" rel="noopener noreferrer" 
+               class="btn btn-gold location-info-btn">Get Directions</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VIP Instant Digital Concierge -->
+  <section class="section section-deep" id="digital-concierge">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-subtitle">VIP Concierge</p>
+        <h2 class="section-title">Instant <em>Digital Concierge</em></h2>
+        <p class="section-description">A fluid, predictive communication portal. Connect with our dedicated curators and sanctuary alchemists instantly.</p>
+      </div>
+      <div class="digital-concierge-grid">
+        <!-- WhatsApp Card -->
+        <div class="concierge-glass-card reveal" id="digital-whatsapp">
+          <svg class="luxury-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <h3>WhatsApp Support</h3>
+          <p>Connect with a Dedicated Butler Alchemist directly. Average response: 90 seconds. Available 24/7/365.</p>
+          <button class="btn btn-outline btn-sm whatsapp-support-btn">Open Chat</button>
+        </div>
+        <!-- Private Booking Help Card -->
+        <div class="concierge-glass-card reveal" id="digital-booking">
+          <svg class="luxury-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2" stroke-width="1.5"/>
+            <line x1="16" y1="2" x2="16" y2="6" stroke-width="1.5"/>
+            <line x1="8" y1="2" x2="8" y2="6" stroke-width="1.5"/>
+            <line x1="3" y1="10" x2="21" y2="10" stroke-width="1.5"/>
+          </svg>
+          <h3>Private Booking Help</h3>
+          <p>Dissolve standard travel friction. Secure private charters, multi-sanctuary routes, and custom villa modifications.</p>
+          <a href="booking.html" class="btn btn-gold btn-sm">Customize Stay</a>
+        </div>
+        <!-- Emergency Assistance Card -->
+        <div class="concierge-glass-card reveal" id="digital-emergency">
+          <svg class="luxury-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <h3>Emergency Assistance</h3>
+          <p>Rest easy knowing your safety is coordinated. Instant air ambulance, secure line communications, and diplomatic liaison.</p>
+          <button class="btn btn-outline btn-sm emergency-line-btn">Call Secured Line</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bespoke Global Assistance Services -->
+  <section class="section section-charcoal" id="global-assistance">
+    <div class="container">
+      <div class="split">
+        <div class="split-image reveal-left">
+          <img src="assets/about/resort.png" alt="Sleek biophilic exterior and sanctuary operations at VÉLORA RESERVE">
+        </div>
+        <div class="split-content reveal-right">
+          <p class="section-subtitle">Global Coordination</p>
+          <h2 class="section-title">Bespoke <em>Global Assistance</em></h2>
+          <p class="section-description">Our reach spans oceans to safeguard your serenity. We operate a highly responsive grid of regional travel alchemists and logistic managers across major time zones, providing proactive guest support, flight synchronization, and private marina arrivals.</p>
+          
+          <div style="margin-top: var(--space-lg); display: flex; flex-direction: column; gap: var(--space-md);">
+            <div style="border-left: 1px solid var(--gold); padding-left: var(--space-md);">
+              <p style="font-family: var(--font-display); font-size: var(--text-sm); color: var(--ivory); letter-spacing: 0.05em; text-transform: uppercase;">Chennai Headquarters & Sanctuary Hub</p>
+              <p style="font-size: var(--text-xs); color: var(--gray); line-height: 1.5; margin-top: 2px;">Adyar Operations · Dedicated to general inquiry resolution, flight synchronization, private yacht charters, and bespoke culinary alignment.<br><strong style="color: var(--gold-light);">Primary Line: <a href="tel:+919840012345" style="color: inherit; text-decoration: none;">+91 98400 12345</a> | Secondary Line: <a href="tel:+919876543210" style="color: inherit; text-decoration: none;">+91 98765 43210</a></strong></p>
+            </div>
+            
+            <div style="border-left: 1px solid var(--gold); padding-left: var(--space-md);">
+              <p style="font-family: var(--font-display); font-size: var(--text-sm); color: var(--ivory); letter-spacing: 0.05em; text-transform: uppercase;">Indian Ocean & Exotic Escape Hub</p>
+              <p style="font-size: var(--text-xs); color: var(--gray); line-height: 1.5; margin-top: 2px;">Maldives & Bali Sanctuary Operations · Coordinating seaplane transfers, luxury marine transit, private villa bookings, and curated wellness retreats.<br><strong style="color: var(--gold-light);">Concierge Hotline: <a href="tel:+919500088888" style="color: inherit; text-decoration: none;">+91 95000 88888</a> | WhatsApp Concierge: <a href="https://wa.me/919500088888" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">+91 95000 88888</a></strong></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- FAQ -->
+  <section class="section section-dark" id="faq">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-subtitle">Common Questions</p>
+        <h2 class="section-title">Frequently <em>Asked</em></h2>
+      </div>
+      <div class="accordion reveal" style="max-width: 800px; margin: 0 auto;">
+        <div class="accordion-item">
+          <button class="accordion-header">How do I make a reservation?<span class="accordion-icon">+</span></button>
+          <div class="accordion-body"><div class="accordion-content">You can book directly through our website by visiting the <a href="booking.html" style="color: var(--gold);">Book Now</a> page, or contact our reservations team 24/7 at +1 (800) VELORA-1 or reservations@velorareserve.com. Our concierge team can also help you create a completely bespoke itinerary.</div></div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header">What accessibility options are integrated into your sanctuaries?<span class="accordion-icon">+</span></button>
+          <div class="accordion-body"><div class="accordion-content">Every overwater villa and beach pavilion is fully ADA-compliant, featuring smooth ramp access, automated doors, sensory calming environments, visual-acoustic emergency signaling, and adaptive walk-in wet rooms. Please share your physical coordinates with our digital concierge during booking to customize your layouts.</div></div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header">What is your cancellation policy?<span class="accordion-icon">+</span></button>
+          <div class="accordion-body"><div class="accordion-content">We offer complimentary cancellation up to 48 hours before your scheduled check-in date. Cancellations within 48 hours are subject to a one-night charge. For wedding and event bookings, please refer to your specific contract terms.</div></div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header">Are airport transfers included?<span class="accordion-icon">+</span></button>
+          <div class="accordion-body"><div class="accordion-content">Yes! All reservations include complimentary airport transfers. In the Maldives, this includes speedboat or seaplane transfer. In other destinations, we provide luxury vehicle service from the nearest international airport.</div></div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header">Do you accommodate dietary restrictions?<span class="accordion-icon">+</span></button>
+          <div class="accordion-body"><div class="accordion-content">Absolutely. Our culinary team caters to all dietary requirements including vegan, vegetarian, gluten-free, halal, kosher, and allergy-specific needs. Please inform us during booking so we can prepare accordingly.</div></div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header">Is VÉLORA suitable for families with children?<span class="accordion-icon">+</span></button>
+          <div class="accordion-body"><div class="accordion-content">Yes! We welcome families warmly. Our properties feature dedicated kids' clubs, family-friendly suites, child-safe pools, and curated family experiences. Babysitting services are available 24/7. Certain experiences like sunset cruises and spa treatments have age restrictions.</div></div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header">What sustainability practices do you follow?<span class="accordion-icon">+</span></button>
+          <div class="accordion-body"><div class="accordion-content">We operate with 100% renewable energy, maintain zero single-use plastic policies, run active coral restoration programs, source food from our organic gardens, and contribute to local community foundations. We're proud holders of the Global Tourism Council's sustainability certification.</div></div>
+        </div>
+      </div>
+      
+      <!-- Universal Accessibility Guarantee Notice -->
+      <div class="accessibility-notice reveal">
+        <p>✦ Universal Accessibility Guarantee ✦</p>
+        <p style="font-size: var(--text-xs); color: var(--gray); line-height: 1.8; margin-top: var(--space-xs); font-style: italic;">
+          At VÉLORA RESERVE, luxury is unconditional and barrier-free. All of our overwater villas, beachfront sanctuaries, and cliffside dining platforms are meticulously engineered with wheelchair accessibility, intuitive braille sensory markers, and adaptive smart living technology. Our highly trained Butler Alchemists are certified in universal hospitality care, ensuring every guest experiences the absolute fullness of paradise with complete dignity, comfort, and independence. For customized physical or sensory arrangements, please connect with our VIP Digital Concierge.
+        </p>
+      </div>
+    </div>
+  </section>
+
+    <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">
+          <svg class="brand-logo-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M12 2L14.85 8.15L21.6 9.15L16.7 13.93L17.85 20.65L12 17.5L6.15 20.65L7.3 13.93L2.4 9.15L9.15 8.15L12 2Z" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="12" cy="12" r="4" />
+          </svg>
+          <span class="brand-text-velora">VÉLORA</span><span class="brand-text-reserve">RESERVE</span>
+        </a>
+          <p>Where every moment is crafted, every view is a masterpiece, and every stay becomes a story.</p>
+          <div class="footer-socials">
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+            <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+            </a>
+            <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l11.733 16h4.267l-11.733 -16z"/><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"/></svg>
+            </a>
+            <a href="https://www.pinterest.com/" target="_blank" rel="noopener noreferrer" aria-label="Pinterest">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.27 2.68 7.9 6.47 9.3.11-.97.21-1.78.68-5.71.05-.42-.08-1.57-.08-1.57s-.17-.34-.17-.83c0-.78.45-1.36.99-1.36.47 0 .7.35.7.77 0 .47-.3 1.18-.46 1.83a.77.77 0 0 0 .79.96c.94 0 1.67-1 1.67-2.44 0-1.28-.92-2.17-2.22-2.17-1.52 0-2.41 1.14-2.41 2.31 0 .46.18.96.4 1.22.04.05.05.1.03.17l-.15.62c-.03.13-.1.17-.23.11-1.07-.5-1.72-2.07-1.72-3.32 0-3.1 2.21-5.19 5.66-5.19 3.09 0 5.28 2.2 5.28 4.95 0 3.07-1.93 5.54-4.62 5.54-.9 0-1.75-.47-2.04-1.02l-.56 2.1c-.2 1.05-.75 2.37-1.12 2.94C10.14 21.89 11.05 22 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-title">Explore</h4>
+          <div class="footer-links">
+            <a href="suites.html">Our Suites</a>
+            <a href="experiences.html">Experiences</a>
+            <a href="destinations.html">Destinations</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="sunsets.html">Sunsets</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-title">Company</h4>
+          <div class="footer-links">
+            <a href="about.html">Our Story</a>
+            <a href="reviews.html">Guest Reviews</a>
+            <a href="wedding.html">Weddings</a>
+            <a href="contact.html">Contact Us</a>
+            <a href="booking.html">Book Now</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-title">Contact</h4>
+          <div class="footer-contact-info">
+            <p>
+              <a href="mailto:concierge@velorareserve.com" aria-label="Email Concierge">
+                <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                concierge@velorareserve.com
+              </a>
+            </p>
+            <p>
+              <a href="tel:+919840012345" aria-label="Call Concierge">
+                <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                +91 98400 12345
+              </a>
+            </p>
+            <p>
+              <a href="contact.html" aria-label="Our Locations">
+                <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                Adyar, Chennai, India
+              </a>
+            </p>
+          </div>
+        </div>
+        <div class="footer-newsletter">
+          <h4 class="footer-title">Newsletter</h4>
+          <p class="newsletter-desc">Curated stories, sunset highlights, and villa private invites.</p>
+          <form class="newsletter-form" onsubmit="event.preventDefault(); this.innerHTML = '<p class=\'newsletter-desc\' style=\'color: var(--gold);\'>Curated invitation sent. Welcome to the Reserve.</p>';">
+            <div class="newsletter-input-wrap">
+              <input type="email" placeholder="Your Email Address" required class="newsletter-input">
+              <button type="submit" class="newsletter-btn">Subscribe</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2026 VÉLORA RESERVE. All rights reserved. Crafted with passion.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <span class="separator">|</span>
+          <a href="#">Terms & Conditions</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- Floating Glass Booking Panel -->
+  <div class="floating-booking-panel" id="floating-booking-panel">
+    <form action="booking.html" method="GET" class="floating-booking-bar">
+      <div class="booking-field">
+        <label class="booking-field-label">Destination</label>
+        <select name="destination" class="booking-field-select">
+          <option value="Maldives">VÉLORA Reserve — Maldives</option>
+          <option value="Bali">VÉLORA Reserve — Bali</option>
+          <option value="Santorini">VÉLORA Reserve — Santorini</option>
+          <option value="Amalfi">VÉLORA Reserve — Amalfi Coast</option>
+          <option value="Bora Bora">VÉLORA Reserve — Bora Bora</option>
+          <option value="Seychelles">VÉLORA Reserve — Seychelles</option>
+        </select>
+      </div>
+      <div class="booking-separator"></div>
+      <div class="booking-field">
+        <label class="booking-field-label">Guests</label>
+        <select name="guests" class="booking-field-select">
+          <option value="1">1 Guest</option>
+          <option value="2" selected>2 Guests</option>
+          <option value="3">3 Guests</option>
+          <option value="4">4 Guests</option>
+          <option value="5+">5+ Guests</option>
+        </select>
+      </div>
+      <button type="submit" class="floating-booking-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 14px; height: 14px; margin-right: 4px;"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        Reserve Escape
+      </button>
+    </form>
+  </div>
+  <script src="script.js"></script>
+  <script src="auth.js"></script>
+</body>
+</html>

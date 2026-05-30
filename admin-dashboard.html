@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard — VÉLORA RESERVE</title>
+  <meta name="description" content="VÉLORA RESERVE administration panel. Manage bookings, users, analytics, and resort operations.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="auth.css">
+  <link rel="stylesheet" href="dashboard.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✦</text></svg>">
+</head>
+<body>
+
+  <!-- Preloader -->
+  <div class="preloader"><div class="preloader-logo">VÉLORA</div><div class="preloader-line"></div></div>
+  <div class="cursor-dot"></div><div class="cursor-ring"></div>
+
+  <!-- Navigation -->
+  <nav class="nav" id="main-nav">
+    <a href="index.html" class="nav-logo">
+      <svg class="brand-logo-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+        <path d="M12 2L14.85 8.15L21.6 9.15L16.7 13.93L17.85 20.65L12 17.5L6.15 20.65L7.3 13.93L2.4 9.15L9.15 8.15L12 2Z" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="12" cy="12" r="4" />
+      </svg>
+      <span class="brand-text-velora">VÉLORA</span><span class="brand-text-reserve">RESERVE</span>
+    </a>
+        <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="experiences.html">Experiences</a>
+      <div class="nav-dropdown-wrapper">
+        <a href="suites.html" class="nav-dropdown-toggle">Suites <span class="arrow">▼</span></a>
+        <div class="nav-dropdown-menu">
+          <a href="suites.html">Suites</a>
+          <a href="destinations.html">Destinations</a>
+          <a href="sunsets.html">Sunsets</a>
+          <a href="wedding.html">Weddings</a>
+        </div>
+      </div>
+      <a href="gallery.html">Gallery</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="contact.html">Contact</a>
+      <div class="nav-profile-wrap">
+        <button class="nav-profile-btn" aria-label="Profile Menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </button>
+        <div class="nav-profile-dropdown"></div>
+      </div>
+      <a href="booking.html" class="nav-book-btn">Book Now</a>
+    </div>
+    <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+  </nav>
+  <div class="mobile-nav" id="mobile-nav">
+    <a href="index.html">Home</a><a href="about.html">About</a><a href="experiences.html">Experiences</a><a href="suites.html">Suites</a><a href="destinations.html">Destinations</a><a href="sunsets.html">Sunsets</a><a href="wedding.html">Weddings</a><a href="gallery.html">Gallery</a><a href="reviews.html">Reviews</a><a href="contact.html">Contact</a><a href="booking.html">Book Now</a>
+  </div>
+
+  <!-- ============ ADMIN DASHBOARD ============ -->
+  <div class="dashboard-layout">
+
+    <!-- ======== SIDEBAR ======== -->
+    <aside class="dash-sidebar" id="dash-sidebar">
+      <div class="dash-sidebar-user">
+        <div class="dash-sidebar-avatar" style="border-color: var(--error);">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" style="color: var(--error);"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div class="dash-sidebar-name" id="dash-sidebar-name">Administrator</div>
+        <div class="dash-sidebar-email" id="dash-sidebar-email">admin@velorareserve.com</div>
+        <span class="dash-sidebar-tier" style="color: var(--error); background: rgba(248,113,113,0.08); border-color: rgba(248,113,113,0.2);">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          System Admin
+        </span>
+      </div>
+
+      <nav class="dash-sidebar-nav">
+        <div class="dash-sidebar-label">Overview</div>
+        <button class="dash-nav-item active" data-panel="panel-overview">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+          Admin Overview
+        </button>
+        <button class="dash-nav-item" data-panel="panel-admin-profile">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          Admin Profile
+        </button>
+        <button class="dash-nav-item" data-panel="panel-admin-notifications">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+          Notification Center
+          <span class="dash-nav-badge" id="admin-notif-badge-count">0</span>
+        </button>
+        <button class="dash-nav-item" data-panel="panel-analytics">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+          Analytics
+        </button>
+        <button class="dash-nav-item" data-panel="panel-revenue">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          Revenue
+        </button>
+
+        <div class="dash-sidebar-label">Operations</div>
+        <button class="dash-nav-item" data-panel="panel-bookings">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Bookings
+          <span class="dash-nav-badge">12</span>
+        </button>
+        <button class="dash-nav-item" data-panel="panel-approvals">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          Approvals
+          <span class="dash-nav-badge">4</span>
+        </button>
+        <button class="dash-nav-item" data-panel="panel-tracking">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Tracking
+        </button>
+        <button class="dash-nav-item" data-panel="panel-packages">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+          Packages
+        </button>
+
+        <div class="dash-sidebar-label">People</div>
+        <button class="dash-nav-item" data-panel="panel-users">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          Users
+        </button>
+        <button class="dash-nav-item" data-panel="panel-reviews">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          Reviews
+          <span class="dash-nav-badge">6</span>
+        </button>
+        <button class="dash-nav-item" data-panel="panel-concierge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+          Concierge
+          <span class="dash-nav-badge">3</span>
+        </button>
+        <button class="dash-nav-item" data-panel="panel-newsletter">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          Newsletter
+        </button>
+
+        <div class="dash-sidebar-label">System</div>
+        <button class="dash-nav-item" data-panel="panel-reports">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+          Reports
+        </button>
+        <button class="dash-nav-item" data-panel="panel-settings">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+          Settings
+        </button>
+        <button class="dash-nav-item" data-panel="panel-system">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          System Status
+        </button>
+        <button class="dash-nav-item danger" data-panel="panel-logout">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+          Logout
+        </button>
+      </nav>
+    </aside>
+
+    <div class="dash-sidebar-overlay" id="dash-sidebar-overlay"></div>
+
+    <!-- ======== MAIN CONTENT ======== -->
+    <main class="dash-main">
+
+      <!-- ═══════ PANEL 1: ADMIN OVERVIEW ═══════ -->
+      <div class="dash-panel active" id="panel-overview">
+        <div class="dash-welcome-hero" style="background: linear-gradient(135deg, rgba(248,113,113,0.06) 0%, rgba(11,11,15,0.6) 40%, rgba(214,179,106,0.06) 100%);">
+          <div class="dash-welcome-greeting">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            Admin Control Center
+          </div>
+          <h1 class="dash-welcome-name">VÉLORA <em>Command</em></h1>
+          <p class="dash-welcome-tagline">Complete oversight of reservations, guests, revenue, and resort operations.</p>
+          <div class="dash-welcome-date" id="dash-current-date"></div>
+        </div>
+
+        <!-- Admin Stats -->
+        <div class="dash-overview-grid">
+          <div class="dash-overview-card">
+            <div class="dash-overview-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+            <div class="dash-overview-value">128</div>
+            <div class="dash-overview-label">Total Bookings</div>
+          </div>
+          <div class="dash-overview-card">
+            <div class="dash-overview-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+            <div class="dash-overview-value">64</div>
+            <div class="dash-overview-label">Active Users</div>
+          </div>
+          <div class="dash-overview-card">
+            <div class="dash-overview-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+            <div class="dash-overview-value">₹18.4L</div>
+            <div class="dash-overview-label">Monthly Revenue</div>
+          </div>
+          <div class="dash-overview-card">
+            <div class="dash-overview-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+            <div class="dash-overview-value">4.8</div>
+            <div class="dash-overview-label">Avg. Rating</div>
+          </div>
+        </div>
+
+        <!-- Quick Panels -->
+        <div class="dash-grid-2">
+          <div class="dash-glass-card">
+            <div class="dash-card-header"><h3 class="dash-card-title">Pending Approvals</h3><button class="dash-card-action" onclick="document.querySelector('[data-panel=panel-approvals]').click()">View All</button></div>
+            <div class="dash-concierge-list">
+              <div class="dash-concierge-item"><div class="dash-concierge-avatar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div><div class="dash-concierge-content"><div class="dash-concierge-subject">Arjun Mehta — Ocean Villa</div><div class="dash-concierge-preview">Jun 15–20 · 2 Guests · ₹3,99,995</div><span class="dash-concierge-status" style="color:#FBBF24; background:rgba(251,191,36,0.1);">Pending</span></div><div class="dash-concierge-time">2h ago</div></div>
+              <div class="dash-concierge-item"><div class="dash-concierge-avatar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div><div class="dash-concierge-content"><div class="dash-concierge-subject">Priya Sharma — Royal Penthouse</div><div class="dash-concierge-preview">Jul 1–7 · 4 Guests · ₹10,49,993</div><span class="dash-concierge-status" style="color:#FBBF24; background:rgba(251,191,36,0.1);">Pending</span></div><div class="dash-concierge-time">5h ago</div></div>
+            </div>
+          </div>
+          <div class="dash-glass-card">
+            <div class="dash-card-header"><h3 class="dash-card-title">Recent Activity</h3></div>
+            <div class="dash-timeline">
+              <div class="dash-timeline-item"><div class="dash-timeline-dot-wrap"><div class="dash-timeline-dot gold"></div><div class="dash-timeline-line"></div></div><div class="dash-timeline-content"><div class="dash-timeline-title">New booking received</div><div class="dash-timeline-desc">Garden Suite — Vikram Iyer</div><div class="dash-timeline-time">12 min ago</div></div></div>
+              <div class="dash-timeline-item"><div class="dash-timeline-dot-wrap"><div class="dash-timeline-dot"></div><div class="dash-timeline-line"></div></div><div class="dash-timeline-content"><div class="dash-timeline-title">Review approved</div><div class="dash-timeline-desc">5-star review for Sunset Cruise</div><div class="dash-timeline-time">1h ago</div></div></div>
+              <div class="dash-timeline-item"><div class="dash-timeline-dot-wrap"><div class="dash-timeline-dot"></div></div><div class="dash-timeline-content"><div class="dash-timeline-title">Concierge request resolved</div><div class="dash-timeline-desc">Private dining — Meera Kapoor</div><div class="dash-timeline-time">3h ago</div></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══════ PANEL 16: NOTIFICATION CENTER ═══════ -->
+      <div class="dash-panel" id="panel-admin-notifications">
+        <div class="dash-panel-header">
+          <h2 class="dash-panel-title">Notification <em>Center</em></h2>
+          <p class="dash-panel-subtitle">Monitor system alerts, approvals, and user activities</p>
+        </div>
+
+        <div style="display: flex; gap: var(--space-md); margin-bottom: var(--space-lg); align-items: center; justify-content: space-between; flex-wrap: wrap;">
+          <h3 class="dash-card-title" style="margin:0;">System Notifications</h3>
+          <div style="display: flex; gap: var(--space-sm);">
+            <button class="btn btn-gold" id="admin-mark-all-read-btn" style="padding: 8px 16px; font-size: 0.7rem;">Mark All Read</button>
+            <button class="btn btn-ghost" id="admin-clear-all-btn" style="padding: 8px 16px; font-size: 0.7rem; color: var(--error); border-color: rgba(239, 68, 68, 0.2);">Clear All</button>
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-md); margin-bottom: var(--space-lg);">
+          <!-- Column 1: Booking Alerts -->
+          <div class="dash-glass-card" style="height: fit-content; border: 1px solid rgba(239, 68, 68, 0.15);">
+            <div class="dash-card-header" style="border-bottom: 1px solid rgba(239, 68, 68, 0.15); padding-bottom: var(--space-xs); margin-bottom: var(--space-sm);">
+              <h3 class="dash-card-title" style="color: #EF4444; display: flex; align-items: center; gap: 6px;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:16px; height:16px;"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                Booking Alerts
+              </h3>
+              <span class="dash-card-action" id="admin-alerts-count" style="color: #EF4444; font-weight:600;">0 alerts</span>
+            </div>
+            <div id="admin-alerts-list" style="display: flex; flex-direction: column; gap: var(--space-xs);">
+              <!-- Dynamic alert items -->
+            </div>
+          </div>
+
+          <!-- Column 2: Pending Approvals -->
+          <div class="dash-glass-card" style="height: fit-content; border: 1px solid rgba(251, 191, 36, 0.15);">
+            <div class="dash-card-header" style="border-bottom: 1px solid rgba(251, 191, 36, 0.15); padding-bottom: var(--space-xs); margin-bottom: var(--space-sm);">
+              <h3 class="dash-card-title" style="color: #FBBF24; display: flex; align-items: center; gap: 6px;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:16px; height:16px;"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                Pending Approvals
+              </h3>
+              <span class="dash-card-action" id="admin-pending-count" style="color: #FBBF24; font-weight:600;">0 pending</span>
+            </div>
+            <div id="admin-pending-list" style="display: flex; flex-direction: column; gap: var(--space-xs);">
+              <!-- Dynamic pending bookings -->
+            </div>
+          </div>
+
+          <!-- Column 3: Latest Activities -->
+          <div class="dash-glass-card" style="height: fit-content; border: 1px solid rgba(214, 179, 106, 0.15);">
+            <div class="dash-card-header" style="border-bottom: 1px solid rgba(214, 179, 106, 0.15); padding-bottom: var(--space-xs); margin-bottom: var(--space-sm);">
+              <h3 class="dash-card-title" style="color: var(--gold); display: flex; align-items: center; gap: 6px;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:16px; height:16px;"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                Latest Activities
+              </h3>
+              <span class="dash-card-action" id="admin-activities-count" style="color: var(--gold); font-weight:600;">0 items</span>
+            </div>
+            <div id="admin-activities-list" style="display: flex; flex-direction: column; gap: var(--space-xs);">
+              <!-- Dynamic activities -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══════ PANEL 2: BOOKING MANAGEMENT ═══════ -->
+      <div class="dash-panel" id="panel-bookings">
+        <div class="dash-panel-header">
+          <h2 class="dash-panel-title">Booking <em>Management</em></h2>
+          <p class="dash-panel-subtitle">Oversee all guest reservations across properties</p>
+        </div>
+        <div id="admin-bookings-container"></div>
+      </div>
+
+      <!-- ═══════ PANEL 3: RESERVATION APPROVAL ═══════ -->
+      <div class="dash-panel" id="panel-approvals">
+        <div class="dash-panel-header">
+          <h2 class="dash-panel-title">Reservation <em>Approvals</em></h2>
+          <p class="dash-panel-subtitle">Review and approve pending guest reservations</p>
+        </div>
+        <div class="dash-concierge-list">
+          <div class="dash-glass-card" style="margin-bottom:var(--space-md);">
+            <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:var(--space-lg);flex-wrap:wrap;">
+              <div style="flex:1;min-width:200px;">
+                <div class="dash-concierge-subject" style="font-size:var(--text-lg);margin-bottom:6px;">Arjun Mehta — Ocean Villa</div>
+                <div class="dash-reservation-meta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/></svg>Jun 15, 2026 → Jun 20, 2026</div>
+                <div class="dash-reservation-meta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>2 Guests</div>
+                <div class="dash-reservation-meta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg><span style="color:var(--gold);font-weight:600;">₹3,99,995</span></div>
+              </div>
+              <div style="display:flex;gap:var(--space-sm);align-items:flex-start;">
+                <button class="btn btn-gold" style="padding:10px 24px;">Approve</button>
+                <button class="dash-delete-btn">Decline</button>
+              </div>
+            </div>
+          </div>
+          <div class="dash-glass-card" style="margin-bottom:var(--space-md);">
+            <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:var(--space-lg);flex-wrap:wrap;">
+              <div style="flex:1;min-width:200px;">
+                <div class="dash-concierge-subject" style="font-size:var(--text-lg);margin-bottom:6px;">Priya Sharma — Royal Penthouse</div>
+                <div class="dash-reservation-meta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/></svg>Jul 1, 2026 → Jul 7, 2026</div>
+                <div class="dash-reservation-meta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>4 Guests</div>
+                <div class="dash-reservation-meta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg><span style="color:var(--gold);font-weight:600;">₹10,49,993</span></div>
+              </div>
+              <div style="display:flex;gap:var(--space-sm);align-items:flex-start;">
+                <button class="btn btn-gold" style="padding:10px 24px;">Approve</button>
+                <button class="dash-delete-btn">Decline</button>
+              </div>
+            </div>
+          </div>
+          <div class="dash-glass-card" style="margin-bottom:var(--space-md);">
+            <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:var(--space-lg);flex-wrap:wrap;">
+              <div style="flex:1;min-width:200px;">
+                <div class="dash-concierge-subject" style="font-size:var(--text-lg);margin-bottom:6px;">Rohit Gupta — Beach Bungalow</div>
+                <div class="dash-reservation-meta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/></svg>Jun 22, 2026 → Jun 26, 2026</div>
+                <div class="dash-reservation-meta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>2 Guests</div>
+                <div class="dash-reservation-meta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg><span style="color:var(--gold);font-weight:600;">₹2,49,995</span></div>
+              </div>
+              <div style="display:flex;gap:var(--space-sm);align-items:flex-start;">
+                <button class="btn btn-gold" style="padding:10px 24px;">Approve</button>
+                <button class="dash-delete-btn">Decline</button>
+              </div>
+            </div>
+          </div>
+          <div class="dash-glass-card">
+            <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:var(--space-lg);flex-wrap:wrap;">
+              <div style="flex:1;min-width:200px;">
+                <div class="dash-concierge-subject" style="font-size:var(--text-lg);margin-bottom:6px;">Neha Kapoor — Garden Suite</div>
+                <div class="dash-reservation-meta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/></svg>Jul 10, 2026 → Jul 14, 2026</div>
+                <div class="dash-reservation-meta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>3 Guests</div>
+                <div class="dash-reservation-meta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg><span style="color:var(--gold);font-weight:600;">₹1,31,996</span></div>
+              </div>
+              <div style="display:flex;gap:var(--space-sm);align-items:flex-start;">
+                <button class="btn btn-gold" style="padding:10px 24px;">Approve</button>
+                <button class="dash-delete-btn">Decline</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══════ PANEL 4: TRACKING CONTROL ═══════ -->
+      <div class="dash-panel" id="panel-tracking">
+        <div class="dash-panel-header">
+          <h2 class="dash-panel-title">Tracking <em>Control</em></h2>
+          <p class="dash-panel-subtitle">Monitor and update guest reservation status in real time</p>
+        </div>
+
+        <!-- Search and Filters Bar -->
+        <div class="dash-glass-card" style="margin-bottom: var(--space-md); padding: var(--space-md);">
+          <div class="dash-settings-grid" style="grid-template-columns: 2fr 1fr; gap: var(--space-md); margin: 0;">
+            <div class="dash-form-group">
+              <label class="dash-settings-label" for="trk-search-input">Search Tracking ID / Guest Name</label>
+              <input type="text" id="trk-search-input" class="dash-settings-input" placeholder="Enter Tracking ID (e.g. TRK-VEL-0001) or Guest Name...">
+            </div>
+            <div class="dash-form-group">
+              <label class="dash-settings-label" for="trk-filter-status">Filter by Active Stage</label>
+              <select id="trk-filter-status" class="dash-settings-input" style="background: var(--charcoal); color: var(--ivory);">
+                <option value="all">All Stages</option>
+                <option value="0">Booking Submitted</option>
+                <option value="1">Under Review</option>
+                <option value="2">Reservation Confirmed</option>
+                <option value="3">Villa Assigned</option>
+                <option value="4">Ready For Arrival</option>
+                <option value="5">Checked In</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div id="admin-tracking-list-container">
+          <!-- Dynamic tracking cards will be rendered here -->
+        </div>
+      </div>
+
+      <!-- ═══════ PANEL 5: USER MANAGEMENT ═══════ -->
+      <div class="dash-panel" id="panel-users">
+        <div class="dash-panel-header">
+          <h2 class="dash-panel-title">User <em>Management</em></h2>
+          <p class="dash-panel-subtitle">Manage guest accounts, roles, and memberships</p>
+        </div>
+        <div id="admin-users-container"></div>
+      </div>
+
+      <!-- ═══════ PANEL 6: REVIEW MANAGEMENT ═══════ -->
+      <div class="dash-panel" id="panel-reviews">
+        <div class="dash-panel-header">
+          <h2 class="dash-panel-title">Review <em>Management</em></h2>
+          <p class="dash-panel-subtitle">Moderate guest reviews and testimonials</p>
+        </div>
+        <div id="admin-reviews-container"></div>
+      </div>
+
+      <!-- ═══════ PANEL 7: CONCIERGE REQUESTS ═══════ -->
+      <div class="dash-panel" id="panel-concierge">
+        <div class="dash-panel-header">
+          <h2 class="dash-panel-title">Concierge <em>Requests</em></h2>
+          <p class="dash-panel-subtitle">Manage guest butler service communications</p>
+        </div>
+        <div id="admin-concierge-container"></div>
+      </div>
+
+      <!-- ═══════ PANEL 8: NEWSLETTER ═══════ -->
+      <div class="dash-panel" id="panel-newsletter">
+        <div class="dash-panel-header">
+          <h2 class="dash-panel-title">Newsletter <em>Management</em></h2>
+          <p class="dash-panel-subtitle">Compose and manage email campaigns to guests</p>
+        </div>
+        <!-- Subscribers List -->
+        <div id="admin-subscribers-container" style="margin-bottom:var(--space-lg);"></div>
+        <!-- Compose Form -->
+        <div class="dash-glass-card" style="margin-bottom:var(--space-lg);">
+          <div class="dash-card-header"><h3 class="dash-card-title">Compose Newsletter</h3></div>
+          <form class="dash-settings-grid" id="admin-newsletter-form" onsubmit="event.preventDefault();">
+            <div class="dash-settings-group full-width"><label class="dash-settings-label" for="nl-subject">Subject</label><input type="text" class="dash-settings-input" id="nl-subject" placeholder="e.g., Monsoon Luxury Escape — Exclusive Offer"></div>
+            <div class="dash-settings-group"><label class="dash-settings-label" for="nl-audience">Audience</label><select class="dash-settings-input" id="nl-audience"><option>All Subscribers</option><option>Gold Members</option><option>Silver Members</option><option>Recent Guests</option></select></div>
+            <div class="dash-settings-group"><label class="dash-settings-label" for="nl-schedule">Schedule</label><select class="dash-settings-input" id="nl-schedule"><option>Send Immediately</option><option>Schedule for Later</option></select></div>
+            <div class="dash-settings-group full-width"><label class="dash-settings-label" for="nl-body">Content</label><textarea class="dash-settings-input" id="nl-body" rows="5" placeholder="Compose your newsletter content..."></textarea></div>
+            <div class="dash-settings-group full-width dash-settings-actions"><button type="submit" class="btn btn-gold">Send Newsletter</button><button type="reset" class="btn btn-ghost">Clear</button></div>
+          </form>
+        </div>
+        <!-- Campaigns -->
+        <div id="admin-campaigns-container"></div>
+      </div>
+
+      <!-- ═══════ PANEL 9: ANALYTICS ═══════ -->
+      <div class="dash-panel" id="panel-analytics">
+        <div class="dash-panel-header">
+          <h2 class="dash-panel-title">Analytics <em>Overview</em></h2>
+          <p class="dash-panel-subtitle">Key performance metrics across all properties</p>
+        </div>
+        
+        <!-- Live Analytics Stats Grid (6 cards) -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: var(--space-md); margin-bottom: var(--space-lg);">
+          <div class="dash-overview-card" style="margin: 0;">
+            <div class="dash-overview-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+            <div class="dash-overview-value" id="ana-total-users">0</div>
+            <div class="dash-overview-label">Total Users</div>
+          </div>
+          <div class="dash-overview-card" style="margin: 0;">
+            <div class="dash-overview-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+            <div class="dash-overview-value" id="ana-total-bookings">0</div>
+            <div class="dash-overview-label">Total Bookings</div>
+          </div>
+          <div class="dash-overview-card" style="margin: 0;">
+            <div class="dash-overview-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+            <div class="dash-overview-value" id="ana-active-res">0</div>
+            <div class="dash-overview-label">Active Stays</div>
+          </div>
+          <div class="dash-overview-card" style="margin: 0;">
+            <div class="dash-overview-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+            <div class="dash-overview-value" id="ana-completed-res">0</div>
+            <div class="dash-overview-label">Completed Stays</div>
+          </div>
+          <div class="dash-overview-card" style="margin: 0;">
+            <div class="dash-overview-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+            <div class="dash-overview-value" id="ana-pending-res">0</div>
+            <div class="dash-overview-label">Pending Stays</div>
+          </div>
+          <div class="dash-overview-card" style="margin: 0; border-color: rgba(214, 179, 106, 0.3);">
+            <div class="dash-overview-icon" style="background: rgba(214, 179, 106, 0.08); border-color: rgba(214, 179, 106, 0.25);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" style="color: var(--gold);"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+            <div class="dash-overview-value" id="ana-revenue-est" style="color: var(--gold);">₹0</div>
+            <div class="dash-overview-label" style="color: var(--gold); font-weight: 500;">Revenue Estimate</div>
+          </div>
+        </div>
+
+        <!-- Dynamic SVG / HTML Charts Grid (2x2) -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: var(--space-md); margin-top: var(--space-md);">
+          <!-- Chart 1: Booking Trend Chart -->
+          <div class="dash-glass-card">
+            <div class="dash-card-header">
+              <h3 class="dash-card-title">Booking <em>Trend</em></h3>
+              <span class="dash-card-action" style="font-family: var(--font-ui); font-size: var(--text-xs); color: var(--gold);">Last 6 Months</span>
+            </div>
+            <div id="chart-booking-trend" style="height: 220px; display: flex; align-items: center; justify-content: center; position: relative;">
+              <!-- SVG path line chart rendered dynamically -->
+            </div>
+          </div>
+
+          <!-- Chart 2: Revenue Trend Chart -->
+          <div class="dash-glass-card">
+            <div class="dash-card-header">
+              <h3 class="dash-card-title">Revenue <em>Trend</em></h3>
+              <span class="dash-card-action" style="font-family: var(--font-ui); font-size: var(--text-xs); color: var(--gold);">Last 6 Months</span>
+            </div>
+            <div id="chart-revenue-trend" style="height: 220px; display: flex; align-items: center; justify-content: center; position: relative;">
+              <!-- SVG path line chart rendered dynamically -->
+            </div>
+          </div>
+
+          <!-- Chart 3: Package Popularity -->
+          <div class="dash-glass-card" style="display: flex; flex-direction: column;">
+            <div class="dash-card-header">
+              <h3 class="dash-card-title">Package <em>Popularity</em></h3>
+              <span class="dash-card-action" style="font-family: var(--font-ui); font-size: var(--text-xs); color: var(--gold);">Suite Distribution</span>
+            </div>
+            <div id="chart-package-popularity" style="flex: 1; display: flex; flex-direction: column; justify-content: center; gap: var(--space-sm); padding: var(--space-sm) 0;">
+              <!-- Dynamic progress list bar chart -->
+            </div>
+          </div>
+
+          <!-- Chart 4: Reservation Status -->
+          <div class="dash-glass-card">
+            <div class="dash-card-header">
+              <h3 class="dash-card-title">Reservation <em>Status</em></h3>
+              <span class="dash-card-action" style="font-family: var(--font-ui); font-size: var(--text-xs); color: var(--gold);">State Breakdown</span>
+            </div>
+            <div id="chart-reservation-status" style="height: 220px; display: flex; align-items: center; justify-content: center; gap: var(--space-md); flex-wrap: wrap;">
+              <!-- SVG Donut Chart + HTML color legends -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══════ PANEL 10: REVENUE ═══════ -->
+      <div class="dash-panel" id="panel-revenue">
+        <div class="dash-panel-header">
+          <h2 class="dash-panel-title">Revenue <em>Overview</em></h2>
+          <p class="dash-panel-subtitle">Financial performance and earnings breakdown</p>
+        </div>
+        <div class="dash-overview-grid">
+          <div class="dash-overview-card"><div class="dash-overview-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div><div class="dash-overview-value">₹18.4L</div><div class="dash-overview-label">This Month</div></div>
+          <div class="dash-overview-card"><div class="dash-overview-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/></svg></div><div class="dash-overview-value">₹1.92Cr</div><div class="dash-overview-label">Year to Date</div></div>
+          <div class="dash-overview-card"><div class="dash-overview-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><div class="dash-overview-value">₹72,499</div><div class="dash-overview-label">Avg. Booking Value</div></div>
+          <div class="dash-overview-card"><div class="dash-overview-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></div><div class="dash-overview-value">+23%</div><div class="dash-overview-label">Growth (MoM)</div></div>
+        </div>
+        <div class="dash-glass-card" style="overflow-x:auto;">
+          <div class="dash-card-header"><h3 class="dash-card-title">Revenue by Property</h3></div>
+          <table class="dash-data-table"><thead><tr><th>Property</th><th>Bookings</th><th>Revenue</th><th>Avg. Nightly</th><th>Occupancy</th></tr></thead>
+            <tbody>
+              <tr><td>Ocean Villa</td><td>42</td><td style="color:var(--gold);font-weight:600;">₹1,67,99,790</td><td>₹79,999</td><td>98%</td></tr>
+              <tr><td>Royal Penthouse</td><td>28</td><td style="color:var(--gold);font-weight:600;">₹2,93,99,720</td><td>₹1,49,999</td><td>88%</td></tr>
+              <tr><td>Garden Suite</td><td>35</td><td style="color:var(--gold);font-weight:600;">₹46,19,965</td><td>₹32,999</td><td>96%</td></tr>
+              <tr><td>Beach Bungalow</td><td>23</td><td style="color:var(--gold);font-weight:600;">₹1,14,99,770</td><td>₹49,999</td><td>82%</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- ═══════ PANEL 11: PACKAGE MANAGEMENT ═══════ -->
+      <div class="dash-panel" id="panel-packages">
+        <div class="dash-panel-header">
+          <h2 class="dash-panel-title">Package <em>Management</em></h2>
+          <p class="dash-panel-subtitle">Create and manage luxury resort packages</p>
+        </div>
+        <!-- Add/Edit Package Form -->
+        <div class="dash-glass-card" style="margin-bottom:var(--space-lg);">
+          <div class="dash-card-header"><h3 class="dash-card-title" id="pkg-form-title">Add New Package</h3></div>
+          <form class="dash-settings-grid" id="admin-package-form" onsubmit="event.preventDefault();">
+            <input type="hidden" id="pkg-edit-id" value="">
+            <div class="dash-settings-group"><label class="dash-settings-label" for="pkg-name">Package Name</label><input type="text" class="dash-settings-input" id="pkg-name" placeholder="e.g., Monsoon Serenity"></div>
+            <div class="dash-settings-group"><label class="dash-settings-label" for="pkg-price">Price (₹)</label><input type="text" class="dash-settings-input" id="pkg-price" placeholder="e.g., 2,49,999"></div>
+            <div class="dash-settings-group"><label class="dash-settings-label" for="pkg-status">Status</label><select class="dash-settings-input" id="pkg-status"><option value="active">Active</option><option value="draft">Draft</option></select></div>
+            <div class="dash-settings-group"><label class="dash-settings-label" for="pkg-nights">Nights</label><input type="number" class="dash-settings-input" id="pkg-nights" placeholder="3" min="1"></div>
+            <div class="dash-settings-group full-width"><label class="dash-settings-label" for="pkg-desc">Description</label><textarea class="dash-settings-input" id="pkg-desc" rows="2" placeholder="e.g., Ocean Villa + Spa + Private Dining"></textarea></div>
+            <div class="dash-settings-group full-width dash-settings-actions"><button type="submit" class="btn btn-gold" id="pkg-submit-btn">Add Package</button><button type="button" class="btn btn-ghost" id="pkg-cancel-btn" style="display:none;">Cancel</button></div>
+          </form>
+        </div>
+        <!-- Package List -->
+        <div id="admin-packages-container"></div>
+      </div>
+
+      <!-- ═══════ PANEL 12: REPORTS ═══════ -->
+      <div class="dash-panel" id="panel-reports">
+        <div class="dash-panel-header">
+          <h2 class="dash-panel-title">Reports <em>Center</em></h2>
+          <p class="dash-panel-subtitle">Generate and download operational reports</p>
+        </div>
+        
+        <div class="dash-overview-grid" style="grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); margin-bottom: var(--space-lg); gap: var(--space-md);">
+          <div class="dash-glass-card" style="text-align:center;cursor:pointer;margin:0;">
+            <div class="dash-overview-icon" style="margin:0 auto var(--space-md);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+            <div class="dash-card-title" style="font-size:var(--text-base);margin-bottom:4px;">Booking Report</div>
+            <div style="font-family:var(--font-ui);font-size:var(--text-xs);color:var(--gray);">All reservations & status</div>
+          </div>
+          <div class="dash-glass-card" style="text-align:center;cursor:pointer;margin:0;">
+            <div class="dash-overview-icon" style="margin:0 auto var(--space-md);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+            <div class="dash-card-title" style="font-size:var(--text-base);margin-bottom:4px;">Financial Report</div>
+            <div style="font-family:var(--font-ui);font-size:var(--text-xs);color:var(--gray);">Revenue & earnings data</div>
+          </div>
+          <div class="dash-glass-card" style="text-align:center;cursor:pointer;margin:0;">
+            <div class="dash-overview-icon" style="margin:0 auto var(--space-md);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+            <div class="dash-card-title" style="font-size:var(--text-base);margin-bottom:4px;">User Report</div>
+            <div style="font-family:var(--font-ui);font-size:var(--text-xs);color:var(--gray);">Guest analytics & trends</div>
+          </div>
+        </div>
+
+        <!-- Tabbed live reports section -->
+        <div class="dash-glass-card">
+          <div class="dash-card-header" style="border-bottom: 1px solid var(--glass-border); padding-bottom: var(--space-sm); margin-bottom: var(--space-md); flex-wrap: wrap; gap: var(--space-xs);">
+            <h3 class="dash-card-title">Operational <em>Statements</em></h3>
+            <div style="display: flex; gap: var(--space-xs); flex-wrap: wrap;" id="reports-tab-buttons">
+              <button class="btn btn-gold" data-rep-tab="bookings" style="padding: 6px 12px; font-size: 0.65rem;">Monthly Bookings</button>
+              <button class="btn btn-ghost" data-rep-tab="revenue" style="padding: 6px 12px; font-size: 0.65rem;">Monthly Revenue</button>
+              <button class="btn btn-ghost" data-rep-tab="packages" style="padding: 6px 12px; font-size: 0.65rem;">Top Packages</button>
+              <button class="btn btn-ghost" data-rep-tab="users" style="padding: 6px 12px; font-size: 0.65rem;">Active Guests</button>
+            </div>
+          </div>
+          <div id="reports-table-container" style="overflow-x: auto; min-height: 180px;">
+            <!-- Dynamic data table will render here -->
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══════ PANEL: ADMIN PROFILE ═══════ -->
+      <div class="dash-panel" id="panel-admin-profile">
+        <div class="dash-panel-header">
+          <h2 class="dash-panel-title">Admin <em>Profile</em></h2>
+          <p class="dash-panel-subtitle">Manage your administrator identity & settings</p>
+        </div>
+
+        <!-- Personal Info Card -->
+        <div class="dash-glass-card" style="margin-bottom: var(--space-lg);">
+          <div class="dash-card-header" style="display: flex; justify-content: space-between; align-items: center;">
+            <h3 class="dash-card-title">Personal Information</h3>
+            <button type="button" class="btn btn-gold" id="admin-settings-edit-btn" style="padding: 6px 14px; font-size: 0.65rem;">Edit Profile</button>
+          </div>
+          <form class="dash-settings-grid" id="admin-settings-form">
+            <div class="dash-settings-avatar-section" style="display: flex; align-items: center; gap: var(--space-md); margin-bottom: var(--space-md); padding-bottom: var(--space-sm); border-bottom: 1px solid var(--glass-border); width: 100%;">
+              <div class="dash-profile-avatar-lg" id="admin-settings-avatar-preview-container" style="position: relative; width: 80px; height: 80px; border-radius: 50%; overflow: hidden; border: 2px solid var(--gold); display: flex; align-items: center; justify-content: center; background: rgba(214, 179, 106, 0.05); margin: 0;">
+                <svg id="admin-settings-avatar-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" style="width: 32px; height: 32px; color: var(--gold);"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                <img id="admin-settings-avatar-img" src="" alt="Avatar Preview" style="width: 100%; height: 100%; object-fit: cover; display: none;">
+              </div>
+              <div>
+                <label for="admin-profile-photo-upload" id="admin-profile-photo-upload-label" class="btn btn-ghost" style="padding: 8px 16px; font-size: 0.7rem; cursor: pointer; display: none; margin-bottom: 6px;">
+                  Upload Photo
+                </label>
+                <input type="file" id="admin-profile-photo-upload" accept="image/*" style="display: none;">
+                <p style="font-family: var(--font-ui); font-size: 0.6rem; color: var(--gray); margin: 0;">Supported formats: JPG, PNG. Max size 1MB.</p>
+              </div>
+            </div>
+            
+            <div class="dash-settings-group">
+              <label class="dash-settings-label" for="admin-settings-name">Full Name</label>
+              <input type="text" class="dash-settings-input" id="admin-settings-name" placeholder="Your full name" disabled>
+            </div>
+            <div class="dash-settings-group">
+              <label class="dash-settings-label" for="admin-settings-email">Email Address</label>
+              <input type="email" class="dash-settings-input" id="admin-settings-email" placeholder="your@email.com" disabled>
+            </div>
+            <div class="dash-settings-group">
+              <label class="dash-settings-label" for="admin-settings-phone">Phone Number</label>
+              <input type="tel" class="dash-settings-input" id="admin-settings-phone" placeholder="+91 98400 12345" disabled>
+            </div>
+            <div class="dash-settings-group full-width dash-settings-actions" id="admin-settings-actions-row" style="display: none;">
+              <button type="submit" class="btn btn-gold">Save Changes</button>
+              <button type="button" class="btn btn-ghost" id="admin-settings-cancel">Cancel</button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Change Password Card -->
+        <div class="dash-glass-card">
+          <div class="dash-card-header">
+            <h3 class="dash-card-title">Change Password</h3>
+          </div>
+          <form class="dash-settings-grid" id="admin-password-form">
+            <div class="dash-settings-group">
+              <label class="dash-settings-label" for="admin-sec-current">Current Password</label>
+              <input type="password" class="dash-settings-input" id="admin-sec-current" placeholder="Enter current password" required>
+            </div>
+            <div class="dash-settings-group">
+              <label class="dash-settings-label" for="admin-sec-new">New Password</label>
+              <input type="password" class="dash-settings-input" id="admin-sec-new" placeholder="Enter new password" required>
+            </div>
+            <div class="dash-settings-group">
+              <label class="dash-settings-label" for="admin-sec-confirm">Confirm New Password</label>
+              <input type="password" class="dash-settings-input" id="admin-sec-confirm" placeholder="Confirm new password" required>
+            </div>
+            <div class="dash-settings-group full-width dash-settings-actions">
+              <button type="submit" class="btn btn-gold">Update Password</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- ═══════ PANEL 13: SETTINGS ═══════ -->
+      <div class="dash-panel" id="panel-settings">
+        <div class="dash-panel-header">
+          <h2 class="dash-panel-title">Admin <em>Settings</em></h2>
+          <p class="dash-panel-subtitle">Configure resort system preferences</p>
+        </div>
+        <div class="dash-glass-card" style="margin-bottom:var(--space-lg);">
+          <div class="dash-card-header"><h3 class="dash-card-title">Resort Information</h3></div>
+          <form class="dash-settings-grid" onsubmit="event.preventDefault();">
+            <div class="dash-settings-group"><label class="dash-settings-label">Resort Name</label><input type="text" class="dash-settings-input" value="VÉLORA RESERVE"></div>
+            <div class="dash-settings-group"><label class="dash-settings-label">Tagline</label><input type="text" class="dash-settings-input" value="Where Every Moment Becomes a Memory"></div>
+            <div class="dash-settings-group"><label class="dash-settings-label">Contact Email</label><input type="email" class="dash-settings-input" value="concierge@velorareserve.com"></div>
+            <div class="dash-settings-group"><label class="dash-settings-label">Contact Phone</label><input type="tel" class="dash-settings-input" value="+91 44 2820 XXXX"></div>
+            <div class="dash-settings-group full-width"><label class="dash-settings-label">Address</label><input type="text" class="dash-settings-input" value="42, Greenways Road, R.A. Puram, Adyar, Chennai — 600028, Tamil Nadu"></div>
+            <div class="dash-settings-group full-width dash-settings-actions"><button type="submit" class="btn btn-gold">Save Settings</button></div>
+          </form>
+        </div>
+        <div class="dash-glass-card">
+          <div class="dash-card-header"><h3 class="dash-card-title">System Preferences</h3></div>
+          <div class="dash-security-row"><div class="dash-security-info"><h4>Maintenance Mode</h4><p>Temporarily disable guest bookings for system maintenance</p></div><button class="dash-toggle" aria-label="Toggle maintenance"></button></div>
+          <div class="dash-security-row"><div class="dash-security-info"><h4>Auto-Approve Bookings</h4><p>Automatically approve new bookings without manual review</p></div><button class="dash-toggle" aria-label="Toggle auto-approve"></button></div>
+          <div class="dash-security-row"><div class="dash-security-info"><h4>Email Notifications</h4><p>Receive email alerts for new bookings and concierge requests</p></div><button class="dash-toggle active" aria-label="Toggle email notifications"></button></div>
+          <div class="dash-security-row"><div class="dash-security-info"><h4>Review Moderation</h4><p>Require admin approval before publishing guest reviews</p></div><button class="dash-toggle active" aria-label="Toggle review moderation"></button></div>
+        </div>
+      </div>
+
+      <!-- ═══════ PANEL 14: SYSTEM STATUS ═══════ -->
+      <div class="dash-panel" id="panel-system">
+        <div class="dash-panel-header">
+          <h2 class="dash-panel-title">System <em>Status</em></h2>
+          <p class="dash-panel-subtitle">Infrastructure health and performance monitoring</p>
+        </div>
+        <div class="dash-overview-grid">
+          <div class="dash-overview-card"><div class="dash-overview-icon" style="background:rgba(74,222,128,0.08);border-color:rgba(74,222,128,0.15);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" style="color:var(--success);"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div><div class="dash-overview-value" style="color:var(--success);">Online</div><div class="dash-overview-label">Server Status</div></div>
+          <div class="dash-overview-card"><div class="dash-overview-icon" style="background:rgba(74,222,128,0.08);border-color:rgba(74,222,128,0.15);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" style="color:var(--success);"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><div class="dash-overview-value">99.9%</div><div class="dash-overview-label">Uptime (30d)</div></div>
+          <div class="dash-overview-card"><div class="dash-overview-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div><div class="dash-overview-value">42ms</div><div class="dash-overview-label">Avg. Response</div></div>
+          <div class="dash-overview-card"><div class="dash-overview-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div><div class="dash-overview-value">2.1GB</div><div class="dash-overview-label">Storage Used</div></div>
+        </div>
+        <div class="dash-glass-card">
+          <div class="dash-card-header"><h3 class="dash-card-title">Service Health</h3></div>
+          <div class="dash-security-row"><div class="dash-security-info"><h4>Booking Engine</h4><p>Processing reservations and payments</p></div><span class="dash-reservation-status confirmed" style="margin:0;">Operational</span></div>
+          <div class="dash-security-row"><div class="dash-security-info"><h4>Authentication System</h4><p>User login, signup, and session management</p></div><span class="dash-reservation-status confirmed" style="margin:0;">Operational</span></div>
+          <div class="dash-security-row"><div class="dash-security-info"><h4>Email Service</h4><p>Newsletter delivery and transactional emails</p></div><span class="dash-reservation-status confirmed" style="margin:0;">Operational</span></div>
+          <div class="dash-security-row"><div class="dash-security-info"><h4>LocalStorage Engine</h4><p>Client-side data persistence layer</p></div><span class="dash-reservation-status confirmed" style="margin:0;">Operational</span></div>
+          <div class="dash-security-row"><div class="dash-security-info"><h4>CDN & Assets</h4><p>Image delivery and static resource hosting</p></div><span class="dash-reservation-status confirmed" style="margin:0;">Operational</span></div>
+        </div>
+      </div>
+
+      <!-- ═══════ PANEL 15: LOGOUT ═══════ -->
+      <div class="dash-panel" id="panel-logout">
+        <div class="dash-logout-section">
+          <div class="dash-logout-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+          </div>
+          <h3 class="dash-logout-title">Sign Out of Admin Panel</h3>
+          <p class="dash-logout-desc">You'll need admin credentials to sign back in. All unsaved changes will be lost.</p>
+          <button class="dash-logout-btn" id="dash-logout-action">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+            Sign Out
+          </button>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- Mobile Sidebar Toggle -->
+  <button class="dash-sidebar-toggle" id="dash-sidebar-toggle" aria-label="Toggle sidebar">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+  </button>
+
+  <div id="dash-toast" class="dash-toast"></div>
+
+  <script src="script.js"></script>
+  <script src="auth.js"></script>
+  <script src="dashboard.js"></script>
+  <script>
+    // Route Guard: Only ADMIN role allowed
+    document.addEventListener('DOMContentLoaded', () => {
+      if (typeof VeloraAuth !== 'undefined') {
+        if (!VeloraAuth.guardRoute('admin')) return;
+      }
+    });
+  </script>
+</body>
+</html>

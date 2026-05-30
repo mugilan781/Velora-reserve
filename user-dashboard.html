@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Dashboard — VÉLORA RESERVE</title>
+  <meta name="description" content="Your personal VÉLORA RESERVE sanctuary dashboard. Manage reservations, explore curated experiences, and access exclusive privileges.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="auth.css">
+  <link rel="stylesheet" href="dashboard.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✦</text></svg>">
+</head>
+<body>
+
+  <!-- Preloader -->
+  <div class="preloader"><div class="preloader-logo">VÉLORA</div><div class="preloader-line"></div></div>
+  <div class="cursor-dot"></div><div class="cursor-ring"></div>
+
+  <!-- Navigation -->
+  <nav class="nav" id="main-nav">
+    <a href="index.html" class="nav-logo">
+      <svg class="brand-logo-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+        <path d="M12 2L14.85 8.15L21.6 9.15L16.7 13.93L17.85 20.65L12 17.5L6.15 20.65L7.3 13.93L2.4 9.15L9.15 8.15L12 2Z" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="12" cy="12" r="4" />
+      </svg>
+      <span class="brand-text-velora">VÉLORA</span><span class="brand-text-reserve">RESERVE</span>
+    </a>
+        <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="experiences.html">Experiences</a>
+      <div class="nav-dropdown-wrapper">
+        <a href="suites.html" class="nav-dropdown-toggle">Suites <span class="arrow">▼</span></a>
+        <div class="nav-dropdown-menu">
+          <a href="suites.html">Suites</a>
+          <a href="destinations.html">Destinations</a>
+          <a href="sunsets.html">Sunsets</a>
+          <a href="wedding.html">Weddings</a>
+        </div>
+      </div>
+      <a href="gallery.html">Gallery</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="contact.html">Contact</a>
+      <div class="nav-profile-wrap">
+        <button class="nav-profile-btn" aria-label="Profile Menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </button>
+        <div class="nav-profile-dropdown"></div>
+      </div>
+      <a href="booking.html" class="nav-book-btn">Book Now</a>
+    </div>
+    <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+  </nav>
+  <div class="mobile-nav" id="mobile-nav">
+    <a href="index.html">Home</a><a href="about.html">About</a><a href="experiences.html">Experiences</a><a href="suites.html">Suites</a><a href="destinations.html">Destinations</a><a href="sunsets.html">Sunsets</a><a href="wedding.html">Weddings</a><a href="gallery.html">Gallery</a><a href="reviews.html">Reviews</a><a href="contact.html">Contact</a><a href="booking.html">Book Now</a>
+  </div>
+
+  <!-- ============ DASHBOARD LAYOUT ============ -->
+  <div class="dashboard-layout">
+
+    <!-- ======== SIDEBAR ======== -->
+    <aside class="dash-sidebar" id="dash-sidebar">
+
+      <!-- Sidebar User -->
+      <div class="dash-sidebar-user">
+        <div class="dash-sidebar-avatar">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </div>
+        <div class="dash-sidebar-name" id="dash-sidebar-name">Luxury Guest</div>
+        <div class="dash-sidebar-email" id="dash-sidebar-email">guest@velorareserve.com</div>
+        <span class="dash-sidebar-tier">
+          <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          Gold Member
+        </span>
+      </div>
+
+      <!-- Sidebar Navigation -->
+      <nav class="dash-sidebar-nav">
+        <div class="dash-sidebar-label">Overview</div>
+        <button class="dash-nav-item active" data-panel="panel-overview">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+          Dashboard
+        </button>
+        <button class="dash-nav-item" data-panel="panel-profile">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          Profile
+        </button>
+        <button class="dash-nav-item" data-panel="panel-activity">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          Recent Activity
+        </button>
+
+        <div class="dash-sidebar-label">Reservations</div>
+        <button class="dash-nav-item" data-panel="panel-active">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Active Reservations
+          <span class="dash-nav-badge">2</span>
+        </button>
+        <button class="dash-nav-item" data-panel="panel-history">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          Booking History
+        </button>
+        <button class="dash-nav-item" data-panel="panel-tracking">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Tracking Center
+        </button>
+
+        <div class="dash-sidebar-label">Personal</div>
+        <button class="dash-nav-item" data-panel="panel-notifications">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+          Notifications
+          <span class="dash-nav-badge">3</span>
+        </button>
+        <button class="dash-nav-item" data-panel="panel-wishlist">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          Wishlist
+        </button>
+        <button class="dash-nav-item" data-panel="panel-concierge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+          Concierge
+        </button>
+        <button class="dash-nav-item" data-panel="panel-reviews">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          My Reviews
+        </button>
+
+        <div class="dash-sidebar-label">Account</div>
+        <button class="dash-nav-item" data-panel="panel-settings">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+          Account Settings
+        </button>
+        <button class="dash-nav-item" data-panel="panel-security">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          Security
+        </button>
+        <button class="dash-nav-item danger" data-panel="panel-logout">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+          Logout
+        </button>
+      </nav>
+    </aside>
+
+    <!-- Sidebar Overlay (Mobile) -->
+    <div class="dash-sidebar-overlay" id="dash-sidebar-overlay"></div>
+
+    <!-- ======== MAIN CONTENT ======== -->
+    <main class="dash-main">
+
+      <!-- ═══════ PANEL 1: OVERVIEW (Dashboard Home) ═══════ -->
+      <div class="dash-panel active" id="panel-overview">
+
+        <!-- Welcome Hero -->
+        <div class="dash-welcome-hero">
+          <div class="dash-welcome-greeting">
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            Welcome Back
+          </div>
+          <h1 class="dash-welcome-name">Hello, <em id="dash-welcome-user">Guest</em></h1>
+          <p class="dash-welcome-tagline">Your luxury sanctuary awaits. Explore your reservations, curated experiences, and exclusive privileges.</p>
+          <div class="dash-welcome-date" id="dash-current-date"></div>
+        </div>
+
+        <!-- Overview Cards -->
+        <div class="dash-overview-grid">
+          <div class="dash-overview-card">
+            <div class="dash-overview-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            </div>
+            <div class="dash-overview-value">0</div>
+            <div class="dash-overview-label">Total Bookings</div>
+          </div>
+          <div class="dash-overview-card">
+            <div class="dash-overview-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            </div>
+            <div class="dash-overview-value">0</div>
+            <div class="dash-overview-label">Active Reservations</div>
+          </div>
+          <div class="dash-overview-card">
+            <div class="dash-overview-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div class="dash-overview-value">0</div>
+            <div class="dash-overview-label">Upcoming Stays</div>
+          </div>
+          <div class="dash-overview-card">
+            <div class="dash-overview-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </div>
+            <div class="dash-overview-value">0</div>
+            <div class="dash-overview-label">Saved Experiences</div>
+          </div>
+        </div>
+
+        <!-- Quick Sections: Activity + Upcoming -->
+        <div class="dash-grid-2">
+          <!-- Recent Activity Preview -->
+          <div class="dash-glass-card">
+            <div class="dash-card-header">
+              <h3 class="dash-card-title">Recent Activity</h3>
+              <button class="dash-card-action" data-panel="panel-activity" onclick="document.querySelector('[data-panel=panel-activity]').click()">View All</button>
+            </div>
+            <div class="dash-empty-state">
+              <div class="dash-empty-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+              </div>
+              <div class="dash-empty-title">No Recent Activity</div>
+              <div class="dash-empty-desc">Your sanctuary journey begins with your first booking</div>
+            </div>
+          </div>
+
+          <!-- Active Reservations Preview -->
+          <div class="dash-glass-card">
+            <div class="dash-card-header">
+              <h3 class="dash-card-title">Active Reservations</h3>
+              <button class="dash-card-action" onclick="document.querySelector('[data-panel=panel-active]').click()">View All</button>
+            </div>
+            <div class="dash-empty-state">
+              <div class="dash-empty-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              </div>
+              <div class="dash-empty-title">No Active Reservations</div>
+              <div class="dash-empty-desc">Book your first luxury escape to begin</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══════ PANEL 2: PROFILE PREVIEW ═══════ -->
+      <div class="dash-panel" id="panel-profile">
+        <div class="dash-panel-header">
+          <h2 class="dash-panel-title">My <em>Profile</em></h2>
+          <p class="dash-panel-subtitle">Your sanctuary identity & membership details</p>
+        </div>
+
+        <div class="dash-glass-card">
+          <div class="dash-profile-card">
+            <div class="dash-profile-avatar-lg">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </div>
+            <div class="dash-profile-details">
+              <div class="dash-profile-field">
+                <span class="dash-profile-field-label">Full Name</span>
+                <span class="dash-profile-field-value" id="dash-pf-name">—</span>
+              </div>
+              <div class="dash-profile-field">
+                <span class="dash-profile-field-label">Email Address</span>
+                <span class="dash-profile-field-value" id="dash-pf-email">—</span>
+              </div>
+              <div class="dash-profile-field">
+                <span class="dash-profile-field-label">Membership</span>
+                <span class="dash-profile-field-value" style="color: var(--gold);">Gold Member</span>
+              </div>
+              <div class="dash-profile-field">
+                <span class="dash-profile-field-label">Member Since</span>
+                <span class="dash-profile-field-value">2026</span>
+              </div>
+              <div class="dash-profile-field">
+                <span class="dash-profile-field-label">Loyalty Points</span>
+                <span class="dash-profile-field-value">0</span>
+              </div>
+              <div class="dash-profile-field">
+                <span class="dash-profile-field-label">Preferred Language</span>
+                <span class="dash-profile-field-value">English</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══════ PANEL 3: RECENT ACTIVITY ═══════ -->
+      <div class="dash-panel" id="panel-activity">
+        <div class="dash-panel-header">
+          <h2 class="dash-panel-title">Recent <em>Activity</em></h2>
+          <p class="dash-panel-subtitle">Your sanctuary journey timeline</p>
+        </div>
+
+        <div class="dash-glass-card">
+          <div class="dash-timeline">
+            <div class="dash-timeline-item">
+              <div class="dash-timeline-dot-wrap"><div class="dash-timeline-dot gold"></div><div class="dash-timeline-line"></div></div>
+              <div class="dash-timeline-content">
+                <div class="dash-timeline-title">Account Created</div>
+                <div class="dash-timeline-desc">Welcome to VÉLORA RESERVE. Your sanctuary journey begins.</div>
+                <div class="dash-timeline-time">Just now</div>
+              </div>
+            </div>
+            <div class="dash-timeline-item">
+              <div class="dash-timeline-dot-wrap"><div class="dash-timeline-dot"></div><div class="dash-timeline-line"></div></div>
+              <div class="dash-timeline-content">
+                <div class="dash-timeline-title">Profile Completed</div>
+                <div class="dash-timeline-desc">Your guest profile has been set up for personalized experiences.</div>
+                <div class="dash-timeline-time">Just now</div>
+              </div>
+            </div>
+            <div class="dash-timeline-item">
+              <div class="dash-timeline-dot-wrap"><div class="dash-timeline-dot"></div></div>
+              <div class="dash-timeline-content">
+                <div class="dash-timeline-title">Gold Membership Activated</div>
+                <div class="dash-timeline-desc">You've been enrolled in our Gold Loyalty tier with exclusive privileges.</div>
+                <div class="dash-timeline-time">Just now</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══════ PANEL 4: ACTIVE RESERVATIONS ═══════ -->
+      <div class="dash-panel" id="panel-active">
+        <div class="dash-panel-header">
+          <h2 class="dash-panel-title">Active <em>Reservations</em></h2>
+          <p class="dash-panel-subtitle">Your upcoming and current sanctuary stays</p>
+        </div>
+        <div id="active-reservations-container"></div>
+      </div>
+
+      <!-- ═══════ PANEL 5: BOOKING HISTORY ═══════ -->
+      <div class="dash-panel" id="panel-history">
+        <div class="dash-panel-header">
+          <h2 class="dash-panel-title">Booking <em>History</em></h2>
+          <p class="dash-panel-subtitle">Your past sanctuary experiences</p>
+        </div>
+        <div class="dash-glass-card" style="overflow-x: auto;" id="booking-history-container"></div>
+      </div>
+
+      <!-- ═══════ PANEL 6: TRACKING CENTER ═══════ -->
+      <div class="dash-panel" id="panel-tracking">
+        <div class="dash-panel-header">
+          <h2 class="dash-panel-title">Tracking <em>Center</em></h2>
+          <p class="dash-panel-subtitle">Monitor your reservation journey in real time</p>
+        </div>
+        <div id="tracking-center-container"></div>
+      </div>
+
+      <!-- ═══════ PANEL 7: NOTIFICATIONS ═══════ -->
+      <div class="dash-panel" id="panel-notifications">
+        <div class="dash-panel-header">
+          <h2 class="dash-panel-title"><em>Notifications</em></h2>
+          <p class="dash-panel-subtitle">Stay updated with your sanctuary alerts</p>
+        </div>
+
+        <div class="dash-glass-card">
+          <div class="dash-card-header">
+            <h3 class="dash-card-title">Recent</h3>
+            <button class="dash-card-action" id="mark-all-read-btn">Mark All Read</button>
+          </div>
+          <div class="dash-notification-list" id="notifications-list-container"></div>
+        </div>
+      </div>
+
+      <!-- ═══════ PANEL 8: WISHLIST ═══════ -->
+      <div class="dash-panel" id="panel-wishlist">
+        <div class="dash-panel-header">
+          <h2 class="dash-panel-title">My <em>Wishlist</em></h2>
+          <p class="dash-panel-subtitle">Saved sanctuaries & curated experiences</p>
+        </div>
+        <div id="wishlist-container"></div>
+      </div>
+
+      <!-- ═══════ PANEL 9: CONCIERGE REQUESTS ═══════ -->
+      <div class="dash-panel" id="panel-concierge">
+        <div class="dash-panel-header">
+          <h2 class="dash-panel-title">Concierge <em>Requests</em></h2>
+          <p class="dash-panel-subtitle">Your personal butler service communications</p>
+        </div>
+
+        <!-- New Request Form -->
+        <div class="dash-glass-card" style="margin-bottom: var(--space-lg);">
+          <div class="dash-card-header">
+            <h3 class="dash-card-title">New Request</h3>
+          </div>
+          <form id="concierge-form" class="dash-settings-grid" onsubmit="event.preventDefault();">
+            <div class="dash-settings-group">
+              <label class="dash-settings-label" for="concierge-subject">Subject</label>
+              <input type="text" class="dash-settings-input" id="concierge-subject" placeholder="e.g., Private dining arrangement">
+            </div>
+            <div class="dash-settings-group">
+              <label class="dash-settings-label" for="concierge-category">Category</label>
+              <select class="dash-settings-input" id="concierge-category">
+                <option value="dining">Private Dining</option>
+                <option value="spa">Spa & Wellness</option>
+                <option value="transport">Transport & Transfers</option>
+                <option value="experience">Curated Experience</option>
+                <option value="room">Room Request</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div class="dash-settings-group full-width">
+              <label class="dash-settings-label" for="concierge-message">Message</label>
+              <textarea class="dash-settings-input" id="concierge-message" rows="3" placeholder="Describe your request in detail..."></textarea>
+            </div>
+            <div class="dash-settings-group full-width dash-settings-actions">
+              <button type="submit" class="btn btn-gold">Submit Request</button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Request History -->
+        <div class="dash-glass-card">
+          <div class="dash-card-header">
+            <h3 class="dash-card-title">Request History</h3>
+          </div>
+          <div class="dash-concierge-list" id="concierge-list-container"></div>
+        </div>
+      </div>
+
+      <!-- ═══════ PANEL 10: MY REVIEWS ═══════ -->
+      <div class="dash-panel" id="panel-reviews">
+        <div class="dash-panel-header">
+          <h2 class="dash-panel-title">My <em>Reviews</em></h2>
+          <p class="dash-panel-subtitle">Your testimonials & sanctuary impressions</p>
+        </div>
+
+        <!-- Review Form -->
+        <div class="dash-glass-card" style="margin-bottom: var(--space-lg);">
+          <div class="dash-card-header">
+            <h3 class="dash-card-title">Write a Review</h3>
+          </div>
+          <form id="review-form" class="dash-settings-grid" onsubmit="event.preventDefault();">
+            <div class="dash-settings-group">
+              <label class="dash-settings-label" for="review-property">Property / Experience</label>
+              <select class="dash-settings-input" id="review-property">
+                <option value="Ocean Villa">Ocean Villa</option>
+                <option value="Royal Penthouse">Royal Penthouse</option>
+                <option value="Garden Suite">Garden Suite</option>
+                <option value="Beach Bungalow">Beach Bungalow</option>
+                <option value="Spa & Wellness">Spa & Wellness</option>
+                <option value="Dining Experience">Dining Experience</option>
+                <option value="Sunset Cruise">Sunset Cruise</option>
+                <option value="General">General Experience</option>
+              </select>
+            </div>
+            <div class="dash-settings-group">
+              <label class="dash-settings-label">Rating</label>
+              <div class="dash-star-rating" id="review-stars">
+                <span class="dash-star" data-value="1">★</span>
+                <span class="dash-star" data-value="2">★</span>
+                <span class="dash-star" data-value="3">★</span>
+                <span class="dash-star" data-value="4">★</span>
+                <span class="dash-star" data-value="5">★</span>
+              </div>
+              <input type="hidden" id="review-rating" value="0">
+            </div>
+            <div class="dash-settings-group full-width">
+              <label class="dash-settings-label" for="review-text">Your Experience</label>
+              <textarea class="dash-settings-input" id="review-text" rows="4" placeholder="Share your sanctuary experience..."></textarea>
+            </div>
+            <div class="dash-settings-group full-width dash-settings-actions">
+              <button type="submit" class="btn btn-gold">Submit Review</button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Reviews List -->
+        <div id="reviews-list-container"></div>
+      </div>
+
+      <!-- ═══════ PANEL 11: ACCOUNT SETTINGS ═══════ -->
+      <div class="dash-panel" id="panel-settings">
+        <div class="dash-panel-header">
+          <h2 class="dash-panel-title">Account <em>Settings</em></h2>
+          <p class="dash-panel-subtitle">Manage your sanctuary profile details</p>
+        </div>
+
+        <div class="dash-glass-card">
+          <div class="dash-card-header" style="display: flex; justify-content: space-between; align-items: center;">
+            <h3 class="dash-card-title">Personal Information</h3>
+            <button type="button" class="btn btn-gold" id="settings-edit-btn" style="padding: 6px 14px; font-size: 0.65rem;">Edit Profile</button>
+          </div>
+          <form class="dash-settings-grid" id="settings-form">
+            <div class="dash-settings-avatar-section" style="display: flex; align-items: center; gap: var(--space-md); margin-bottom: var(--space-md); padding-bottom: var(--space-sm); border-bottom: 1px solid var(--glass-border); width: 100%;">
+              <div class="dash-profile-avatar-lg" id="settings-avatar-preview-container" style="position: relative; width: 80px; height: 80px; border-radius: 50%; overflow: hidden; border: 2px solid var(--gold); display: flex; align-items: center; justify-content: center; background: rgba(214, 179, 106, 0.05); margin: 0;">
+                <svg id="settings-avatar-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" style="width: 32px; height: 32px; color: var(--gold);"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                <img id="settings-avatar-img" src="" alt="Avatar Preview" style="width: 100%; height: 100%; object-fit: cover; display: none;">
+              </div>
+              <div>
+                <label for="profile-photo-upload" id="profile-photo-upload-label" class="btn btn-ghost" style="padding: 8px 16px; font-size: 0.7rem; cursor: pointer; display: none; margin-bottom: 6px;">
+                  Upload Photo
+                </label>
+                <input type="file" id="profile-photo-upload" accept="image/*" style="display: none;">
+                <p style="font-family: var(--font-ui); font-size: 0.6rem; color: var(--gray); margin: 0;">Supported formats: JPG, PNG. Max size 1MB.</p>
+              </div>
+            </div>
+            
+            <div class="dash-settings-group">
+              <label class="dash-settings-label" for="settings-name">Full Name</label>
+              <input type="text" class="dash-settings-input" id="settings-name" placeholder="Your full name" disabled>
+            </div>
+            <div class="dash-settings-group">
+              <label class="dash-settings-label" for="settings-email">Email Address</label>
+              <input type="email" class="dash-settings-input" id="settings-email" placeholder="your@email.com" disabled>
+            </div>
+            <div class="dash-settings-group">
+              <label class="dash-settings-label" for="settings-phone">Phone Number</label>
+              <input type="tel" class="dash-settings-input" id="settings-phone" placeholder="+91 98400 12345" disabled>
+            </div>
+            <div class="dash-settings-group">
+              <label class="dash-settings-label" for="settings-dob">Date of Birth</label>
+              <input type="date" class="dash-settings-input" id="settings-dob" disabled>
+            </div>
+            <div class="dash-settings-group full-width">
+              <label class="dash-settings-label" for="settings-address">Address</label>
+              <input type="text" class="dash-settings-input" id="settings-address" placeholder="Your address" disabled>
+            </div>
+            <div class="dash-settings-group full-width dash-settings-actions" id="settings-actions-row" style="display: none;">
+              <button type="submit" class="btn btn-gold">Save Changes</button>
+              <button type="button" class="btn btn-ghost" id="settings-cancel">Cancel</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- ═══════ PANEL 12: SECURITY SETTINGS ═══════ -->
+      <div class="dash-panel" id="panel-security">
+        <div class="dash-panel-header">
+          <h2 class="dash-panel-title">Security <em>Settings</em></h2>
+          <p class="dash-panel-subtitle">Protect your sanctuary account</p>
+        </div>
+
+        <!-- Change Password -->
+        <div class="dash-glass-card" style="margin-bottom: var(--space-lg);">
+          <div class="dash-card-header">
+            <h3 class="dash-card-title">Change Password</h3>
+          </div>
+          <form class="dash-settings-grid" id="password-form">
+            <div class="dash-settings-group">
+              <label class="dash-settings-label" for="sec-current">Current Password</label>
+              <input type="password" class="dash-settings-input" id="sec-current" placeholder="Enter current password" required>
+            </div>
+            <div class="dash-settings-group">
+              <label class="dash-settings-label" for="sec-new">New Password</label>
+              <input type="password" class="dash-settings-input" id="sec-new" placeholder="Enter new password" required>
+            </div>
+            <div class="dash-settings-group">
+              <label class="dash-settings-label" for="sec-confirm">Confirm New Password</label>
+              <input type="password" class="dash-settings-input" id="sec-confirm" placeholder="Confirm new password" required>
+            </div>
+            <div class="dash-settings-group full-width dash-settings-actions">
+              <button type="submit" class="btn btn-gold">Update Password</button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Security Options -->
+        <div class="dash-glass-card">
+          <div class="dash-card-header">
+            <h3 class="dash-card-title">Security Preferences</h3>
+          </div>
+          <div class="dash-security-row">
+            <div class="dash-security-info">
+              <h4>Two-Factor Authentication</h4>
+              <p>Add an extra layer of security to your sanctuary account</p>
+            </div>
+            <button class="dash-toggle" aria-label="Toggle 2FA"></button>
+          </div>
+          <div class="dash-security-row">
+            <div class="dash-security-info">
+              <h4>Login Notifications</h4>
+              <p>Receive alerts when your account is accessed from a new device</p>
+            </div>
+            <button class="dash-toggle active" aria-label="Toggle login notifications"></button>
+          </div>
+          <div class="dash-security-row">
+            <div class="dash-security-info">
+              <h4>Session Timeout</h4>
+              <p>Automatically sign out after 30 minutes of inactivity</p>
+            </div>
+            <button class="dash-toggle active" aria-label="Toggle session timeout"></button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══════ PANEL 13: LOGOUT ═══════ -->
+      <div class="dash-panel" id="panel-logout">
+        <div class="dash-logout-section">
+          <div class="dash-logout-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+          </div>
+          <h3 class="dash-logout-title">Sign Out of Your Sanctuary</h3>
+          <p class="dash-logout-desc">You'll need to sign in again to access your dashboard, reservations, and exclusive privileges.</p>
+          <button class="dash-logout-btn" id="dash-logout-action">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+            Sign Out
+          </button>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- Mobile Sidebar Toggle -->
+  <button class="dash-sidebar-toggle" id="dash-sidebar-toggle" aria-label="Toggle sidebar">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+  </button>
+
+  <!-- Toast Notification -->
+  <div id="dash-toast" class="dash-toast"></div>
+
+  <script src="script.js"></script>
+  <script src="auth.js"></script>
+  <script src="dashboard.js"></script>
+  <script>
+    // Route Guard: Only USER role allowed
+    document.addEventListener('DOMContentLoaded', () => {
+      if (typeof VeloraAuth !== 'undefined') {
+        if (!VeloraAuth.guardRoute('user')) return;
+      }
+    });
+  </script>
+</body>
+</html>
