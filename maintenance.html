@@ -1,0 +1,1119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Experience Refinement — VÉLORA RESERVE</title>
+  <meta name="description" content="VÉLORA RESERVE is undergoing a refined enhancement. Our sanctuary will reopen shortly with even greater elegance, comfort, and exclusivity.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✦</text></svg>">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ============================================================
+       VÉLORA RESERVE — Maintenance Page Self-Contained Styles
+       ============================================================ */
+
+    :root {
+      --midnight: #0B0B0F;
+      --gold: #D6B36A;
+      --gold-light: #E8CFA0;
+      --gold-dark: #B8963E;
+      --ivory: #F8F5F0;
+      --beige: #DCC7A1;
+      --glass: rgba(255, 255, 255, 0.08);
+      --glass-strong: rgba(255, 255, 255, 0.12);
+      --glass-border: rgba(255, 255, 255, 0.15);
+      --gray: #A1A1AA;
+      --charcoal: #18181B;
+      --deep: #0F0F14;
+      --success: #4ADE80;
+
+      --font-display: 'Playfair Display', Georgia, serif;
+      --font-heading: 'Cormorant Garamond', Georgia, serif;
+      --font-body: 'Inter', -apple-system, sans-serif;
+      --font-ui: 'Poppins', sans-serif;
+
+      --ease-luxury: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      --ease-smooth: cubic-bezier(0.22, 1, 0.36, 1);
+      --shadow-glow: 0 0 20px rgba(214, 179, 106, 0.3);
+      --shadow-gold: 0 0 40px rgba(214, 179, 106, 0.15);
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--ivory);
+      background: var(--midnight);
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
+
+    a { text-decoration: none; color: inherit; }
+
+    /* ---------- Background Pattern ---------- */
+    .maint-bg {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    .maint-bg-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(214, 179, 106, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(214, 179, 106, 0.03) 1px, transparent 1px);
+      background-size: 80px 80px;
+      animation: gridDrift 30s linear infinite;
+    }
+
+    @keyframes gridDrift {
+      0%   { transform: translate(0, 0); }
+      100% { transform: translate(80px, 80px); }
+    }
+
+    .maint-bg-radial {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 50% 30%, rgba(214, 179, 106, 0.04) 0%, transparent 60%);
+    }
+
+    /* ---------- Floating Vector Elements ---------- */
+    .float-elements {
+      position: fixed;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .float-star {
+      position: absolute;
+      opacity: 0;
+      animation: floatStar linear infinite;
+    }
+
+    .float-star svg {
+      stroke: var(--gold);
+      fill: none;
+      stroke-width: 1;
+    }
+
+    .float-star:nth-child(1) { left: 8%;  top: 15%; animation-duration: 20s; animation-delay: 0s; }
+    .float-star:nth-child(2) { left: 88%; top: 25%; animation-duration: 25s; animation-delay: 4s; }
+    .float-star:nth-child(3) { left: 15%; top: 70%; animation-duration: 22s; animation-delay: 8s; }
+    .float-star:nth-child(4) { left: 75%; top: 80%; animation-duration: 18s; animation-delay: 2s; }
+    .float-star:nth-child(5) { left: 50%; top: 10%; animation-duration: 28s; animation-delay: 6s; }
+    .float-star:nth-child(6) { left: 92%; top: 55%; animation-duration: 24s; animation-delay: 10s; }
+    .float-star:nth-child(7) { left: 5%;  top: 45%; animation-duration: 21s; animation-delay: 12s; }
+    .float-star:nth-child(8) { left: 40%; top: 85%; animation-duration: 26s; animation-delay: 3s; }
+
+    @keyframes floatStar {
+      0%   { opacity: 0; transform: translateY(0) rotate(0deg) scale(0.6); }
+      15%  { opacity: 0.4; }
+      50%  { opacity: 0.2; transform: translateY(-30px) rotate(180deg) scale(1); }
+      85%  { opacity: 0.35; }
+      100% { opacity: 0; transform: translateY(-60px) rotate(360deg) scale(0.6); }
+    }
+
+    /* Geometric shapes */
+    .float-geo {
+      position: absolute;
+      border: 1px solid rgba(214, 179, 106, 0.08);
+      animation: geoFloat 16s var(--ease-luxury) infinite;
+    }
+
+    .float-geo--diamond {
+      width: 40px; height: 40px;
+      top: 20%; left: 5%;
+      transform: rotate(45deg);
+      animation-duration: 20s;
+    }
+
+    .float-geo--circle {
+      width: 60px; height: 60px;
+      border-radius: 50%;
+      top: 65%; right: 8%;
+      animation-duration: 24s;
+      animation-delay: 5s;
+    }
+
+    .float-geo--hex {
+      width: 35px; height: 35px;
+      bottom: 15%; left: 12%;
+      transform: rotate(30deg);
+      animation-duration: 18s;
+      animation-delay: 8s;
+    }
+
+    @keyframes geoFloat {
+      0%, 100% { opacity: 0.3; transform: translateY(0) rotate(45deg); }
+      50%      { opacity: 0.6; transform: translateY(-20px) rotate(90deg); }
+    }
+
+    /* Decorative lines */
+    .float-line {
+      position: absolute;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(214, 179, 106, 0.12), transparent);
+      animation: lineGlow 8s ease-in-out infinite;
+    }
+
+    .float-line:nth-child(1) { width: 120px; top: 30%; left: -20px; animation-delay: 0s; }
+    .float-line:nth-child(2) { width: 80px;  top: 60%; right: -10px; animation-delay: 3s; }
+    .float-line:nth-child(3) { width: 100px; bottom: 25%; left: 10%; animation-delay: 6s; }
+
+    @keyframes lineGlow {
+      0%, 100% { opacity: 0; transform: translateX(-20px); }
+      50%      { opacity: 1; transform: translateX(20px); }
+    }
+
+    /* Ambient particles */
+    .particle-m {
+      position: absolute;
+      width: 2px; height: 2px;
+      background: var(--gold);
+      border-radius: 50%;
+      opacity: 0;
+      animation: particleMFloat linear infinite;
+    }
+
+    .particle-m:nth-child(1)  { left: 10%; animation-duration: 18s; animation-delay: 0s; }
+    .particle-m:nth-child(2)  { left: 25%; animation-duration: 22s; animation-delay: 3s; }
+    .particle-m:nth-child(3)  { left: 40%; animation-duration: 16s; animation-delay: 6s; }
+    .particle-m:nth-child(4)  { left: 58%; animation-duration: 20s; animation-delay: 2s; }
+    .particle-m:nth-child(5)  { left: 72%; animation-duration: 24s; animation-delay: 5s; }
+    .particle-m:nth-child(6)  { left: 88%; animation-duration: 19s; animation-delay: 8s; }
+    .particle-m:nth-child(7)  { left: 35%; animation-duration: 21s; animation-delay: 1s; }
+    .particle-m:nth-child(8)  { left: 65%; animation-duration: 17s; animation-delay: 7s; }
+    .particle-m:nth-child(9)  { left: 80%; animation-duration: 23s; animation-delay: 4s; }
+    .particle-m:nth-child(10) { left: 15%; animation-duration: 26s; animation-delay: 9s; }
+
+    @keyframes particleMFloat {
+      0%   { transform: translateY(100vh) scale(0); opacity: 0; }
+      10%  { opacity: 0.5; }
+      50%  { opacity: 0.2; }
+      90%  { opacity: 0.4; }
+      100% { transform: translateY(-10vh) scale(1); opacity: 0; }
+    }
+
+    /* ---------- Main Wrapper ---------- */
+    .maint-wrapper {
+      position: relative;
+      z-index: 10;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem 4rem;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* ---------- Reveal Animations ---------- */
+    .reveal-m {
+      opacity: 0;
+      transform: translateY(30px);
+      animation: revealM 1s var(--ease-smooth) forwards;
+    }
+
+    @keyframes revealM {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .reveal-m.d1 { animation-delay: 0.2s; }
+    .reveal-m.d2 { animation-delay: 0.4s; }
+    .reveal-m.d3 { animation-delay: 0.6s; }
+    .reveal-m.d4 { animation-delay: 0.8s; }
+    .reveal-m.d5 { animation-delay: 1.0s; }
+    .reveal-m.d6 { animation-delay: 1.2s; }
+    .reveal-m.d7 { animation-delay: 1.4s; }
+    .reveal-m.d8 { animation-delay: 1.6s; }
+    .reveal-m.d9 { animation-delay: 1.8s; }
+    .reveal-m.d10 { animation-delay: 2.0s; }
+
+    /* ---------- Brand Mark ---------- */
+    .maint-brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 2.5rem;
+      padding-top: 1rem;
+    }
+
+    .maint-brand svg {
+      width: 26px; height: 26px;
+      color: var(--gold);
+    }
+
+    .maint-brand-text {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 500;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--ivory);
+    }
+
+    .maint-brand-text span {
+      font-weight: 300;
+      letter-spacing: 0.2em;
+      color: var(--gray);
+      margin-left: 4px;
+    }
+
+    /* ---------- Hero SVG Illustration ---------- */
+    .maint-hero-svg {
+      width: 100%;
+      max-width: 600px;
+      margin-bottom: 2.5rem;
+    }
+
+    .maint-hero-svg svg {
+      width: 100%;
+      height: auto;
+    }
+
+    /* SVG Animation Classes */
+    .svg-line-draw {
+      stroke-dasharray: 1000;
+      stroke-dashoffset: 1000;
+      animation: drawLine 3s var(--ease-smooth) forwards;
+    }
+
+    .svg-line-draw.d1 { animation-delay: 0.5s; }
+    .svg-line-draw.d2 { animation-delay: 0.8s; }
+    .svg-line-draw.d3 { animation-delay: 1.1s; }
+    .svg-line-draw.d4 { animation-delay: 1.4s; }
+    .svg-line-draw.d5 { animation-delay: 1.7s; }
+    .svg-line-draw.d6 { animation-delay: 2.0s; }
+
+    @keyframes drawLine {
+      to { stroke-dashoffset: 0; }
+    }
+
+    .svg-pulse {
+      animation: svgPulse 4s ease-in-out infinite;
+    }
+
+    @keyframes svgPulse {
+      0%, 100% { opacity: 0.3; }
+      50%      { opacity: 0.7; }
+    }
+
+    .svg-shimmer {
+      animation: svgShimmer 6s ease-in-out infinite;
+    }
+
+    @keyframes svgShimmer {
+      0%, 100% { opacity: 0.15; }
+      50%      { opacity: 0.4; }
+    }
+
+    /* ---------- Label ---------- */
+    .maint-label {
+      font-family: var(--font-ui);
+      font-size: clamp(0.58rem, 1.1vw, 0.68rem);
+      font-weight: 600;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.25rem;
+      text-align: center;
+    }
+
+    .maint-label::before,
+    .maint-label::after {
+      content: '✦';
+      margin: 0 10px;
+      font-size: 0.45rem;
+      vertical-align: middle;
+      opacity: 0.6;
+    }
+
+    /* ---------- Heading ---------- */
+    .maint-heading {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 4.5vw, 3rem);
+      font-weight: 500;
+      text-align: center;
+      color: var(--ivory);
+      line-height: 1.25;
+      margin-bottom: 1.25rem;
+      letter-spacing: -0.01em;
+    }
+
+    .maint-heading em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    /* ---------- Description ---------- */
+    .maint-desc {
+      font-family: var(--font-body);
+      font-size: clamp(0.85rem, 1.4vw, 0.95rem);
+      font-weight: 300;
+      line-height: 1.85;
+      color: var(--gray);
+      text-align: center;
+      max-width: 580px;
+      margin-bottom: 3rem;
+    }
+
+    /* ---------- Gold Divider ---------- */
+    .maint-divider {
+      width: 60px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      margin: 0 auto 3rem;
+    }
+
+    /* ---------- Status Panel ---------- */
+    .maint-status-panel {
+      width: 100%;
+      max-width: 700px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--glass-border);
+      border: 1px solid var(--glass-border);
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 3rem;
+    }
+
+    .status-item {
+      background: rgba(11, 11, 15, 0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      padding: 1.5rem 1rem;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .status-icon {
+      width: 28px; height: 28px;
+      color: var(--gold);
+      opacity: 0.8;
+    }
+
+    .status-label {
+      font-family: var(--font-ui);
+      font-size: 0.55rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gray);
+    }
+
+    .status-value {
+      font-family: var(--font-display);
+      font-size: clamp(0.9rem, 1.5vw, 1.05rem);
+      font-weight: 500;
+      color: var(--ivory);
+    }
+
+    .status-dot {
+      display: inline-block;
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      margin-right: 6px;
+      vertical-align: middle;
+      animation: dotPulse 2s ease-in-out infinite;
+    }
+
+    .status-dot--gold { background: var(--gold); box-shadow: 0 0 8px rgba(214, 179, 106, 0.5); }
+    .status-dot--green { background: var(--success); box-shadow: 0 0 8px rgba(74, 222, 128, 0.5); }
+
+    @keyframes dotPulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50%      { opacity: 0.5; transform: scale(0.8); }
+    }
+
+    /* Progress bar */
+    .status-progress {
+      width: 100%;
+      max-width: 80px;
+      height: 3px;
+      background: rgba(255, 255, 255, 0.06);
+      border-radius: 2px;
+      overflow: hidden;
+      margin-top: 2px;
+    }
+
+    .status-progress-fill {
+      height: 100%;
+      width: 92%;
+      background: linear-gradient(90deg, var(--gold-dark), var(--gold), var(--gold-light));
+      border-radius: 2px;
+      animation: progressGlow 3s ease-in-out infinite;
+    }
+
+    @keyframes progressGlow {
+      0%, 100% { box-shadow: 0 0 4px rgba(214, 179, 106, 0.3); }
+      50%      { box-shadow: 0 0 12px rgba(214, 179, 106, 0.6); }
+    }
+
+    /* ---------- Countdown ---------- */
+    .maint-countdown {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: clamp(0.75rem, 2vw, 1.5rem);
+      margin-bottom: 3rem;
+    }
+
+    .countdown-unit {
+      background: rgba(255, 255, 255, 0.03);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--glass-border);
+      border-radius: 12px;
+      padding: clamp(1rem, 2vw, 1.5rem) clamp(0.8rem, 2vw, 1.5rem);
+      text-align: center;
+      min-width: clamp(60px, 12vw, 90px);
+      transition: border-color 0.3s var(--ease-luxury);
+    }
+
+    .countdown-unit:hover {
+      border-color: rgba(214, 179, 106, 0.3);
+    }
+
+    .countdown-number {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      font-weight: 600;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 0.4rem;
+    }
+
+    .countdown-label {
+      font-family: var(--font-ui);
+      font-size: clamp(0.5rem, 0.8vw, 0.6rem);
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gray);
+    }
+
+    .countdown-sep {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      color: rgba(214, 179, 106, 0.3);
+      margin-top: -0.5rem;
+      animation: sepBlink 2s ease-in-out infinite;
+    }
+
+    @keyframes sepBlink {
+      0%, 100% { opacity: 1; }
+      50%      { opacity: 0.2; }
+    }
+
+    /* ---------- Notify Form ---------- */
+    .maint-notify {
+      width: 100%;
+      max-width: 480px;
+      margin-bottom: 2.5rem;
+      text-align: center;
+    }
+
+    .notify-title {
+      font-family: var(--font-ui);
+      font-size: 0.6rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gray);
+      margin-bottom: 1rem;
+    }
+
+    .notify-form {
+      display: flex;
+      gap: 0;
+      border: 1px solid var(--glass-border);
+      border-radius: 8px;
+      overflow: hidden;
+      background: rgba(255, 255, 255, 0.02);
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+      transition: border-color 0.3s var(--ease-luxury), box-shadow 0.3s var(--ease-luxury);
+    }
+
+    .notify-form:focus-within {
+      border-color: var(--gold);
+      box-shadow: 0 0 0 3px rgba(214, 179, 106, 0.08);
+    }
+
+    .notify-input {
+      flex: 1;
+      padding: 14px 18px;
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      font-weight: 300;
+      color: var(--ivory);
+      background: transparent;
+      border: none;
+      outline: none;
+      letter-spacing: 0.02em;
+      min-width: 0;
+    }
+
+    .notify-input::placeholder {
+      color: rgba(161, 161, 170, 0.4);
+    }
+
+    .notify-btn {
+      padding: 14px 24px;
+      font-family: var(--font-ui);
+      font-size: 0.62rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--midnight);
+      background: var(--gold);
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s var(--ease-luxury);
+      white-space: nowrap;
+    }
+
+    .notify-btn:hover {
+      background: var(--gold-light);
+    }
+
+    .notify-success {
+      display: none;
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      font-weight: 400;
+      color: var(--gold);
+      padding: 14px;
+      text-align: center;
+    }
+
+    /* ---------- CTA Buttons ---------- */
+    .maint-buttons {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 3rem;
+    }
+
+    .btn-m {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-family: var(--font-ui);
+      font-size: clamp(0.6rem, 1vw, 0.7rem);
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 14px 36px;
+      border-radius: 4px;
+      transition: all 0.3s var(--ease-luxury);
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-m--primary {
+      background: var(--gold);
+      color: var(--midnight);
+    }
+
+    .btn-m--primary::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      transform: translateX(-100%);
+      transition: transform 0.6s;
+    }
+
+    .btn-m--primary:hover {
+      background: var(--gold-light);
+      box-shadow: var(--shadow-glow);
+      transform: translateY(-2px);
+    }
+
+    .btn-m--primary:hover::after {
+      transform: translateX(100%);
+    }
+
+    .btn-m--secondary {
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      background: transparent;
+    }
+
+    .btn-m--secondary:hover {
+      background: var(--gold);
+      color: var(--midnight);
+      box-shadow: var(--shadow-glow);
+      transform: translateY(-2px);
+    }
+
+    /* ---------- Quote ---------- */
+    .maint-quote {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .maint-quote-text {
+      font-family: var(--font-heading);
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      font-weight: 300;
+      font-style: italic;
+      color: rgba(248, 245, 240, 0.45);
+      line-height: 1.7;
+      margin-bottom: 0.75rem;
+      letter-spacing: 0.02em;
+    }
+
+    .maint-quote-text::before { content: '\201C'; margin-right: 2px; }
+    .maint-quote-text::after  { content: '\201D'; margin-left: 2px; }
+
+    .maint-quote-attr {
+      font-family: var(--font-ui);
+      font-size: 0.58rem;
+      font-weight: 600;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      opacity: 0.6;
+    }
+
+    .maint-quote-attr::before { content: '— '; }
+
+    /* ---------- Animated Compass (Corner) ---------- */
+    .corner-compass {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 50px;
+      height: 50px;
+      z-index: 20;
+      pointer-events: none;
+      opacity: 0;
+      animation: fadeInCompass 1.5s 2.5s var(--ease-smooth) forwards;
+    }
+
+    .corner-compass-ring {
+      width: 50px; height: 50px;
+      border: 1px solid rgba(214, 179, 106, 0.2);
+      border-radius: 50%;
+      position: absolute;
+      top: 0; left: 0;
+      animation: compassRingPulse 5s var(--ease-luxury) infinite;
+    }
+
+    .corner-compass-needle {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      animation: needleSway 10s var(--ease-luxury) infinite;
+    }
+
+    .corner-compass-needle svg {
+      width: 20px; height: 20px;
+      stroke: var(--gold);
+      fill: rgba(214, 179, 106, 0.1);
+      opacity: 0.5;
+    }
+
+    .corner-compass-dot {
+      position: absolute;
+      top: 50%; left: 50%;
+      width: 3px; height: 3px;
+      background: var(--gold);
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      box-shadow: 0 0 6px rgba(214, 179, 106, 0.4);
+    }
+
+    @keyframes fadeInCompass {
+      to { opacity: 1; }
+    }
+
+    @keyframes compassRingPulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(214, 179, 106, 0.08); }
+      50%      { box-shadow: 0 0 0 8px rgba(214, 179, 106, 0); }
+    }
+
+    @keyframes needleSway {
+      0%   { transform: translate(-50%, -50%) rotate(0deg); }
+      25%  { transform: translate(-50%, -50%) rotate(15deg); }
+      50%  { transform: translate(-50%, -50%) rotate(-10deg); }
+      75%  { transform: translate(-50%, -50%) rotate(8deg); }
+      100% { transform: translate(-50%, -50%) rotate(0deg); }
+    }
+
+    /* ---------- Responsive ---------- */
+    @media (max-width: 767px) {
+      .maint-wrapper {
+        padding: 2rem 1.25rem 3rem;
+      }
+
+      .maint-hero-svg {
+        max-width: 90%;
+        margin-bottom: 2rem;
+      }
+
+      .maint-status-panel {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .maint-buttons {
+        flex-direction: column;
+        gap: 0.75rem;
+      }
+
+      .btn-m {
+        width: 100%;
+        max-width: 260px;
+      }
+
+      .maint-countdown {
+        gap: 0.5rem;
+      }
+
+      .countdown-sep {
+        display: none;
+      }
+
+      .notify-form {
+        flex-direction: column;
+      }
+
+      .notify-btn {
+        padding: 14px;
+      }
+
+      .corner-compass {
+        bottom: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+      }
+
+      .corner-compass-ring {
+        width: 40px;
+        height: 40px;
+      }
+
+      .corner-compass-needle svg {
+        width: 16px;
+        height: 16px;
+      }
+
+      .float-geo { display: none; }
+    }
+
+    @media (min-width: 768px) and (max-width: 1024px) {
+      .maint-hero-svg {
+        max-width: 480px;
+      }
+
+      .maint-status-panel {
+        max-width: 600px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Background -->
+  <div class="maint-bg">
+    <div class="maint-bg-grid"></div>
+    <div class="maint-bg-radial"></div>
+  </div>
+
+  <!-- Floating Vector Elements -->
+  <div class="float-elements">
+    <!-- Stars -->
+    <div class="float-star"><svg width="12" height="12" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+    <div class="float-star"><svg width="8" height="8" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+    <div class="float-star"><svg width="10" height="10" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+    <div class="float-star"><svg width="6" height="6" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+    <div class="float-star"><svg width="14" height="14" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+    <div class="float-star"><svg width="7" height="7" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+    <div class="float-star"><svg width="9" height="9" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+    <div class="float-star"><svg width="11" height="11" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+
+    <!-- Geometric shapes -->
+    <div class="float-geo float-geo--diamond"></div>
+    <div class="float-geo float-geo--circle"></div>
+    <div class="float-geo float-geo--hex"></div>
+
+    <!-- Decorative lines -->
+    <div class="float-line"></div>
+    <div class="float-line"></div>
+    <div class="float-line"></div>
+
+    <!-- Ambient particles -->
+    <div class="particle-m"></div>
+    <div class="particle-m"></div>
+    <div class="particle-m"></div>
+    <div class="particle-m"></div>
+    <div class="particle-m"></div>
+    <div class="particle-m"></div>
+    <div class="particle-m"></div>
+    <div class="particle-m"></div>
+    <div class="particle-m"></div>
+    <div class="particle-m"></div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="maint-wrapper">
+
+    <!-- Brand Mark -->
+    <div class="maint-brand reveal-m d1">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M12 2L14.85 8.15L21.6 9.15L16.7 13.93L17.85 20.65L12 17.5L6.15 20.65L7.3 13.93L2.4 9.15L9.15 8.15L12 2Z" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="12" cy="12" r="4"/>
+      </svg>
+      <div class="maint-brand-text">VÉLORA <span>RESERVE</span></div>
+    </div>
+
+    <!-- Hero SVG Illustration -->
+    <div class="maint-hero-svg reveal-m d2">
+      <svg viewBox="0 0 600 260" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Ocean Waves -->
+        <path d="M0 210 Q50 195 100 210 Q150 225 200 210 Q250 195 300 210 Q350 225 400 210 Q450 195 500 210 Q550 225 600 210" stroke="rgba(214,179,106,0.2)" stroke-width="1" fill="none" class="svg-line-draw d1"/>
+        <path d="M0 225 Q60 215 120 225 Q180 235 240 225 Q300 215 360 225 Q420 235 480 225 Q540 215 600 225" stroke="rgba(214,179,106,0.12)" stroke-width="0.8" fill="none" class="svg-line-draw d2"/>
+        <path d="M0 238 Q70 230 140 238 Q210 246 280 238 Q350 230 420 238 Q490 246 560 238 L600 238" stroke="rgba(214,179,106,0.08)" stroke-width="0.6" fill="none" class="svg-line-draw d3"/>
+
+        <!-- Villa / Pavilion Structure -->
+        <!-- Roof -->
+        <path d="M220 120 L300 70 L380 120" stroke="rgba(214,179,106,0.5)" stroke-width="1.2" stroke-linecap="round" class="svg-line-draw d1"/>
+        <!-- Roof peak ornament -->
+        <circle cx="300" cy="65" r="3" stroke="rgba(214,179,106,0.6)" stroke-width="0.8" fill="none" class="svg-pulse"/>
+        <!-- Support columns -->
+        <line x1="235" y1="120" x2="235" y2="195" stroke="rgba(214,179,106,0.35)" stroke-width="1" class="svg-line-draw d2"/>
+        <line x1="365" y1="120" x2="365" y2="195" stroke="rgba(214,179,106,0.35)" stroke-width="1" class="svg-line-draw d2"/>
+        <!-- Base platform / deck -->
+        <rect x="220" y="195" width="160" height="4" rx="1" stroke="rgba(214,179,106,0.3)" stroke-width="0.8" fill="rgba(214,179,106,0.03)" class="svg-line-draw d3"/>
+        <!-- Overwater walkway -->
+        <line x1="380" y1="197" x2="460" y2="197" stroke="rgba(214,179,106,0.25)" stroke-width="0.8" stroke-dasharray="4 3" class="svg-line-draw d4"/>
+        <line x1="220" y1="197" x2="140" y2="197" stroke="rgba(214,179,106,0.25)" stroke-width="0.8" stroke-dasharray="4 3" class="svg-line-draw d4"/>
+        <!-- Inner arch -->
+        <path d="M270 195 L270 145 Q300 125 330 145 L330 195" stroke="rgba(214,179,106,0.25)" stroke-width="0.8" fill="none" class="svg-line-draw d3"/>
+        <!-- Railing hints -->
+        <line x1="240" y1="155" x2="265" y2="155" stroke="rgba(214,179,106,0.15)" stroke-width="0.5" class="svg-line-draw d4"/>
+        <line x1="335" y1="155" x2="360" y2="155" stroke="rgba(214,179,106,0.15)" stroke-width="0.5" class="svg-line-draw d4"/>
+
+        <!-- Left Palm Tree -->
+        <path d="M100 200 L105 130" stroke="rgba(214,179,106,0.3)" stroke-width="1.2" stroke-linecap="round" class="svg-line-draw d2"/>
+        <!-- Palm fronds -->
+        <path d="M105 130 Q85 110 55 115" stroke="rgba(214,179,106,0.25)" stroke-width="0.8" fill="none" class="svg-line-draw d3"/>
+        <path d="M105 130 Q90 105 70 95" stroke="rgba(214,179,106,0.2)" stroke-width="0.8" fill="none" class="svg-line-draw d4"/>
+        <path d="M105 130 Q120 105 145 100" stroke="rgba(214,179,106,0.25)" stroke-width="0.8" fill="none" class="svg-line-draw d3"/>
+        <path d="M105 130 Q130 110 155 115" stroke="rgba(214,179,106,0.2)" stroke-width="0.8" fill="none" class="svg-line-draw d4"/>
+        <path d="M105 130 Q108 100 110 85" stroke="rgba(214,179,106,0.18)" stroke-width="0.8" fill="none" class="svg-line-draw d5"/>
+
+        <!-- Right Palm Tree -->
+        <path d="M500 200 L495 140" stroke="rgba(214,179,106,0.3)" stroke-width="1.2" stroke-linecap="round" class="svg-line-draw d2"/>
+        <path d="M495 140 Q475 120 445 125" stroke="rgba(214,179,106,0.25)" stroke-width="0.8" fill="none" class="svg-line-draw d3"/>
+        <path d="M495 140 Q480 115 460 105" stroke="rgba(214,179,106,0.2)" stroke-width="0.8" fill="none" class="svg-line-draw d4"/>
+        <path d="M495 140 Q510 115 535 110" stroke="rgba(214,179,106,0.25)" stroke-width="0.8" fill="none" class="svg-line-draw d3"/>
+        <path d="M495 140 Q520 120 545 125" stroke="rgba(214,179,106,0.2)" stroke-width="0.8" fill="none" class="svg-line-draw d4"/>
+        <path d="M495 140 Q498 110 500 95" stroke="rgba(214,179,106,0.18)" stroke-width="0.8" fill="none" class="svg-line-draw d5"/>
+
+        <!-- Navigation Star / Compass Motif (center top) -->
+        <g transform="translate(300, 30)">
+          <circle cx="0" cy="0" r="12" stroke="rgba(214,179,106,0.3)" stroke-width="0.6" fill="none" class="svg-pulse"/>
+          <polygon points="0,-8 2,-2 8,0 2,2 0,8 -2,2 -8,0 -2,-2" stroke="rgba(214,179,106,0.5)" stroke-width="0.5" fill="rgba(214,179,106,0.08)" class="svg-shimmer"/>
+        </g>
+
+        <!-- Refinement / Construction Motif (small gear-like elements) -->
+        <g transform="translate(300, 165)" class="svg-shimmer">
+          <circle cx="0" cy="0" r="6" stroke="rgba(214,179,106,0.2)" stroke-width="0.5" fill="none"/>
+          <circle cx="0" cy="0" r="2" stroke="rgba(214,179,106,0.3)" stroke-width="0.5" fill="rgba(214,179,106,0.1)"/>
+          <!-- Tiny spokes -->
+          <line x1="0" y1="-6" x2="0" y2="-9" stroke="rgba(214,179,106,0.15)" stroke-width="0.4"/>
+          <line x1="6" y1="0" x2="9" y2="0" stroke="rgba(214,179,106,0.15)" stroke-width="0.4"/>
+          <line x1="0" y1="6" x2="0" y2="9" stroke="rgba(214,179,106,0.15)" stroke-width="0.4"/>
+          <line x1="-6" y1="0" x2="-9" y2="0" stroke="rgba(214,179,106,0.15)" stroke-width="0.4"/>
+        </g>
+
+        <!-- Water Reflections -->
+        <line x1="250" y1="215" x2="280" y2="215" stroke="rgba(214,179,106,0.08)" stroke-width="0.5" class="svg-shimmer"/>
+        <line x1="310" y1="220" x2="350" y2="220" stroke="rgba(214,179,106,0.06)" stroke-width="0.5" class="svg-shimmer" style="animation-delay: 2s;"/>
+        <line x1="180" y1="230" x2="210" y2="230" stroke="rgba(214,179,106,0.05)" stroke-width="0.5" class="svg-shimmer" style="animation-delay: 4s;"/>
+        <line x1="400" y1="225" x2="440" y2="225" stroke="rgba(214,179,106,0.07)" stroke-width="0.5" class="svg-shimmer" style="animation-delay: 3s;"/>
+
+        <!-- Horizon line -->
+        <line x1="0" y1="200" x2="600" y2="200" stroke="rgba(214,179,106,0.06)" stroke-width="0.3"/>
+      </svg>
+    </div>
+
+    <!-- Label -->
+    <div class="maint-label reveal-m d3">Experience Refinement in Progress</div>
+
+    <!-- Heading -->
+    <h1 class="maint-heading reveal-m d4">We're Curating Something <em>Extraordinary</em></h1>
+
+    <!-- Description -->
+    <p class="maint-desc reveal-m d5">VÉLORA RESERVE is currently undergoing a refined enhancement to elevate your experience. Our sanctuary will reopen shortly with even greater elegance, comfort, and exclusivity.</p>
+
+    <!-- Divider -->
+    <div class="maint-divider reveal-m d5"></div>
+
+    <!-- Status Panel -->
+    <div class="maint-status-panel reveal-m d6">
+      <div class="status-item">
+        <svg class="status-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+        </svg>
+        <span class="status-label">System Status</span>
+        <span class="status-value"><span class="status-dot status-dot--gold"></span>Active Upgrade</span>
+      </div>
+      <div class="status-item">
+        <svg class="status-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>
+        </svg>
+        <span class="status-label">Enhancement</span>
+        <span class="status-value">92%</span>
+        <div class="status-progress"><div class="status-progress-fill"></div></div>
+      </div>
+      <div class="status-item">
+        <svg class="status-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
+        </svg>
+        <span class="status-label">Availability</span>
+        <span class="status-value">Very Soon</span>
+      </div>
+      <div class="status-item">
+        <svg class="status-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+        </svg>
+        <span class="status-label">Guest Services</span>
+        <span class="status-value"><span class="status-dot status-dot--green"></span>Available</span>
+      </div>
+    </div>
+
+    <!-- Countdown -->
+    <div class="maint-countdown reveal-m d7">
+      <div class="countdown-unit">
+        <div class="countdown-number" id="cd-days">02</div>
+        <div class="countdown-label">Days</div>
+      </div>
+      <span class="countdown-sep">:</span>
+      <div class="countdown-unit">
+        <div class="countdown-number" id="cd-hours">14</div>
+        <div class="countdown-label">Hours</div>
+      </div>
+      <span class="countdown-sep">:</span>
+      <div class="countdown-unit">
+        <div class="countdown-number" id="cd-minutes">37</div>
+        <div class="countdown-label">Minutes</div>
+      </div>
+      <span class="countdown-sep">:</span>
+      <div class="countdown-unit">
+        <div class="countdown-number" id="cd-seconds">52</div>
+        <div class="countdown-label">Seconds</div>
+      </div>
+    </div>
+
+    <!-- Notify Me -->
+    <div class="maint-notify reveal-m d8">
+      <div class="notify-title">Get Notified When We're Back</div>
+      <form class="notify-form" id="notify-form" onsubmit="event.preventDefault(); handleNotify();">
+        <input type="email" class="notify-input" id="notify-email" placeholder="Your Email Address" required>
+        <button type="submit" class="notify-btn">Notify Me When We're Back</button>
+      </form>
+      <div class="notify-success" id="notify-success">✦ Thank you. We'll notify you the moment our sanctuary reopens.</div>
+    </div>
+
+    <!-- CTA Buttons -->
+    <div class="maint-buttons reveal-m d9">
+      <a href="index.html" class="btn-m btn-m--primary">Return Home</a>
+      <a href="contact.html" class="btn-m btn-m--secondary">Contact Concierge</a>
+    </div>
+
+    <!-- Quote -->
+    <div class="maint-quote reveal-m d10">
+      <p class="maint-quote-text">Perfection is never rushed. Every extraordinary experience deserves meticulous refinement.</p>
+      <p class="maint-quote-attr">VÉLORA RESERVE</p>
+    </div>
+
+  </div>
+
+  <!-- Corner Compass -->
+  <div class="corner-compass">
+    <div class="corner-compass-ring"></div>
+    <div class="corner-compass-needle">
+      <svg viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <polygon points="12 2 19 21 12 17 5 21 12 2"/>
+      </svg>
+    </div>
+    <div class="corner-compass-dot"></div>
+  </div>
+
+  <!-- Scripts -->
+  <script>
+    // Countdown Timer (demo: 2 days, 14 hours, 37 minutes, 52 seconds from now)
+    (function() {
+      const targetDate = new Date();
+      targetDate.setDate(targetDate.getDate() + 2);
+      targetDate.setHours(targetDate.getHours() + 14);
+      targetDate.setMinutes(targetDate.getMinutes() + 37);
+      targetDate.setSeconds(targetDate.getSeconds() + 52);
+
+      const daysEl = document.getElementById('cd-days');
+      const hoursEl = document.getElementById('cd-hours');
+      const minutesEl = document.getElementById('cd-minutes');
+      const secondsEl = document.getElementById('cd-seconds');
+
+      function pad(n) { return n < 10 ? '0' + n : n; }
+
+      function updateCountdown() {
+        const now = new Date();
+        let diff = Math.max(0, Math.floor((targetDate - now) / 1000));
+
+        const d = Math.floor(diff / 86400); diff %= 86400;
+        const h = Math.floor(diff / 3600);  diff %= 3600;
+        const m = Math.floor(diff / 60);    diff %= 60;
+        const s = diff;
+
+        daysEl.textContent = pad(d);
+        hoursEl.textContent = pad(h);
+        minutesEl.textContent = pad(m);
+        secondsEl.textContent = pad(s);
+      }
+
+      updateCountdown();
+      setInterval(updateCountdown, 1000);
+    })();
+
+    // Notify Me Form
+    function handleNotify() {
+      const form = document.getElementById('notify-form');
+      const success = document.getElementById('notify-success');
+      form.style.display = 'none';
+      success.style.display = 'block';
+    }
+  </script>
+
+</body>
+</html>
