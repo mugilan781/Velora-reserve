@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — VÉLORA RESERVE</title>
+  <meta name="description" content="VÉLORA RESERVE Privacy Policy. Learn how we collect, use, and protect your personal information to ensure a secure and trusted luxury hospitality experience.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="auth.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✦</text></svg>">
+
+  <style>
+    /* ============================================================
+       VÉLORA RESERVE — Privacy Policy Page Styles
+       ============================================================ */
+
+    /* ---------- Policy Hero ---------- */
+    .policy-hero {
+      position: relative;
+      min-height: 50vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+      background: linear-gradient(180deg, var(--midnight) 0%, var(--deep) 50%, var(--charcoal) 100%);
+    }
+
+    .policy-hero::before {
+      content: '';
+      position: absolute;
+      top: -30%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 800px;
+      height: 800px;
+      background: radial-gradient(circle, rgba(214, 179, 106, 0.06) 0%, transparent 65%);
+      pointer-events: none;
+    }
+
+    .policy-hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(214, 179, 106, 0.2), transparent);
+    }
+
+    .policy-hero-content {
+      position: relative;
+      z-index: 2;
+      padding: 140px 24px 80px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .policy-hero-ornament {
+      font-family: var(--font-ui);
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 24px;
+      opacity: 0;
+      animation: policyFadeUp 0.8s var(--ease-smooth) 0.2s forwards;
+    }
+
+    .policy-hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      font-weight: 700;
+      color: var(--ivory);
+      line-height: 1.15;
+      margin-bottom: 20px;
+      opacity: 0;
+      animation: policyFadeUp 0.8s var(--ease-smooth) 0.35s forwards;
+    }
+
+    .policy-hero-title em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    .policy-hero-description {
+      font-family: var(--font-heading);
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      color: rgba(248, 245, 240, 0.7);
+      font-weight: 300;
+      line-height: 1.7;
+      max-width: 600px;
+      margin: 0 auto;
+      opacity: 0;
+      animation: policyFadeUp 0.8s var(--ease-smooth) 0.5s forwards;
+    }
+
+    /* Decorative line below hero */
+    .policy-hero-line {
+      width: 60px;
+      height: 1px;
+      background: var(--gold);
+      margin: 28px auto 0;
+      opacity: 0;
+      animation: policyFadeUp 0.8s var(--ease-smooth) 0.65s forwards;
+    }
+
+    @keyframes policyFadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ---------- Policy Container ---------- */
+    .policy-container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ---------- Policy Body ---------- */
+    .policy-body {
+      background: var(--midnight);
+      padding: 80px 0 100px;
+    }
+
+    /* ---------- Last Updated Card ---------- */
+    .policy-updated-card {
+      background: rgba(214, 179, 106, 0.04);
+      border: 1px solid rgba(214, 179, 106, 0.12);
+      border-radius: 12px;
+      padding: 20px 28px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 56px;
+      opacity: 0;
+      animation: policyFadeUp 0.6s var(--ease-smooth) 0.8s forwards;
+    }
+
+    .policy-updated-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      background: rgba(214, 179, 106, 0.08);
+      border: 1px solid rgba(214, 179, 106, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .policy-updated-icon svg {
+      width: 16px;
+      height: 16px;
+      color: var(--gold);
+      stroke-width: 1.5;
+    }
+
+    .policy-updated-label {
+      font-family: var(--font-ui);
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gray);
+    }
+
+    .policy-updated-date {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      color: var(--ivory);
+      font-weight: 600;
+    }
+
+    /* ---------- Policy Section ---------- */
+    .policy-section {
+      margin-bottom: 40px;
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.6s var(--ease-smooth), transform 0.6s var(--ease-smooth);
+    }
+
+    .policy-section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .policy-card {
+      background: rgba(255, 255, 255, 0.02);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--glass-border);
+      border-radius: 16px;
+      padding: 36px;
+      transition: border-color 0.3s var(--ease-luxury);
+    }
+
+    .policy-card:hover {
+      border-color: rgba(214, 179, 106, 0.2);
+    }
+
+    /* Section Header */
+    .policy-section-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 24px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .policy-section-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background: rgba(214, 179, 106, 0.08);
+      border: 1px solid rgba(214, 179, 106, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .policy-section-icon svg {
+      width: 20px;
+      height: 20px;
+      color: var(--gold);
+      stroke-width: 1.5;
+    }
+
+    .policy-section-label {
+      font-family: var(--font-ui);
+      font-size: 0.6rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 4px;
+    }
+
+    .policy-section-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+      font-weight: 600;
+      color: var(--ivory);
+    }
+
+    /* Section Content */
+    .policy-text {
+      font-family: var(--font-body);
+      font-size: 0.92rem;
+      color: rgba(248, 245, 240, 0.7);
+      line-height: 1.85;
+      margin-bottom: 20px;
+    }
+
+    .policy-text:last-child {
+      margin-bottom: 0;
+    }
+
+    .policy-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 20px;
+    }
+
+    .policy-list:last-child {
+      margin-bottom: 0;
+    }
+
+    .policy-list li {
+      font-family: var(--font-body);
+      font-size: 0.92rem;
+      color: rgba(248, 245, 240, 0.7);
+      line-height: 1.85;
+      padding: 6px 0 6px 28px;
+      position: relative;
+    }
+
+    .policy-list li::before {
+      content: '✦';
+      position: absolute;
+      left: 0;
+      top: 6px;
+      color: var(--gold);
+      font-size: 0.6rem;
+    }
+
+    /* Contact Card */
+    .policy-contact-card {
+      background: rgba(214, 179, 106, 0.04);
+      border: 1px solid rgba(214, 179, 106, 0.15);
+      border-radius: 12px;
+      padding: 24px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-top: 16px;
+    }
+
+    .policy-contact-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: rgba(214, 179, 106, 0.08);
+      border: 1px solid rgba(214, 179, 106, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .policy-contact-icon svg {
+      width: 20px;
+      height: 20px;
+      color: var(--gold);
+      stroke-width: 1.5;
+    }
+
+    .policy-contact-label {
+      font-family: var(--font-ui);
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gray);
+      margin-bottom: 4px;
+    }
+
+    .policy-contact-email {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      color: var(--gold);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s var(--ease-luxury);
+    }
+
+    .policy-contact-email:hover {
+      color: var(--gold-light);
+    }
+
+    /* ---------- Responsive ---------- */
+    @media (max-width: 768px) {
+      .policy-hero-content {
+        padding: 120px 20px 60px;
+      }
+
+      .policy-card {
+        padding: 24px 20px;
+      }
+
+      .policy-section-header {
+        gap: 12px;
+      }
+
+      .policy-section-icon {
+        width: 38px;
+        height: 38px;
+      }
+
+      .policy-section-icon svg {
+        width: 16px;
+        height: 16px;
+      }
+
+      .policy-updated-card {
+        padding: 16px 20px;
+        gap: 12px;
+      }
+
+      .policy-contact-card {
+        flex-direction: column;
+        text-align: center;
+        gap: 12px;
+      }
+
+      .policy-body {
+        padding: 50px 0 70px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .policy-hero {
+        min-height: 45vh;
+      }
+
+      .policy-hero-content {
+        padding: 110px 16px 50px;
+      }
+
+      .policy-card {
+        padding: 20px 16px;
+        border-radius: 12px;
+      }
+
+      .policy-updated-card {
+        flex-direction: column;
+        text-align: center;
+        gap: 8px;
+      }
+
+      .policy-list li {
+        padding-left: 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Preloader -->
+  <div class="preloader"><div class="preloader-logo">VÉLORA</div><div class="preloader-line"></div></div>
+  <div class="cursor-dot"></div><div class="cursor-ring"></div>
+
+  <!-- Navigation -->
+  <nav class="nav"><a href="index.html" class="nav-logo">
+          <svg class="brand-logo-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M12 2L14.85 8.15L21.6 9.15L16.7 13.93L17.85 20.65L12 17.5L6.15 20.65L7.3 13.93L2.4 9.15L9.15 8.15L12 2Z" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="12" cy="12" r="4" />
+          </svg>
+          <span class="brand-text-velora">VÉLORA</span><span class="brand-text-reserve">RESERVE</span>
+        </a>
+        <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="experiences.html">Experiences</a>
+      <div class="nav-dropdown-wrapper">
+        <a href="suites.html" class="nav-dropdown-toggle">Suites <span class="arrow">▼</span></a>
+        <div class="nav-dropdown-menu">
+          <a href="suites.html">Suites</a>
+          <a href="destinations.html">Destinations</a>
+          <a href="sunsets.html">Sunsets</a>
+          <a href="wedding.html">Weddings</a>
+        </div>
+      </div>
+      <a href="gallery.html">Gallery</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="contact.html">Contact</a>
+      <div class="nav-profile-wrap">
+        <button class="nav-profile-btn" aria-label="Profile Menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </button>
+        <div class="nav-profile-dropdown"></div>
+      </div>
+      <a href="booking.html" class="nav-book-btn">Book Now</a>
+    </div>
+    <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+  </nav>
+  <div class="mobile-nav" id="mobile-nav"><a href="index.html">Home</a><a href="about.html">About</a><a href="experiences.html">Experiences</a><a href="suites.html">Suites</a><a href="destinations.html">Destinations</a><a href="sunsets.html">Sunsets</a><a href="wedding.html">Weddings</a><a href="gallery.html">Gallery</a><a href="reviews.html">Reviews</a><a href="contact.html">Contact</a><a href="booking.html">Book Now</a></div>
+
+  <!-- ============ HERO ============ -->
+  <section class="policy-hero">
+    <div class="policy-hero-content">
+      <p class="policy-hero-ornament">✦ Legal ✦</p>
+      <h1 class="policy-hero-title">Privacy <em>Policy</em></h1>
+      <p class="policy-hero-description">Your trust, privacy, and security remain at the heart of every VÉLORA RESERVE experience.</p>
+      <div class="policy-hero-line"></div>
+    </div>
+  </section>
+
+  <!-- ============ POLICY BODY ============ -->
+  <main class="policy-body">
+    <div class="policy-container">
+
+      <!-- Last Updated -->
+      <div class="policy-updated-card">
+        <div class="policy-updated-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <div>
+          <div class="policy-updated-label">Last Updated</div>
+          <div class="policy-updated-date">June 2026</div>
+        </div>
+      </div>
+
+      <!-- A. Information We Collect -->
+      <div class="policy-section" id="policy-info-collect">
+        <div class="policy-card">
+          <div class="policy-section-header">
+            <div class="policy-section-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </div>
+            <div>
+              <div class="policy-section-label">Section A</div>
+              <h2 class="policy-section-title">Information We Collect</h2>
+            </div>
+          </div>
+          <p class="policy-text">At VÉLORA RESERVE, we collect only the information necessary to deliver an extraordinary and personalized luxury hospitality experience. We are committed to transparency in every interaction.</p>
+          <ul class="policy-list">
+            <li><strong>Personal Information</strong> — Full name, date of birth, nationality, and identification documents required for secure reservation processing and regulatory compliance.</li>
+            <li><strong>Reservation Information</strong> — Stay dates, suite preferences, special occasion details, dining requirements, and bespoke experience selections that allow us to craft your perfect sanctuary.</li>
+            <li><strong>Contact Details</strong> — Email address, phone number, and postal address used exclusively for booking confirmations, concierge coordination, and pre-arrival curation.</li>
+            <li><strong>Preferences &amp; Interests</strong> — Dietary requirements, wellness preferences, pillow selections, preferred fragrances, and activity interests that enable our Butler Alchemists to anticipate your desires.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- B. How We Use Information -->
+      <div class="policy-section" id="policy-info-use">
+        <div class="policy-card">
+          <div class="policy-section-header">
+            <div class="policy-section-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <div>
+              <div class="policy-section-label">Section B</div>
+              <h2 class="policy-section-title">How We Use Information</h2>
+            </div>
+          </div>
+          <p class="policy-text">Your information is used with the utmost care and solely to enhance the quality of your VÉLORA RESERVE experience. We never sell, rent, or share your personal data with unauthorized third parties.</p>
+          <ul class="policy-list">
+            <li><strong>Reservation Management</strong> — Processing bookings, confirming availability, coordinating seaplane and yacht transfers, and managing your complete stay lifecycle from inquiry to checkout.</li>
+            <li><strong>Personalized Experiences</strong> — Tailoring in-suite amenities, curating bespoke dining menus, arranging private excursions, and calibrating wellness rituals to your individual preferences.</li>
+            <li><strong>Customer Support</strong> — Responding to concierge requests, resolving service inquiries, managing special occasion arrangements, and providing 24/7 VIP guest assistance across all properties.</li>
+            <li><strong>Service Improvements</strong> — Analyzing anonymized usage patterns to refine our hospitality standards, enhance our digital platforms, and develop new experiential offerings for our guests.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- C. Communications -->
+      <div class="policy-section" id="policy-communications">
+        <div class="policy-card">
+          <div class="policy-section-header">
+            <div class="policy-section-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div>
+              <div class="policy-section-label">Section C</div>
+              <h2 class="policy-section-title">Communications</h2>
+            </div>
+          </div>
+          <p class="policy-text">We communicate with our guests through carefully curated channels, ensuring every correspondence reflects the quiet luxury standards of VÉLORA RESERVE.</p>
+          <ul class="policy-list">
+            <li><strong>Booking Confirmations</strong> — Instant digital confirmations with detailed itineraries, suite specifications, and pre-arrival preparation guides delivered upon reservation completion.</li>
+            <li><strong>Reservation Updates</strong> — Timely notifications regarding booking status changes, approval confirmations, villa assignments, and check-in readiness communications.</li>
+            <li><strong>Guest Service Notifications</strong> — Personalized alerts for concierge requests, dining reservations, spa appointments, and curated experience schedules throughout your stay.</li>
+            <li><strong>Marketing Preferences</strong> — Optional subscription to our curated newsletter featuring seasonal highlights, exclusive villa offerings, and invitation-only retreat announcements. You may opt out at any time.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- D. Data Protection -->
+      <div class="policy-section" id="policy-data-protection">
+        <div class="policy-card">
+          <div class="policy-section-header">
+            <div class="policy-section-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            </div>
+            <div>
+              <div class="policy-section-label">Section D</div>
+              <h2 class="policy-section-title">Data Protection</h2>
+            </div>
+          </div>
+          <p class="policy-text">Protecting your personal data is a paramount responsibility at VÉLORA RESERVE. We employ enterprise-grade security infrastructure to safeguard every piece of information entrusted to us.</p>
+          <ul class="policy-list">
+            <li><strong>Secure Systems</strong> — All guest data is stored on hardened, access-controlled servers with multi-layered firewall protections and continuous intrusion detection monitoring.</li>
+            <li><strong>Encryption</strong> — Industry-standard TLS/SSL encryption protects all data in transit, while AES-256 encryption secures stored information across our digital platforms.</li>
+            <li><strong>Access Control</strong> — Strict role-based access policies ensure that only authorized personnel with legitimate business needs can access guest information, with comprehensive audit trails.</li>
+            <li><strong>Data Security Practices</strong> — Regular security assessments, vulnerability scanning, employee training programs, and compliance reviews maintain our commitment to data stewardship excellence.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- E. Cookies & Analytics -->
+      <div class="policy-section" id="policy-cookies">
+        <div class="policy-card">
+          <div class="policy-section-header">
+            <div class="policy-section-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            </div>
+            <div>
+              <div class="policy-section-label">Section E</div>
+              <h2 class="policy-section-title">Cookies &amp; Analytics</h2>
+            </div>
+          </div>
+          <p class="policy-text">Our digital platforms use minimal, purposeful tracking technologies to ensure a seamless and optimized browsing experience for our guests.</p>
+          <ul class="policy-list">
+            <li><strong>Website Optimization</strong> — Essential cookies maintain your session preferences, language selections, and browsing continuity to deliver a fluid, uninterrupted luxury digital experience.</li>
+            <li><strong>Analytics Tracking</strong> — We utilize anonymized analytics to understand how guests navigate our digital sanctuary, allowing us to refine content, improve user journeys, and enhance booking flows.</li>
+            <li><strong>Performance Monitoring</strong> — Technical performance cookies help us identify and resolve loading issues, ensuring our website delivers the same standard of excellence as our physical properties.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- F. Third-Party Services -->
+      <div class="policy-section" id="policy-third-party">
+        <div class="policy-card">
+          <div class="policy-section-header">
+            <div class="policy-section-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            </div>
+            <div>
+              <div class="policy-section-label">Section F</div>
+              <h2 class="policy-section-title">Third-Party Services</h2>
+            </div>
+          </div>
+          <p class="policy-text">To deliver our comprehensive luxury hospitality services, we partner with carefully vetted third-party providers who adhere to equivalent data protection standards.</p>
+          <ul class="policy-list">
+            <li><strong>Payment Providers</strong> — Secure, PCI-DSS compliant payment processing partners handle all financial transactions. VÉLORA RESERVE never stores complete payment card details on our systems.</li>
+            <li><strong>Reservation Systems</strong> — Integrated booking and property management platforms that coordinate availability, guest profiles, and stay logistics across our global portfolio of properties.</li>
+            <li><strong>Communication Platforms</strong> — Trusted email delivery, SMS notification, and WhatsApp concierge communication partners that enable seamless, real-time guest coordination worldwide.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- G. Guest Rights -->
+      <div class="policy-section" id="policy-guest-rights">
+        <div class="policy-card">
+          <div class="policy-section-header">
+            <div class="policy-section-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <div>
+              <div class="policy-section-label">Section G</div>
+              <h2 class="policy-section-title">Guest Rights</h2>
+            </div>
+          </div>
+          <p class="policy-text">As a valued guest of VÉLORA RESERVE, you maintain complete authority over your personal information. We respect and facilitate the following rights at all times.</p>
+          <ul class="policy-list">
+            <li><strong>Access Information</strong> — You may request a comprehensive summary of all personal data we hold about you, including reservation history, preference profiles, and communication records.</li>
+            <li><strong>Update Information</strong> — You have the right to correct, amend, or update any personal information at any time through your guest dashboard or by contacting our Privacy Concierge.</li>
+            <li><strong>Request Deletion</strong> — You may request the complete erasure of your personal data from our systems, subject to applicable legal retention obligations and active reservation commitments.</li>
+            <li><strong>Marketing Preferences</strong> — You can modify your communication preferences, opt out of promotional materials, or unsubscribe from newsletters at any time without affecting your guest experience.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- H. Contact Regarding Privacy -->
+      <div class="policy-section" id="policy-contact">
+        <div class="policy-card">
+          <div class="policy-section-header">
+            <div class="policy-section-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+            </div>
+            <div>
+              <div class="policy-section-label">Section H</div>
+              <h2 class="policy-section-title">Contact Regarding Privacy</h2>
+            </div>
+          </div>
+          <p class="policy-text">For any questions, concerns, or requests related to this Privacy Policy or the handling of your personal data, please reach out to our dedicated Privacy Concierge team. We are committed to responding within 48 hours.</p>
+          <div class="policy-contact-card">
+            <div class="policy-contact-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div>
+              <div class="policy-contact-label">Privacy Concierge</div>
+              <a href="mailto:privacy@velorareserve.com" class="policy-contact-email">privacy@velorareserve.com</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">
+          <svg class="brand-logo-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M12 2L14.85 8.15L21.6 9.15L16.7 13.93L17.85 20.65L12 17.5L6.15 20.65L7.3 13.93L2.4 9.15L9.15 8.15L12 2Z" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="12" cy="12" r="4" />
+          </svg>
+          <span class="brand-text-velora">VÉLORA</span><span class="brand-text-reserve">RESERVE</span>
+        </a>
+          <p>Where every moment is crafted, every view is a masterpiece, and every stay becomes a story.</p>
+          <div class="footer-socials">
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+            <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+            </a>
+            <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l11.733 16h4.267l-11.733 -16z"/><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"/></svg>
+            </a>
+            <a href="https://www.pinterest.com/" target="_blank" rel="noopener noreferrer" aria-label="Pinterest">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.27 2.68 7.9 6.47 9.3.11-.97.21-1.78.68-5.71.05-.42-.08-1.57-.08-1.57s-.17-.34-.17-.83c0-.78.45-1.36.99-1.36.47 0 .7.35.7.77 0 .47-.3 1.18-.46 1.83a.77.77 0 0 0 .79.96c.94 0 1.67-1 1.67-2.44 0-1.28-.92-2.17-2.22-2.17-1.52 0-2.41 1.14-2.41 2.31 0 .46.18.96.4 1.22.04.05.05.1.03.17l-.15.62c-.03.13-.1.17-.23.11-1.07-.5-1.72-2.07-1.72-3.32 0-3.1 2.21-5.19 5.66-5.19 3.09 0 5.28 2.2 5.28 4.95 0 3.07-1.93 5.54-4.62 5.54-.9 0-1.75-.47-2.04-1.02l-.56 2.1c-.2 1.05-.75 2.37-1.12 2.94C10.14 21.89 11.05 22 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-title">Explore</h4>
+          <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="suites.html">Our Suites</a>
+            <a href="experiences.html">Experiences</a>
+            <a href="destinations.html">Destinations</a>
+            <a href="gallery.html">Gallery</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-title">Company</h4>
+          <div class="footer-links">
+            <a href="about.html">Our Story</a>
+            <a href="reviews.html">Guest Reviews</a>
+            <a href="wedding.html">Weddings</a>
+            <a href="contact.html">Contact Us</a>
+            <a href="booking.html">Book Now</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-title">Contact</h4>
+          <div class="footer-contact-info">
+            <p>
+              <a href="mailto:concierge@velorareserve.com" aria-label="Email Concierge">
+                <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                concierge@velorareserve.com
+              </a>
+            </p>
+            <p>
+              <a href="tel:+919840012345" aria-label="Call Concierge">
+                <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                +91 98400 12345
+              </a>
+            </p>
+            <p>
+              <a href="contact.html" aria-label="Our Locations">
+                <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                Adyar, Chennai, India
+              </a>
+            </p>
+          </div>
+        </div>
+        <div class="footer-newsletter">
+          <h4 class="footer-title">Newsletter</h4>
+          <p class="newsletter-desc">Curated stories, sunset highlights, and villa private invites.</p>
+          <form class="newsletter-form" onsubmit="event.preventDefault(); this.innerHTML = '<p class=\'newsletter-desc\' style=\'color: var(--gold);\'>Curated invitation sent. Welcome to the Reserve.</p>';">
+            <div class="newsletter-input-wrap">
+              <input type="email" placeholder="Your Email Address" required class="newsletter-input">
+              <button type="submit" class="newsletter-btn">Subscribe</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2026 VÉLORA RESERVE. All rights reserved. Crafted with passion.</p>
+        <div class="footer-bottom-links">
+          <a href="privacy-policy.html">Privacy Policy</a>
+          <span class="separator">|</span>
+          <a href="terms-and-conditions.html">Terms &amp; Conditions</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="auth.js"></script>
+
+  <!-- Policy Section Scroll Reveal -->
+  <script>
+    (function() {
+      const sections = document.querySelectorAll('.policy-section');
+      if (!sections.length) return;
+
+      const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+      sections.forEach(function(section) {
+        observer.observe(section);
+      });
+    })();
+  </script>
+</body>
+</html>

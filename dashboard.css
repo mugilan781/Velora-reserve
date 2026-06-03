@@ -1356,7 +1356,28 @@
   }
 }
 
-@media (max-width: 1024px) {
+/* ---------- Desktop & Tablet Scroll Behavior (>= 768px) ---------- */
+@media (min-width: 768px) {
+  .dashboard-layout {
+    height: 100vh;
+    min-height: 100vh;
+    overflow: hidden;
+  }
+  .dash-sidebar {
+    height: 100%;
+    min-height: 0;
+    position: relative;
+    top: 0;
+  }
+  .dash-main {
+    height: 100%;
+    min-height: 0;
+    overflow-y: auto;
+  }
+}
+
+/* ---------- Mobile Drawer Behavior (<= 767px) ---------- */
+@media (max-width: 767px) {
   .dash-sidebar {
     position: fixed;
     left: -300px;
@@ -1377,7 +1398,10 @@
   .dash-sidebar-toggle {
     display: flex;
   }
+}
 
+/* ---------- Responsive Dashboard (<= 1024px) ---------- */
+@media (max-width: 1024px) {
   .dash-main {
     padding: var(--space-xl) var(--space-md);
   }
@@ -1661,5 +1685,57 @@
     background-size: 12px !important;
     padding-right: 24px !important;
   }
+
+  /* Admin Dashboard Mobile Centering Fixes */
+  #panel-admin-notifications > div[style*="grid-template-columns"],
+  #panel-analytics > div[style*="grid-template-columns"] {
+    grid-template-columns: 1fr !important;
+    width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    justify-content: center !important;
+    box-sizing: border-box !important;
+  }
+
+  #panel-admin-notifications .dash-glass-card,
+  #panel-analytics .dash-glass-card,
+  #panel-analytics .dash-overview-card {
+    margin: 0 auto !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
 }
+
+/* ============================================================
+   ADMIN DASHBOARD UI FIXES
+   ============================================================ */
+
+/* 1. Notification Center - Equal heights for the three columns */
+#panel-admin-notifications .dash-glass-card {
+  height: 100% !important;
+}
+
+/* 2. Analytics Page - Revenue Estimate fit */
+#ana-revenue-est {
+  font-size: clamp(1.1rem, 2.2vw, 1.8rem) !important;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+/* 3. Approvals Page - Decline button dimension harmonization */
+#panel-approvals .dash-delete-btn {
+  padding: 10px 24px !important;
+  font-size: var(--text-xs) !important;
+  letter-spacing: 0.15em !important;
+  font-weight: 600 !important;
+  border-radius: var(--radius-sm) !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  height: auto !important;
+}
+
 

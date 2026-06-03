@@ -3611,9 +3611,12 @@ input[type="date"]::-webkit-calendar-picker-indicator:hover {
 }
 
 .concierge-info-card:hover .concierge-info-icon {
-  background: var(--gold);
-  color: var(--midnight);
-  box-shadow: var(--shadow-glow);
+  background: rgba(214, 179, 106, 0.15);
+  color: var(--gold);
+  box-shadow: 0 0 15px rgba(214, 179, 106, 0.3);
+  position: relative;
+  z-index: 2;
+  opacity: 1;
 }
 
 .concierge-info-title {
@@ -6583,7 +6586,212 @@ html, body {
   }
 }
 
+/* ============================================================
+   RESPONSIVENESS PHASE 6 — BOOKING PAGE EXCLUSIVE REFINEMENTS
+   ============================================================ */
+@media (max-width: 767px) {
+  /* 1. Booking Page Section Spacing & Layout */
+  .booking-page .section {
+    padding: var(--space-xl) var(--space-md) !important; /* Cozy vertical space, comfortable left/right borders */
+  }
+  
+  .booking-page .booking-layout {
+    gap: var(--space-lg) !important; /* Reduce vertical spacing between wizard panels and pricing card when stacked */
+  }
 
+  /* 2. Wizard Progress Bar (Step Indicators) */
+  .booking-page .booking-step span:not(.step-number) {
+    display: none !important; /* Collapse labels for all screens <= 767px to prevent overflow wrap issues */
+  }
+  
+  .booking-page .booking-steps {
+    gap: var(--space-xs) !important;
+    margin-bottom: var(--space-lg) !important;
+    padding: 0 var(--space-xs) !important;
+  }
+  
+  .booking-page .step-connector {
+    width: 20px !important;
+    margin: 0 -8px !important;
+    top: -11px !important; /* Center connector line vertically with resized step badges on mobile */
+  }
 
+  /* 3. Stage 2 - Suite Selection Overrides */
+  .booking-page .suite-selection-list {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
 
+  .booking-page .suite-select-card {
+    flex-direction: column !important; /* Force clean vertical stack layout */
+    gap: var(--space-sm) !important;
+    padding: var(--space-sm) !important; /* Cozy padding */
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    border-radius: var(--radius-md) !important;
+  }
 
+  .booking-page .suite-select-img {
+    width: 100% !important;
+    height: 160px !important; /* Landscape cover for the suite image */
+    max-width: 100% !important;
+    object-fit: cover !important;
+    border-radius: var(--radius-sm) !important;
+  }
+
+  .booking-page .suite-select-info {
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .booking-page .suite-select-info div {
+    white-space: normal !important; /* Allow detail tokens (m², plunge pool, deck) to wrap nicely */
+    word-break: break-word !important;
+  }
+
+  /* Vertical Step Wizard Action Button Stacking */
+  .booking-page .step-panel .flex.gap-sm.mt-lg,
+  .booking-page .step-panel .flex.gap-sm.mt-xl {
+    flex-direction: column !important;
+    gap: var(--space-xs) !important;
+    width: 100% !important;
+  }
+
+  .booking-page .step-panel .flex.gap-sm.mt-lg button,
+  .booking-page .step-panel .flex.gap-sm.mt-xl button,
+  .booking-page .step-panel .flex.gap-sm.mt-lg a,
+  .booking-page .step-panel .flex.gap-sm.mt-xl a {
+    width: 100% !important;
+    flex: none !important;
+    justify-content: center !important;
+  }
+
+  /* 4. Stage 3 - Details Form & Enhancements */
+  .booking-page .form-row {
+    grid-template-columns: 1fr !important; /* Full vertical grid collapse */
+    gap: 0 !important;
+  }
+
+  .booking-page .form-group {
+    margin-bottom: var(--space-md) !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .booking-page .form-input,
+  .booking-page select.form-input,
+  .booking-page textarea.form-input,
+  .booking-page .form-input-luxury {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .booking-page .package-grid {
+    grid-template-columns: 1fr !important; /* Vertical column layout for package templates */
+    gap: var(--space-md) !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .booking-page .package-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .booking-page .package-title-row {
+    flex-wrap: wrap !important; /* Stack package name and stay premium rate if screen is tight */
+    gap: var(--space-xs) !important;
+  }
+  
+  .booking-page .package-card-title {
+    font-size: var(--text-sm) !important;
+  }
+
+  .booking-page .package-card-price {
+    font-size: 10px !important;
+    padding: 3px 8px !important;
+  }
+
+  /* 5. Stage 4 - Booking Summary / Confirmation */
+  .booking-page .confirmation-card {
+    padding: var(--space-md) !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .booking-page .booking-id-block {
+    display: flex !important;
+    flex-direction: column !important; /* Stack confirmation code fields vertically */
+    align-items: center !important;
+    gap: var(--space-md) !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    padding: var(--space-md) !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .booking-page .booking-id-block > div {
+    text-align: center !important;
+    width: 100% !important;
+  }
+
+  /* 6. Sanctuary Breakdown Card (Pricing Sidebar) */
+  .booking-page .pricing-summary-luxury {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    padding: var(--space-md) !important;
+    margin-top: var(--space-md) !important;
+  }
+
+  .booking-page .pricing-row-luxury {
+    flex-wrap: wrap !important; /* Wrap long pricing elements to prevent viewport overflow pushes */
+    gap: var(--space-xs) !important;
+    align-items: center !important;
+    padding: 10px 0 !important;
+  }
+
+  .booking-page .pricing-row-luxury span:last-child {
+    text-align: right !important;
+    word-break: break-word !important;
+  }
+
+  .booking-page .pricing-total-luxury {
+    flex-wrap: wrap !important;
+    gap: var(--space-xs) !important;
+    font-size: var(--text-lg) !important;
+    align-items: center !important;
+  }
+
+  .booking-page .pricing-summary-luxury .flex.flex-col.gap-sm p {
+    font-size: var(--text-xs) !important;
+    line-height: 1.4 !important;
+    display: flex !important;
+    align-items: flex-start !important; /* Symmetrical top align checks with text wrap lines */
+    gap: 6px !important;
+    white-space: normal !important;
+    word-break: break-word !important;
+  }
+}
+
+/* Booking Success Toast Alignment Fix for Mobile & Tablet */
+@media (max-width: 1024px) {
+  .luxury-toast {
+    right: auto !important;
+    left: 50% !important;
+    transform: translateX(-50%) translateY(30px) !important;
+    width: 90% !important;
+    max-width: 400px !important;
+    box-sizing: border-box !important;
+    text-align: center !important;
+  }
+  .luxury-toast.visible {
+    transform: translateX(-50%) translateY(0) !important;
+  }
+}

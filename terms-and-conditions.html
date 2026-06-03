@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terms &amp; Conditions — VÉLORA RESERVE</title>
+  <meta name="description" content="VÉLORA RESERVE Terms &amp; Conditions. Review the policies governing reservations, guest conduct, payments, cancellations, and use of our luxury hospitality services.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="auth.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✦</text></svg>">
+
+  <style>
+    /* ============================================================
+       VÉLORA RESERVE — Terms & Conditions Page Styles
+       ============================================================ */
+
+    /* ---------- Terms Hero ---------- */
+    .terms-hero {
+      position: relative;
+      min-height: 50vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+      background: linear-gradient(180deg, var(--midnight) 0%, var(--deep) 50%, var(--charcoal) 100%);
+    }
+
+    .terms-hero::before {
+      content: '';
+      position: absolute;
+      top: -30%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 800px;
+      height: 800px;
+      background: radial-gradient(circle, rgba(214, 179, 106, 0.06) 0%, transparent 65%);
+      pointer-events: none;
+    }
+
+    .terms-hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(214, 179, 106, 0.2), transparent);
+    }
+
+    .terms-hero-content {
+      position: relative;
+      z-index: 2;
+      padding: 140px 24px 80px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .terms-hero-ornament {
+      font-family: var(--font-ui);
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 24px;
+      opacity: 0;
+      animation: termsFadeUp 0.8s var(--ease-smooth) 0.2s forwards;
+    }
+
+    .terms-hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      font-weight: 700;
+      color: var(--ivory);
+      line-height: 1.15;
+      margin-bottom: 20px;
+      opacity: 0;
+      animation: termsFadeUp 0.8s var(--ease-smooth) 0.35s forwards;
+    }
+
+    .terms-hero-title em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    .terms-hero-description {
+      font-family: var(--font-heading);
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      color: rgba(248, 245, 240, 0.7);
+      font-weight: 300;
+      line-height: 1.7;
+      max-width: 640px;
+      margin: 0 auto;
+      opacity: 0;
+      animation: termsFadeUp 0.8s var(--ease-smooth) 0.5s forwards;
+    }
+
+    .terms-hero-line {
+      width: 60px;
+      height: 1px;
+      background: var(--gold);
+      margin: 28px auto 0;
+      opacity: 0;
+      animation: termsFadeUp 0.8s var(--ease-smooth) 0.65s forwards;
+    }
+
+    @keyframes termsFadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ---------- Terms Container ---------- */
+    .terms-container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ---------- Terms Body ---------- */
+    .terms-body {
+      background: var(--midnight);
+      padding: 80px 0 100px;
+    }
+
+    /* ---------- Last Updated Card ---------- */
+    .terms-updated-card {
+      background: rgba(214, 179, 106, 0.04);
+      border: 1px solid rgba(214, 179, 106, 0.12);
+      border-radius: 12px;
+      padding: 20px 28px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 56px;
+      opacity: 0;
+      animation: termsFadeUp 0.6s var(--ease-smooth) 0.8s forwards;
+    }
+
+    .terms-updated-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      background: rgba(214, 179, 106, 0.08);
+      border: 1px solid rgba(214, 179, 106, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .terms-updated-icon svg {
+      width: 16px;
+      height: 16px;
+      color: var(--gold);
+      stroke-width: 1.5;
+    }
+
+    .terms-updated-label {
+      font-family: var(--font-ui);
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gray);
+    }
+
+    .terms-updated-date {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      color: var(--ivory);
+      font-weight: 600;
+    }
+
+    /* ---------- Terms Section ---------- */
+    .terms-section {
+      margin-bottom: 40px;
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.6s var(--ease-smooth), transform 0.6s var(--ease-smooth);
+    }
+
+    .terms-section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .terms-card {
+      background: rgba(255, 255, 255, 0.02);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--glass-border);
+      border-radius: 16px;
+      padding: 36px;
+      transition: border-color 0.3s var(--ease-luxury);
+    }
+
+    .terms-card:hover {
+      border-color: rgba(214, 179, 106, 0.2);
+    }
+
+    /* Section Header */
+    .terms-section-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 24px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .terms-section-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background: rgba(214, 179, 106, 0.08);
+      border: 1px solid rgba(214, 179, 106, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .terms-section-icon svg {
+      width: 20px;
+      height: 20px;
+      color: var(--gold);
+      stroke-width: 1.5;
+    }
+
+    .terms-section-label {
+      font-family: var(--font-ui);
+      font-size: 0.6rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 4px;
+    }
+
+    .terms-section-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+      font-weight: 600;
+      color: var(--ivory);
+    }
+
+    /* Section Content */
+    .terms-text {
+      font-family: var(--font-body);
+      font-size: 0.92rem;
+      color: rgba(248, 245, 240, 0.7);
+      line-height: 1.85;
+      margin-bottom: 20px;
+    }
+
+    .terms-text:last-child {
+      margin-bottom: 0;
+    }
+
+    .terms-text a {
+      color: var(--gold);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(214, 179, 106, 0.3);
+      transition: color 0.3s var(--ease-luxury), border-color 0.3s var(--ease-luxury);
+    }
+
+    .terms-text a:hover {
+      color: var(--gold-light);
+      border-color: var(--gold-light);
+    }
+
+    .terms-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 20px;
+    }
+
+    .terms-list:last-child {
+      margin-bottom: 0;
+    }
+
+    .terms-list li {
+      font-family: var(--font-body);
+      font-size: 0.92rem;
+      color: rgba(248, 245, 240, 0.7);
+      line-height: 1.85;
+      padding: 6px 0 6px 28px;
+      position: relative;
+    }
+
+    .terms-list li::before {
+      content: '✦';
+      position: absolute;
+      left: 0;
+      top: 6px;
+      color: var(--gold);
+      font-size: 0.6rem;
+    }
+
+    /* Contact Card */
+    .terms-contact-card {
+      background: rgba(214, 179, 106, 0.04);
+      border: 1px solid rgba(214, 179, 106, 0.15);
+      border-radius: 12px;
+      padding: 28px;
+      display: flex;
+      gap: 32px;
+      margin-top: 16px;
+      flex-wrap: wrap;
+    }
+
+    .terms-contact-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .terms-contact-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: rgba(214, 179, 106, 0.08);
+      border: 1px solid rgba(214, 179, 106, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .terms-contact-icon svg {
+      width: 20px;
+      height: 20px;
+      color: var(--gold);
+      stroke-width: 1.5;
+    }
+
+    .terms-contact-label {
+      font-family: var(--font-ui);
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gray);
+      margin-bottom: 4px;
+    }
+
+    .terms-contact-value {
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      color: var(--gold);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s var(--ease-luxury);
+    }
+
+    .terms-contact-value:hover {
+      color: var(--gold-light);
+    }
+
+    /* ---------- Responsive ---------- */
+    @media (max-width: 768px) {
+      .terms-hero-content {
+        padding: 120px 20px 60px;
+      }
+
+      .terms-card {
+        padding: 24px 20px;
+      }
+
+      .terms-section-header {
+        gap: 12px;
+      }
+
+      .terms-section-icon {
+        width: 38px;
+        height: 38px;
+      }
+
+      .terms-section-icon svg {
+        width: 16px;
+        height: 16px;
+      }
+
+      .terms-updated-card {
+        padding: 16px 20px;
+        gap: 12px;
+      }
+
+      .terms-contact-card {
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+      }
+
+      .terms-body {
+        padding: 50px 0 70px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .terms-hero {
+        min-height: 45vh;
+      }
+
+      .terms-hero-content {
+        padding: 110px 16px 50px;
+      }
+
+      .terms-card {
+        padding: 20px 16px;
+        border-radius: 12px;
+      }
+
+      .terms-updated-card {
+        flex-direction: column;
+        text-align: center;
+        gap: 8px;
+      }
+
+      .terms-list li {
+        padding-left: 22px;
+      }
+
+      .terms-contact-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Preloader -->
+  <div class="preloader"><div class="preloader-logo">VÉLORA</div><div class="preloader-line"></div></div>
+  <div class="cursor-dot"></div><div class="cursor-ring"></div>
+
+  <!-- Navigation -->
+  <nav class="nav"><a href="index.html" class="nav-logo">
+          <svg class="brand-logo-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M12 2L14.85 8.15L21.6 9.15L16.7 13.93L17.85 20.65L12 17.5L6.15 20.65L7.3 13.93L2.4 9.15L9.15 8.15L12 2Z" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="12" cy="12" r="4" />
+          </svg>
+          <span class="brand-text-velora">VÉLORA</span><span class="brand-text-reserve">RESERVE</span>
+        </a>
+        <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="experiences.html">Experiences</a>
+      <div class="nav-dropdown-wrapper">
+        <a href="suites.html" class="nav-dropdown-toggle">Suites <span class="arrow">▼</span></a>
+        <div class="nav-dropdown-menu">
+          <a href="suites.html">Suites</a>
+          <a href="destinations.html">Destinations</a>
+          <a href="sunsets.html">Sunsets</a>
+          <a href="wedding.html">Weddings</a>
+        </div>
+      </div>
+      <a href="gallery.html">Gallery</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="contact.html">Contact</a>
+      <div class="nav-profile-wrap">
+        <button class="nav-profile-btn" aria-label="Profile Menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </button>
+        <div class="nav-profile-dropdown"></div>
+      </div>
+      <a href="booking.html" class="nav-book-btn">Book Now</a>
+    </div>
+    <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+  </nav>
+  <div class="mobile-nav" id="mobile-nav"><a href="index.html">Home</a><a href="about.html">About</a><a href="experiences.html">Experiences</a><a href="suites.html">Suites</a><a href="destinations.html">Destinations</a><a href="sunsets.html">Sunsets</a><a href="wedding.html">Weddings</a><a href="gallery.html">Gallery</a><a href="reviews.html">Reviews</a><a href="contact.html">Contact</a><a href="booking.html">Book Now</a></div>
+
+  <!-- ============ HERO ============ -->
+  <section class="terms-hero">
+    <div class="terms-hero-content">
+      <p class="terms-hero-ornament">✦ Legal ✦</p>
+      <h1 class="terms-hero-title">Terms &amp; <em>Conditions</em></h1>
+      <p class="terms-hero-description">These terms govern the use of VÉLORA RESERVE services, reservations, experiences, and digital platforms.</p>
+      <div class="terms-hero-line"></div>
+    </div>
+  </section>
+
+  <!-- ============ TERMS BODY ============ -->
+  <main class="terms-body">
+    <div class="terms-container">
+
+      <!-- Last Updated -->
+      <div class="terms-updated-card">
+        <div class="terms-updated-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <div>
+          <div class="terms-updated-label">Last Updated</div>
+          <div class="terms-updated-date">June 2026</div>
+        </div>
+      </div>
+
+      <!-- A. Acceptance of Terms -->
+      <div class="terms-section" id="terms-acceptance">
+        <div class="terms-card">
+          <div class="terms-section-header">
+            <div class="terms-section-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            </div>
+            <div>
+              <div class="terms-section-label">Section A</div>
+              <h2 class="terms-section-title">Acceptance of Terms</h2>
+            </div>
+          </div>
+          <p class="terms-text">By accessing, browsing, or using the VÉLORA RESERVE website, mobile platforms, or any of our luxury hospitality services, you acknowledge that you have read, understood, and agree to be bound by these Terms &amp; Conditions in their entirety.</p>
+          <ul class="terms-list">
+            <li><strong>Use of Website Implies Acceptance</strong> — Your continued use of velorareserve.com and its associated digital platforms constitutes full acceptance of these terms. If you do not agree with any provision, we respectfully ask that you discontinue use of our services.</li>
+            <li><strong>Agreement to Comply with Policies</strong> — You agree to comply with all applicable VÉLORA RESERVE policies, including our Privacy Policy, resort guidelines, and local regulations governing the destinations where our properties operate.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- B. Reservation Policies -->
+      <div class="terms-section" id="terms-reservations">
+        <div class="terms-card">
+          <div class="terms-section-header">
+            <div class="terms-section-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            </div>
+            <div>
+              <div class="terms-section-label">Section B</div>
+              <h2 class="terms-section-title">Reservation Policies</h2>
+            </div>
+          </div>
+          <p class="terms-text">All reservations at VÉLORA RESERVE are subject to availability and confirmation by our dedicated reservations team. We are committed to delivering a seamless booking experience worthy of our luxury hospitality standards.</p>
+          <ul class="terms-list">
+            <li><strong>Reservation Requests</strong> — Submitting a booking form constitutes a reservation request, not a confirmed booking. Our concierge team reviews each request to ensure your preferred sanctuary, dates, and bespoke requirements can be accommodated to perfection.</li>
+            <li><strong>Confirmation Procedures</strong> — A reservation is confirmed only upon receipt of a written confirmation from VÉLORA RESERVE, accompanied by a unique Booking Reference and Tracking ID. Guests will receive confirmation via their registered email address within 24–48 hours.</li>
+            <li><strong>Guest Responsibilities</strong> — Guests are responsible for providing accurate personal details, valid identification documents, and truthful special requirement information. Inaccurate information may result in service limitations or reservation adjustments.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- C. Payment & Billing -->
+      <div class="terms-section" id="terms-payment">
+        <div class="terms-card">
+          <div class="terms-section-header">
+            <div class="terms-section-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+            </div>
+            <div>
+              <div class="terms-section-label">Section C</div>
+              <h2 class="terms-section-title">Payment &amp; Billing</h2>
+            </div>
+          </div>
+          <p class="terms-text">VÉLORA RESERVE maintains transparent and secure payment procedures designed to protect our guests while ensuring seamless financial processing across all properties.</p>
+          <ul class="terms-list">
+            <li><strong>Deposit Requirements</strong> — A non-refundable deposit of 30% of the total reservation value is required at the time of booking confirmation. The remaining balance is due 14 days prior to your scheduled arrival date.</li>
+            <li><strong>Payment Methods</strong> — We accept major international credit and debit cards (Visa, Mastercard, American Express), bank wire transfers, and select digital payment platforms. All transactions are processed through PCI-DSS compliant payment gateways.</li>
+            <li><strong>Currency &amp; Pricing</strong> — All prices are quoted in Indian Rupees (₹ INR) unless otherwise specified. Pricing is subject to applicable luxury resort taxes (12% GST) and service charges as displayed during the booking process.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- D. Cancellation & Refund Policy -->
+      <div class="terms-section" id="terms-cancellation">
+        <div class="terms-card">
+          <div class="terms-section-header">
+            <div class="terms-section-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+            </div>
+            <div>
+              <div class="terms-section-label">Section D</div>
+              <h2 class="terms-section-title">Cancellation &amp; Refund Policy</h2>
+            </div>
+          </div>
+          <p class="terms-text">We understand that plans may change. VÉLORA RESERVE offers a structured cancellation policy that balances guest flexibility with the exclusivity of our limited-capacity sanctuaries.</p>
+          <ul class="terms-list">
+            <li><strong>Cancellation Windows</strong> — Cancellations made 30 or more days prior to arrival receive a full refund minus the non-refundable deposit. Cancellations within 15–29 days incur a 50% charge. Cancellations within 14 days of arrival are non-refundable.</li>
+            <li><strong>Refund Eligibility</strong> — Eligible refunds are processed within 10–14 business days to the original payment method. Refund processing times may vary depending on your financial institution. Resort credits may be offered as an alternative.</li>
+            <li><strong>Modification Requests</strong> — Date changes and suite upgrades are accommodated subject to availability, with no additional fees if requested 14 or more days before arrival. Modifications within 14 days may incur administrative charges.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- E. Guest Conduct -->
+      <div class="terms-section" id="terms-conduct">
+        <div class="terms-card">
+          <div class="terms-section-header">
+            <div class="terms-section-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <div>
+              <div class="terms-section-label">Section E</div>
+              <h2 class="terms-section-title">Guest Conduct</h2>
+            </div>
+          </div>
+          <p class="terms-text">VÉLORA RESERVE is a sanctuary of peace, elegance, and mutual respect. We invite all guests to uphold the serene atmosphere that defines our properties and enriches the experience of every visitor.</p>
+          <ul class="terms-list">
+            <li><strong>Respectful Behavior</strong> — Guests are expected to treat fellow guests, staff, and the local community with courtesy and respect. Disruptive, offensive, or harmful behavior may result in the termination of your stay without refund.</li>
+            <li><strong>Property Care</strong> — Guests are responsible for maintaining the condition of their assigned suite, villa, and shared resort facilities. Any damage beyond normal wear will be assessed and charged to the guest's account at replacement value.</li>
+            <li><strong>Compliance with Resort Guidelines</strong> — All guests must adhere to posted resort regulations, including quiet hours (10:00 PM – 7:00 AM), designated smoking areas, pool safety protocols, marine conservation zones, and dress code requirements for dining venues.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- F. Resort Experiences -->
+      <div class="terms-section" id="terms-experiences">
+        <div class="terms-card">
+          <div class="terms-section-header">
+            <div class="terms-section-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+            </div>
+            <div>
+              <div class="terms-section-label">Section F</div>
+              <h2 class="terms-section-title">Resort Experiences</h2>
+            </div>
+          </div>
+          <p class="terms-text">VÉLORA RESERVE curates an extraordinary portfolio of bespoke experiences across all properties. While we strive to deliver every planned activity, certain natural and operational factors may require adjustments.</p>
+          <ul class="terms-list">
+            <li><strong>Activity Availability</strong> — All resort experiences, excursions, and curated activities are subject to availability, seasonal conditions, and minimum participation requirements. Advance reservations through your Butler Alchemist are recommended.</li>
+            <li><strong>Weather-Related Changes</strong> — Outdoor activities including sunset cruises, snorkeling expeditions, seaplane transfers, and beachfront dining may be modified, rescheduled, or cancelled due to adverse weather conditions. Guest safety is our absolute priority.</li>
+            <li><strong>Schedule Modifications</strong> — VÉLORA RESERVE reserves the right to modify experience schedules, itineraries, and activity details to optimize guest enjoyment and safety. Guests will be notified of any changes through their dedicated concierge.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- G. Intellectual Property -->
+      <div class="terms-section" id="terms-ip">
+        <div class="terms-card">
+          <div class="terms-section-header">
+            <div class="terms-section-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <div>
+              <div class="terms-section-label">Section G</div>
+              <h2 class="terms-section-title">Intellectual Property</h2>
+            </div>
+          </div>
+          <p class="terms-text">All creative, visual, and textual content presented on the VÉLORA RESERVE digital platforms is the exclusive intellectual property of VÉLORA RESERVE and its affiliated partners.</p>
+          <ul class="terms-list">
+            <li><strong>Website Content Ownership</strong> — All text, editorial content, design elements, user interface components, and software code on velorareserve.com are owned by VÉLORA RESERVE and protected under applicable intellectual property laws.</li>
+            <li><strong>Images &amp; Branding Protection</strong> — All photographs, illustrations, logos, brand marks, and visual identity elements are proprietary assets. Unauthorized reproduction, distribution, or modification is strictly prohibited and subject to legal action.</li>
+            <li><strong>Usage Restrictions</strong> — Guests may not copy, reproduce, republish, upload, post, transmit, or distribute any content from our platforms for commercial purposes without prior written authorization from VÉLORA RESERVE.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- H. Limitation of Liability -->
+      <div class="terms-section" id="terms-liability">
+        <div class="terms-card">
+          <div class="terms-section-header">
+            <div class="terms-section-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <div>
+              <div class="terms-section-label">Section H</div>
+              <h2 class="terms-section-title">Limitation of Liability</h2>
+            </div>
+          </div>
+          <p class="terms-text">While VÉLORA RESERVE strives to deliver flawless luxury hospitality, certain circumstances beyond our direct control may affect the guest experience. Our liability is governed as follows.</p>
+          <ul class="terms-list">
+            <li><strong>Service Interruptions</strong> — VÉLORA RESERVE shall not be held liable for temporary service interruptions caused by system maintenance, utility outages, or infrastructure upgrades required to maintain our property standards.</li>
+            <li><strong>External Circumstances</strong> — We are not liable for disruptions caused by force majeure events including natural disasters, pandemics, political instability, travel restrictions, or other extraordinary circumstances beyond our reasonable control.</li>
+            <li><strong>Third-Party Services</strong> — VÉLORA RESERVE is not responsible for the quality, safety, or reliability of third-party services accessed through our recommendations, including independent tour operators, airlines, and external transportation providers.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- I. Privacy & Data Protection -->
+      <div class="terms-section" id="terms-privacy">
+        <div class="terms-card">
+          <div class="terms-section-header">
+            <div class="terms-section-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            </div>
+            <div>
+              <div class="terms-section-label">Section I</div>
+              <h2 class="terms-section-title">Privacy &amp; Data Protection</h2>
+            </div>
+          </div>
+          <p class="terms-text">Your privacy is a fundamental commitment at VÉLORA RESERVE. Our comprehensive approach to data collection, usage, and protection is detailed in our dedicated Privacy Policy.</p>
+          <p class="terms-text">For complete information on how we collect, use, store, and protect your personal data, please review our <a href="privacy-policy.html">Privacy Policy</a>.</p>
+          <ul class="terms-list">
+            <li><strong>Guest Data Handling</strong> — All personal information provided during reservation, check-in, and stay customization is handled in strict accordance with our Privacy Policy and applicable data protection regulations, including India's Digital Personal Data Protection Act.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- J. Governing Law -->
+      <div class="terms-section" id="terms-governing-law">
+        <div class="terms-card">
+          <div class="terms-section-header">
+            <div class="terms-section-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            </div>
+            <div>
+              <div class="terms-section-label">Section J</div>
+              <h2 class="terms-section-title">Governing Law</h2>
+            </div>
+          </div>
+          <p class="terms-text">These Terms &amp; Conditions are governed by and construed in accordance with the laws of the Republic of India, without regard to its conflict of law provisions.</p>
+          <ul class="terms-list">
+            <li><strong>Applicable Legal Framework</strong> — All matters arising from or relating to these terms shall be governed exclusively by Indian law, with specific reference to the Consumer Protection Act, 2019, and the Information Technology Act, 2000, as applicable.</li>
+            <li><strong>Dispute Resolution Procedures</strong> — In the event of any dispute, VÉLORA RESERVE and the guest agree to first attempt resolution through good-faith mediation. If mediation is unsuccessful, disputes shall be submitted to the exclusive jurisdiction of the courts in Chennai, Tamil Nadu, India.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- K. Contact Information -->
+      <div class="terms-section" id="terms-contact">
+        <div class="terms-card">
+          <div class="terms-section-header">
+            <div class="terms-section-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+            </div>
+            <div>
+              <div class="terms-section-label">Section K</div>
+              <h2 class="terms-section-title">Contact Information</h2>
+            </div>
+          </div>
+          <p class="terms-text">For any questions, clarifications, or concerns regarding these Terms &amp; Conditions, please contact our dedicated Legal &amp; Compliance team. We are committed to providing a response within 48 business hours.</p>
+          <div class="terms-contact-card">
+            <div class="terms-contact-item">
+              <div class="terms-contact-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </div>
+              <div>
+                <div class="terms-contact-label">Legal Department</div>
+                <a href="mailto:legal@velorareserve.com" class="terms-contact-value">legal@velorareserve.com</a>
+              </div>
+            </div>
+            <div class="terms-contact-item">
+              <div class="terms-contact-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              </div>
+              <div>
+                <div class="terms-contact-label">Reservations Line</div>
+                <a href="tel:+919840012345" class="terms-contact-value">+91 98400 12345</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">
+          <svg class="brand-logo-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M12 2L14.85 8.15L21.6 9.15L16.7 13.93L17.85 20.65L12 17.5L6.15 20.65L7.3 13.93L2.4 9.15L9.15 8.15L12 2Z" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="12" cy="12" r="4" />
+          </svg>
+          <span class="brand-text-velora">VÉLORA</span><span class="brand-text-reserve">RESERVE</span>
+        </a>
+          <p>Where every moment is crafted, every view is a masterpiece, and every stay becomes a story.</p>
+          <div class="footer-socials">
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+            <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+            </a>
+            <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l11.733 16h4.267l-11.733 -16z"/><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"/></svg>
+            </a>
+            <a href="https://www.pinterest.com/" target="_blank" rel="noopener noreferrer" aria-label="Pinterest">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.27 2.68 7.9 6.47 9.3.11-.97.21-1.78.68-5.71.05-.42-.08-1.57-.08-1.57s-.17-.34-.17-.83c0-.78.45-1.36.99-1.36.47 0 .7.35.7.77 0 .47-.3 1.18-.46 1.83a.77.77 0 0 0 .79.96c.94 0 1.67-1 1.67-2.44 0-1.28-.92-2.17-2.22-2.17-1.52 0-2.41 1.14-2.41 2.31 0 .46.18.96.4 1.22.04.05.05.1.03.17l-.15.62c-.03.13-.1.17-.23.11-1.07-.5-1.72-2.07-1.72-3.32 0-3.1 2.21-5.19 5.66-5.19 3.09 0 5.28 2.2 5.28 4.95 0 3.07-1.93 5.54-4.62 5.54-.9 0-1.75-.47-2.04-1.02l-.56 2.1c-.2 1.05-.75 2.37-1.12 2.94C10.14 21.89 11.05 22 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-title">Explore</h4>
+          <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="suites.html">Our Suites</a>
+            <a href="experiences.html">Experiences</a>
+            <a href="destinations.html">Destinations</a>
+            <a href="gallery.html">Gallery</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-title">Company</h4>
+          <div class="footer-links">
+            <a href="about.html">Our Story</a>
+            <a href="reviews.html">Guest Reviews</a>
+            <a href="wedding.html">Weddings</a>
+            <a href="contact.html">Contact Us</a>
+            <a href="booking.html">Book Now</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-title">Contact</h4>
+          <div class="footer-contact-info">
+            <p>
+              <a href="mailto:concierge@velorareserve.com" aria-label="Email Concierge">
+                <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                concierge@velorareserve.com
+              </a>
+            </p>
+            <p>
+              <a href="tel:+919840012345" aria-label="Call Concierge">
+                <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                +91 98400 12345
+              </a>
+            </p>
+            <p>
+              <a href="contact.html" aria-label="Our Locations">
+                <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                Adyar, Chennai, India
+              </a>
+            </p>
+          </div>
+        </div>
+        <div class="footer-newsletter">
+          <h4 class="footer-title">Newsletter</h4>
+          <p class="newsletter-desc">Curated stories, sunset highlights, and villa private invites.</p>
+          <form class="newsletter-form" onsubmit="event.preventDefault(); this.innerHTML = '<p class=\'newsletter-desc\' style=\'color: var(--gold);\'>Curated invitation sent. Welcome to the Reserve.</p>';">
+            <div class="newsletter-input-wrap">
+              <input type="email" placeholder="Your Email Address" required class="newsletter-input">
+              <button type="submit" class="newsletter-btn">Subscribe</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2026 VÉLORA RESERVE. All rights reserved. Crafted with passion.</p>
+        <div class="footer-bottom-links">
+          <a href="privacy-policy.html">Privacy Policy</a>
+          <span class="separator">|</span>
+          <a href="terms-and-conditions.html">Terms &amp; Conditions</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="auth.js"></script>
+
+  <!-- Terms Section Scroll Reveal -->
+  <script>
+    (function() {
+      const sections = document.querySelectorAll('.terms-section');
+      if (!sections.length) return;
+
+      const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+      sections.forEach(function(section) {
+        observer.observe(section);
+      });
+    })();
+  </script>
+</body>
+</html>
