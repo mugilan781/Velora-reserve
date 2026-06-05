@@ -456,7 +456,7 @@ document.addEventListener('DOMContentLoaded', () => {
         ${list.map(r => `
           <div class="dash-review-item">
             <div class="dash-review-header">
-              <div class="dash-review-stars">${'★'.repeat(r.rating)}${'☆'.repeat(5 - r.rating)}</div>
+              <div class="dash-review-stars">${Array.from({length:5},(_, i) => `<svg viewBox="0 0 24 24" style="width:0.9rem;height:0.9rem;${i < r.rating ? 'fill:var(--gold);stroke:var(--gold);' : 'fill:none;stroke:var(--glass-border);'}stroke-width:1.5;"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>`).join('')}</div>
               <div class="dash-review-date">${formatDate(r.time)}</div>
             </div>
             <div class="dash-review-property">${r.property}</div>
@@ -483,14 +483,16 @@ document.addEventListener('DOMContentLoaded', () => {
         const val = parseInt(star.getAttribute('data-value'));
         starContainer.querySelectorAll('.dash-star').forEach(s => {
           const sv = parseInt(s.getAttribute('data-value'));
-          s.style.color = sv <= val ? 'var(--gold)' : '';
+          const svg = s.querySelector('svg');
+          if (svg) { svg.style.fill = sv <= val ? 'var(--gold)' : ''; svg.style.stroke = sv <= val ? 'var(--gold)' : ''; }
         });
       });
       star.addEventListener('mouseleave', () => {
         const current = parseInt(ratingInput.value);
         starContainer.querySelectorAll('.dash-star').forEach(s => {
           const sv = parseInt(s.getAttribute('data-value'));
-          s.style.color = sv <= current ? 'var(--gold)' : '';
+          const svg = s.querySelector('svg');
+          if (svg) { svg.style.fill = sv <= current ? 'var(--gold)' : ''; svg.style.stroke = sv <= current ? 'var(--gold)' : ''; }
         });
       });
     });
@@ -516,7 +518,7 @@ document.addEventListener('DOMContentLoaded', () => {
       renderNotifications();
       reviewForm.reset();
       ratingInput.value = 0;
-      starContainer.querySelectorAll('.dash-star').forEach(s => { s.classList.remove('active'); s.style.color = ''; });
+      starContainer.querySelectorAll('.dash-star').forEach(s => { s.classList.remove('active'); const svg = s.querySelector('svg'); if (svg) { svg.style.fill = ''; svg.style.stroke = ''; } });
       showToast('✦ Review submitted successfully');
     });
   }
@@ -1446,7 +1448,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <div class="dash-card-header"><h3 class="dash-card-title">Pending Reviews</h3><span class="dash-card-action">${pending.length} pending</span></div>
         <div class="dash-review-list">${pending.map(r => `
           <div class="dash-review-item">
-            <div class="dash-review-header"><div class="dash-review-stars">${'★'.repeat(r.rating)}${'☆'.repeat(5 - r.rating)}</div><div class="dash-review-date">${formatDate(r.time)}</div></div>
+            <div class="dash-review-header"><div class="dash-review-stars">${Array.from({length:5},(_,i) => `<svg viewBox="0 0 24 24" style="width:0.9rem;height:0.9rem;${i < r.rating ? 'fill:var(--gold);stroke:var(--gold);' : 'fill:none;stroke:var(--glass-border);'}stroke-width:1.5;"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>`).join('')}</div><div class="dash-review-date">${formatDate(r.time)}</div></div>
             <div class="dash-review-property">${r.property} — ${r.author}</div>
             <div class="dash-review-text">"${r.text}"</div>
             <div style="display:flex;gap:var(--space-sm);margin-top:var(--space-md);">
@@ -1463,7 +1465,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <div class="dash-card-header"><h3 class="dash-card-title">Approved Reviews</h3><span class="dash-card-action">${approved.length} published</span></div>
         <div class="dash-review-list">${approved.map(r => `
           <div class="dash-review-item">
-            <div class="dash-review-header"><div class="dash-review-stars">${'★'.repeat(r.rating)}${'☆'.repeat(5 - r.rating)}</div><div class="dash-review-date">${formatDate(r.time)}</div></div>
+            <div class="dash-review-header"><div class="dash-review-stars">${Array.from({length:5},(_,i) => `<svg viewBox="0 0 24 24" style="width:0.9rem;height:0.9rem;${i < r.rating ? 'fill:var(--gold);stroke:var(--gold);' : 'fill:none;stroke:var(--glass-border);'}stroke-width:1.5;"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>`).join('')}</div><div class="dash-review-date">${formatDate(r.time)}</div></div>
             <div class="dash-review-property">${r.property} — ${r.author}</div>
             <div class="dash-review-text">"${r.text}"</div>
             <div style="margin-top:var(--space-sm);"><span class="dash-reservation-status confirmed">Published</span></div>

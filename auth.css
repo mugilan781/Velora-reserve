@@ -574,7 +574,7 @@
 }
 
 .auth-strength-bar.weak { background: var(--error); }
-.auth-strength-bar.medium { background: #FBBF24; }
+.auth-strength-bar.medium { background: var(--color-warning); }
 .auth-strength-bar.strong { background: var(--success); }
 
 .auth-strength-text {
@@ -1154,3 +1154,73 @@
   width: 18px;
   height: 18px;
 }
+
+/* ---------- Back Button ---------- */
+.auth-back-btn {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  font-family: var(--font-ui);
+  font-size: var(--text-xs);
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 8px 16px;
+  border-radius: var(--radius-sm);
+  z-index: 10;
+  transition: all var(--duration-fast) var(--ease-luxury);
+  
+  /* Dark Mode Default style */
+  color: var(--gold);
+  border: 1px solid rgba(214, 179, 106, 0.25);
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.auth-back-btn svg {
+  width: 14px;
+  height: 14px;
+  stroke: currentColor;
+  stroke-width: 2;
+  transition: transform var(--duration-fast) var(--ease-luxury);
+}
+
+/* Hover state - Dark Mode */
+.auth-back-btn:hover {
+  color: var(--gold-light);
+  border-color: rgba(214, 179, 106, 0.5);
+  background: rgba(214, 179, 106, 0.08);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.auth-back-btn:hover svg {
+  transform: translateX(-3px);
+}
+
+/* ---------- Light Mode Overrides ---------- */
+[data-theme="light"] .auth-back-btn {
+  color: var(--gold);
+  border-color: rgba(181, 138, 61, 0.25);
+  background: rgba(181, 138, 61, 0.02);
+}
+
+[data-theme="light"] .auth-back-btn:hover {
+  color: var(--gold-dark);
+  border-color: rgba(181, 138, 61, 0.5);
+  background: rgba(181, 138, 61, 0.08);
+  box-shadow: 0 4px 15px rgba(181, 138, 61, 0.05);
+}
+
+/* Responsive spacing */
+@media (max-width: 768px) {
+  .auth-back-btn {
+    top: 20px;
+    left: 20px;
+  }
+}
+

@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="auth.css">
   <link rel="stylesheet" href="dashboard.css">
+  <link rel="stylesheet" href="theme.css">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✦</text></svg>">
 </head>
 <body>
@@ -433,11 +434,11 @@
             <div class="dash-settings-group">
               <label class="dash-settings-label">Rating</label>
               <div class="dash-star-rating" id="review-stars">
-                <span class="dash-star" data-value="1">★</span>
-                <span class="dash-star" data-value="2">★</span>
-                <span class="dash-star" data-value="3">★</span>
-                <span class="dash-star" data-value="4">★</span>
-                <span class="dash-star" data-value="5">★</span>
+                <span class="dash-star" data-value="1"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span>
+                <span class="dash-star" data-value="2"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span>
+                <span class="dash-star" data-value="3"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span>
+                <span class="dash-star" data-value="4"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span>
+                <span class="dash-star" data-value="5"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span>
               </div>
               <input type="hidden" id="review-rating" value="0">
             </div>
@@ -596,6 +597,7 @@
   <!-- Toast Notification -->
   <div id="dash-toast" class="dash-toast"></div>
 
+  <script src="theme.js"></script>
   <script src="script.js"></script>
   <script src="auth.js"></script>
   <script src="dashboard.js"></script>

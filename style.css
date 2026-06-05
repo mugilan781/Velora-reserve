@@ -23,6 +23,21 @@
   --deep: #0F0F14;
   --success: #4ADE80;
   --error: #F87171;
+  --warning: #FBBF24;
+
+  /* Semantic Color Aliases */
+  --color-primary: var(--gold);
+  --color-secondary: var(--ivory);
+  --color-accent: var(--gold-light);
+  --color-background: var(--midnight);
+  --color-surface: var(--charcoal);
+  --color-text-primary: var(--ivory);
+  --color-text-secondary: var(--gray);
+  --color-border: var(--glass-border);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-error: var(--error);
+  --color-text-muted: #52525B;
 
   /* Typography */
   --font-display: 'Playfair Display', Georgia, serif;
@@ -43,6 +58,8 @@
   --text-hero: clamp(2.375rem, 5.5vw, 4.5rem);
 
   /* Spacing */
+  --space-3xs: 0.125rem;
+  --space-2xs: 0.25rem;
   --space-xs: 0.5rem;
   --space-sm: 1rem;
   --space-md: 1.5rem;
@@ -767,7 +784,7 @@ input, textarea, select {
 }
 
 .section-ivory .section-description {
-  color: #52525B;
+  color: var(--color-text-muted);
 }
 
 .container {
@@ -905,6 +922,57 @@ input, textarea, select {
 .btn-lg {
   padding: 18px 48px;
   font-size: var(--text-sm);
+}
+
+.btn-secondary {
+  background: var(--charcoal-light);
+  color: var(--ivory);
+  border: 1px solid var(--glass-border);
+}
+
+.btn-secondary:hover {
+  background: var(--charcoal);
+  border-color: var(--gold);
+  color: var(--gold);
+  transform: translateY(-2px);
+}
+
+/* ---------- Status Pills ---------- */
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-family: var(--font-ui);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+}
+
+.status-pill--success {
+  color: var(--success);
+  background: rgba(74, 222, 128, 0.1);
+  border: 1px solid rgba(74, 222, 128, 0.2);
+}
+
+.status-pill--warning {
+  color: var(--color-warning);
+  background: rgba(251, 191, 36, 0.1);
+  border: 1px solid rgba(251, 191, 36, 0.2);
+}
+
+.status-pill--error {
+  color: var(--error);
+  background: rgba(248, 113, 113, 0.1);
+  border: 1px solid rgba(248, 113, 113, 0.2);
+}
+
+.status-pill--neutral {
+  color: var(--gray);
+  background: rgba(161, 161, 170, 0.1);
+  border: 1px solid rgba(161, 161, 170, 0.2);
 }
 
 /* ---------- Cards ---------- */

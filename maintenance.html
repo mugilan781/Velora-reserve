@@ -838,9 +838,215 @@
         max-width: 600px;
       }
     }
+
+    /* ---------- Light Mode Overrides ---------- */
+    html.theme-transition,
+    html.theme-transition *,
+    html.theme-transition *::before,
+    html.theme-transition *::after {
+      transition: background-color 0.5s cubic-bezier(0.22, 1, 0.36, 1), color 0.35s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.4s cubic-bezier(0.22, 1, 0.36, 1) !important;
+    }
+
+    [data-theme="light"] body {
+      background: #FAF6EE;
+      color: #161B26;
+    }
+
+    [data-theme="light"] .maint-brand-text {
+      color: #0A122C !important;
+      text-shadow: none !important;
+    }
+
+    [data-theme="light"] .maint-brand-text span {
+      color: #404552 !important;
+    }
+
+    [data-theme="light"] .maint-heading {
+      color: #0A122C !important;
+      text-shadow: none !important;
+    }
+
+    [data-theme="light"] .maint-desc {
+      color: #404552 !important;
+    }
+
+    [data-theme="light"] .status-item {
+      background: rgba(249, 246, 240, 0.8) !important; /* Warm Pearl background */
+    }
+
+    [data-theme="light"] .status-value {
+      color: #0A122C !important;
+    }
+
+    [data-theme="light"] .status-label {
+      color: #404552 !important;
+    }
+
+    [data-theme="light"] .countdown-unit {
+      background: rgba(244, 239, 230, 0.85) !important; /* Soft Champagne background */
+      border: 1px solid rgba(181, 138, 61, 0.18) !important;
+    }
+
+    [data-theme="light"] .countdown-unit:hover {
+      border-color: rgba(181, 138, 61, 0.35) !important;
+      box-shadow: var(--shadow-sm), var(--shadow-gold) !important;
+    }
+
+    [data-theme="light"] .notify-form {
+      background: rgba(244, 239, 230, 0.85) !important; /* Soft Champagne background */
+      border: 1px solid rgba(181, 138, 61, 0.25) !important;
+    }
+
+    [data-theme="light"] .notify-form:focus-within {
+      border-color: var(--gold) !important;
+      box-shadow: 0 0 0 3px rgba(181, 138, 61, 0.12) !important;
+    }
+
+    [data-theme="light"] .notify-input {
+      color: #161B26 !important;
+    }
+
+    [data-theme="light"] .notify-input::placeholder {
+      color: #404552 !important;
+      opacity: 0.5 !important;
+    }
+
+    [data-theme="light"] .notify-btn {
+      color: #0B0B0F !important;
+      background: var(--gold) !important;
+      font-weight: 600 !important;
+    }
+
+    [data-theme="light"] .notify-btn:hover {
+      background: var(--gold-dark) !important;
+      color: #FAF6EE !important;
+    }
+
+    [data-theme="light"] .maint-quote {
+      background: #0A122C !important;
+      border-radius: 12px !important;
+      padding: 1.75rem 2rem !important;
+      border: 1px solid rgba(181, 138, 61, 0.25) !important;
+      box-shadow: var(--shadow-md) !important;
+      max-width: 620px !important;
+      margin: 0 auto 2rem !important;
+    }
+
+    [data-theme="light"] .maint-quote-text {
+      color: #FAF6EE !important;
+      text-shadow: none !important;
+    }
+
+    [data-theme="light"] .maint-quote-attr {
+      color: var(--gold-light) !important;
+    }
+
+    [data-theme="light"] .btn-m--primary {
+      color: #0B0B0F !important;
+      background: var(--gold) !important;
+      border-color: var(--gold) !important;
+      font-weight: 600 !important;
+    }
+
+    [data-theme="light"] .btn-m--primary:hover {
+      background: var(--gold-dark) !important;
+      border-color: var(--gold-dark) !important;
+      color: #FAF6EE !important;
+      box-shadow: 0 10px 25px rgba(140, 102, 35, 0.25) !important;
+    }
+
+    [data-theme="light"] .btn-m--secondary {
+      border: 1.5px solid var(--gold-dark) !important;
+      color: var(--gold-dark) !important;
+      background: transparent !important;
+      font-weight: 600 !important;
+    }
+
+    [data-theme="light"] .btn-m--secondary:hover {
+      background: var(--gold-dark) !important;
+      border-color: var(--gold-dark) !important;
+      color: #FAF6EE !important;
+      box-shadow: 0 10px 25px rgba(140, 102, 35, 0.25) !important;
+    }
+
+    [data-theme="light"] .maint-bg-grid {
+      background-image:
+        linear-gradient(rgba(181, 138, 61, 0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(181, 138, 61, 0.06) 1px, transparent 1px) !important;
+    }
+
+    [data-theme="light"] .maint-bg-radial {
+      background: radial-gradient(ellipse at 50% 30%, rgba(181, 138, 61, 0.08) 0%, transparent 60%) !important;
+    }
+
+    [data-theme="light"] .maint-status-panel {
+      background: rgba(244, 239, 230, 0.85) !important; /* Soft Champagne background */
+      border: 1px solid rgba(181, 138, 61, 0.18) !important;
+      backdrop-filter: blur(20px) !important;
+      -webkit-backdrop-filter: blur(20px) !important;
+    }
+
+    [data-theme="light"] .particle-m {
+      background: var(--gold-dark) !important;
+    }
+
+    /* Theme toggle for maintenance page */
+    .theme-toggle-maint {
+      position: fixed;
+      top: 24px;
+      right: 24px;
+      z-index: 100;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 1.5px solid rgba(255, 255, 255, 0.2);
+      background: rgba(255, 255, 255, 0.06);
+      color: var(--ivory);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      padding: 0;
+    }
+
+    [data-theme="light"] .theme-toggle-maint {
+      border-color: rgba(181, 138, 61, 0.25) !important;
+      background: rgba(244, 239, 230, 0.6) !important; /* Soft Champagne background */
+      color: #161B26 !important;
+    }
+
+    .theme-toggle-maint:hover {
+      border-color: var(--gold) !important;
+      color: var(--gold-dark) !important;
+      background: rgba(181, 138, 61, 0.1) !important;
+    }
+
+    [data-theme="light"] .theme-toggle-maint:hover {
+      border-color: var(--gold) !important;
+      color: var(--gold-dark) !important;
+      background: rgba(181, 138, 61, 0.08) !important;
+    }
+
+    .theme-toggle-maint svg {
+      width: 18px;
+      height: 18px;
+      stroke-width: 1.5;
+    }
+
+    .theme-toggle-maint .icon-sun { display: block !important; }
+    .theme-toggle-maint .icon-moon { display: none !important; }
+    [data-theme="light"] .theme-toggle-maint .icon-sun { display: none !important; }
+    [data-theme="light"] .theme-toggle-maint .icon-moon { display: block !important; }
   </style>
 </head>
 <body>
+
+  <!-- Theme Toggle -->
+  <button class="theme-toggle-maint" id="theme-toggle-maint" aria-label="Toggle theme">
+    <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+    <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+  </button>
 
   <!-- Background -->
   <div class="maint-bg">
@@ -1112,6 +1318,15 @@
       const success = document.getElementById('notify-success');
       form.style.display = 'none';
       success.style.display = 'block';
+    }
+  </script>
+
+  <!-- Theme Engine -->
+  <script src="theme.js"></script>
+  <script>
+    var tMaint = document.getElementById('theme-toggle-maint');
+    if (tMaint && window.VeloraTheme) {
+      tMaint.addEventListener('click', function() { VeloraTheme.toggle(); });
     }
   </script>
 

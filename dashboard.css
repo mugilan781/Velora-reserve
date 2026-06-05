@@ -625,7 +625,7 @@
 }
 
 .dash-reservation-status.pending {
-  color: #FBBF24;
+  color: var(--color-warning);
   background: rgba(251, 191, 36, 0.1);
   border: 1px solid rgba(251, 191, 36, 0.2);
 }
@@ -1048,8 +1048,9 @@
 
 .dash-review-stars {
   color: var(--gold);
-  font-size: 0.9rem;
-  letter-spacing: 3px;
+  display: flex;
+  align-items: center;
+  gap: 3px;
 }
 
 .dash-review-date {
@@ -1536,17 +1537,32 @@
 }
 
 .dash-star {
-  font-size: 1.6rem;
-  color: var(--glass-border);
   cursor: pointer;
-  transition: color var(--duration-fast) var(--ease-luxury), transform var(--duration-fast);
+  transition: transform var(--duration-fast) var(--ease-luxury);
   line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dash-star svg {
+  width: 1.6rem;
+  height: 1.6rem;
+  fill: none;
+  stroke: var(--glass-border);
+  stroke-width: 1.5;
+  transition: fill var(--duration-fast) var(--ease-luxury), stroke var(--duration-fast) var(--ease-luxury);
 }
 
 .dash-star:hover,
 .dash-star.active {
-  color: var(--gold);
   transform: scale(1.15);
+}
+
+.dash-star:hover svg,
+.dash-star.active svg {
+  fill: var(--gold);
+  stroke: var(--gold);
 }
 
 /* ---------- Toast Notification ---------- */
