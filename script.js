@@ -215,9 +215,42 @@ function initNavigation() {
       });
     }
 
+    // Set initial ARIA state for the hamburger button
+    hamburger.setAttribute('role', 'button');
+    hamburger.setAttribute('tabindex', '0');
+    if (!hamburger.hasAttribute('aria-label')) {
+      hamburger.setAttribute('aria-label', 'Toggle navigation menu');
+    }
+    if (!hamburger.hasAttribute('aria-expanded')) {
+      hamburger.setAttribute('aria-expanded', 'false');
+    }
+
+    // Keydown event listener for Enter/Space on hamburger button
+    hamburger.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        hamburger.click();
+      }
+    });
+
+    // Close mobile nav on Escape key press
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && mobileNav.classList.contains('active')) {
+        hamburger.classList.remove('active');
+        hamburger.setAttribute('aria-expanded', 'false');
+        mobileNav.classList.remove('active');
+        if (nav) {
+          nav.classList.remove('mobile-menu-open');
+        }
+        document.body.style.overflow = '';
+        hamburger.focus(); // return focus to hamburger
+      }
+    });
+
     // Toggle menu active status
     hamburger.addEventListener('click', () => {
-      hamburger.classList.toggle('active');
+      const isActive = hamburger.classList.toggle('active');
+      hamburger.setAttribute('aria-expanded', isActive ? 'true' : 'false');
       mobileNav.classList.toggle('active');
       if (nav) {
         nav.classList.toggle('mobile-menu-open', mobileNav.classList.contains('active'));
@@ -230,6 +263,7 @@ function initNavigation() {
       const link = e.target.closest('a');
       if (link) {
         hamburger.classList.remove('active');
+        hamburger.setAttribute('aria-expanded', 'false');
         mobileNav.classList.remove('active');
         if (nav) {
           nav.classList.remove('mobile-menu-open');
@@ -857,9 +891,15 @@ function initBookingForm() {
         nextPanel.classList.add('active');
         currentStep = index;
         isTransitioning = false;
-        // Make sure pricing updates correctly on step transition
         updatePricingSummary();
-      }, 350); // Matches the 0.4s fade-out in CSS
+
+        // Accessibility focus shift: Focus the heading of the new panel
+        const heading = nextPanel.querySelector('h3, h2');
+        if (heading) {
+          heading.setAttribute('tabindex', '-1');
+          heading.focus();
+        }
+      }, 350);
     } else {
       steps.forEach((step, i) => {
         step.classList.toggle('active', i === index);
@@ -1204,7 +1244,6 @@ function initContactForm() {
 
   form.addEventListener('submit', (e) => {
     e.preventDefault();
-
     // Basic validation
     const inputs = form.querySelectorAll('.form-input[required]');
     let valid = true;
@@ -1213,8 +1252,10 @@ function initContactForm() {
       if (!input.value.trim()) {
         valid = false;
         input.style.borderColor = 'var(--error)';
+        input.setAttribute('aria-invalid', 'true');
         input.addEventListener('input', () => {
           input.style.borderColor = '';
+          input.removeAttribute('aria-invalid');
         }, { once: true });
       }
     });
@@ -1224,6 +1265,11 @@ function initContactForm() {
     if (emailInput && emailInput.value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailInput.value)) {
       valid = false;
       emailInput.style.borderColor = 'var(--error)';
+      emailInput.setAttribute('aria-invalid', 'true');
+      emailInput.addEventListener('input', () => {
+        emailInput.style.borderColor = '';
+        emailInput.removeAttribute('aria-invalid');
+      }, { once: true });
     }
 
     if (valid) {
@@ -1300,7 +1346,6 @@ function initReviewForm() {
 
   form.addEventListener('submit', (e) => {
     e.preventDefault();
-
     // Basic validation
     const inputs = form.querySelectorAll('.form-input[required]');
     let valid = true;
@@ -1309,8 +1354,10 @@ function initReviewForm() {
       if (!input.value.trim()) {
         valid = false;
         input.style.borderColor = 'var(--error)';
+        input.setAttribute('aria-invalid', 'true');
         input.addEventListener('input', () => {
           input.style.borderColor = '';
+          input.removeAttribute('aria-invalid');
         }, { once: true });
       }
     });
@@ -1320,6 +1367,11 @@ function initReviewForm() {
     if (emailInput && emailInput.value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailInput.value)) {
       valid = false;
       emailInput.style.borderColor = 'var(--error)';
+      emailInput.setAttribute('aria-invalid', 'true');
+      emailInput.addEventListener('input', () => {
+        emailInput.style.borderColor = '';
+        emailInput.removeAttribute('aria-invalid');
+      }, { once: true });
     }
 
     if (valid) {

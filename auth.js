@@ -396,6 +396,10 @@ document.addEventListener('DOMContentLoaded', () => {
       const dropdown = wrap.querySelector('.nav-profile-dropdown');
       if (!btn || !dropdown) return;
 
+      // Accessibility enhancement: Add ARIA roles/states
+      btn.setAttribute('aria-haspopup', 'menu');
+      btn.setAttribute('aria-expanded', 'false');
+
       if (hasRealSession) {
         btn.classList.add('logged-in');
         const currentUser = VeloraAuth.getCurrentUser();
@@ -512,6 +516,8 @@ document.addEventListener('DOMContentLoaded', () => {
       const dropdown = profileBtn.nextElementSibling;
       if (dropdown) {
         dropdown.classList.toggle('active');
+        const isActive = dropdown.classList.contains('active');
+        profileBtn.setAttribute('aria-expanded', isActive ? 'true' : 'false');
       }
       return;
     }
@@ -520,6 +526,10 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!profileWrap) {
       document.querySelectorAll('.nav-profile-dropdown.active').forEach(d => {
         d.classList.remove('active');
+        const pBtn = d.previousElementSibling;
+        if (pBtn && pBtn.classList.contains('nav-profile-btn')) {
+          pBtn.setAttribute('aria-expanded', 'false');
+        }
       });
     }
   });
@@ -854,22 +864,30 @@ function hideAlert(banner) {
 function showFieldError(input, message) {
   if (!input) return;
   input.classList.add('error');
+  input.setAttribute('aria-invalid', 'true');
   const group = input.closest('.auth-form-group');
   if (group) {
     let errEl = group.querySelector('.auth-error-msg');
     if (!errEl) {
       errEl = document.createElement('div');
       errEl.className = 'auth-error-msg';
+      // Generate ID for validation error element to link with input
+      errEl.id = input.id ? (input.id + '-error') : ('err-' + Math.random().toString(36).substr(2, 9));
       group.appendChild(errEl);
     }
     errEl.textContent = message;
     errEl.classList.add('visible');
+    input.setAttribute('aria-describedby', errEl.id);
   }
 }
 
 function clearFieldErrors(form) {
   if (!form) return;
-  form.querySelectorAll('.auth-form-input.error').forEach(el => el.classList.remove('error'));
+  form.querySelectorAll('.auth-form-input').forEach(el => {
+    el.classList.remove('error');
+    el.removeAttribute('aria-invalid');
+    el.removeAttribute('aria-describedby');
+  });
   form.querySelectorAll('.auth-error-msg.visible').forEach(el => el.classList.remove('visible'));
 }
 

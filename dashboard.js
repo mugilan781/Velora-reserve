@@ -121,6 +121,13 @@ document.addEventListener('DOMContentLoaded', () => {
       targetPanel.style.animation = 'none';
       targetPanel.offsetHeight;
       targetPanel.style.animation = '';
+      
+      // Accessibility focus shift: Focus the heading of the new panel
+      const heading = targetPanel.querySelector('h2, h3');
+      if (heading) {
+        heading.setAttribute('tabindex', '-1');
+        heading.focus();
+      }
     }
     if (targetNav) targetNav.classList.add('active');
     closeSidebar();
@@ -136,11 +143,29 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  function openSidebar() { if (sidebar) sidebar.classList.add('open'); if (overlay) overlay.classList.add('active'); document.body.style.overflow = 'hidden'; }
-  function closeSidebar() { if (sidebar) sidebar.classList.remove('open'); if (overlay) overlay.classList.remove('active'); document.body.style.overflow = ''; }
-  if (sidebarToggle) sidebarToggle.addEventListener('click', () => sidebar && sidebar.classList.contains('open') ? closeSidebar() : openSidebar());
+  function openSidebar() { 
+    if (sidebar) sidebar.classList.add('open'); 
+    if (overlay) overlay.classList.add('active'); 
+    document.body.style.overflow = 'hidden'; 
+    if (sidebarToggle) sidebarToggle.setAttribute('aria-expanded', 'true');
+  }
+  function closeSidebar() { 
+    if (sidebar) sidebar.classList.remove('open'); 
+    if (overlay) overlay.classList.remove('active'); 
+    document.body.style.overflow = ''; 
+    if (sidebarToggle) sidebarToggle.setAttribute('aria-expanded', 'false');
+  }
+  if (sidebarToggle) {
+    sidebarToggle.setAttribute('aria-expanded', 'false');
+    sidebarToggle.addEventListener('click', () => sidebar && sidebar.classList.contains('open') ? closeSidebar() : openSidebar());
+  }
   if (overlay) overlay.addEventListener('click', closeSidebar);
-  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeSidebar(); });
+  document.addEventListener('keydown', (e) => { 
+    if (e.key === 'Escape' && sidebar && sidebar.classList.contains('open')) {
+      closeSidebar();
+      if (sidebarToggle) sidebarToggle.focus();
+    }
+  });
 
   // ─── Toggle Switches ───
   document.querySelectorAll('.dash-toggle').forEach(toggle => {

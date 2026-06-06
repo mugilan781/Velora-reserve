@@ -159,6 +159,13 @@ input, textarea, select {
   color: var(--midnight);
 }
 
+/* Branded VÉLORA focus rings visible during keyboard navigation only */
+*:focus-visible {
+  outline: 2px solid var(--gold) !important;
+  outline-offset: 3px !important;
+  box-shadow: 0 0 10px rgba(214, 179, 106, 0.5) !important;
+}
+
 /* ---------- Custom Scrollbar ---------- */
 ::-webkit-scrollbar {
   width: 8px;
@@ -547,11 +554,13 @@ input, textarea, select {
   align-items: center;
   justify-content: center;
   gap: var(--space-lg);
-  transition: right var(--duration-normal) var(--ease-smooth);
+  visibility: hidden;
+  transition: right var(--duration-normal) var(--ease-smooth), visibility var(--duration-normal) var(--ease-smooth);
 }
 
 .mobile-nav.active {
   right: 0;
+  visibility: visible;
 }
 
 .mobile-nav a {
