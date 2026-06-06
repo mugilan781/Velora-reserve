@@ -1406,6 +1406,42 @@ html.theme-transition *::after {
   box-shadow: 0 8px 24px rgba(37, 211, 102, 0.08) !important;
 }
 
+/* ---------- Terms & Privacy Content Elements ---------- */
+[data-theme="light"] .terms-card,
+[data-theme="light"] .policy-card {
+  background: var(--card-champagne) !important;
+  border: 1px solid rgba(181, 138, 61, 0.15) !important;
+  box-shadow: 0 10px 30px rgba(142, 126, 95, 0.04) !important;
+}
+
+[data-theme="light"] .terms-card:hover,
+[data-theme="light"] .policy-card:hover {
+  border-color: rgba(181, 138, 61, 0.35) !important;
+  box-shadow: 0 20px 50px rgba(142, 126, 95, 0.08), var(--shadow-gold) !important;
+}
+
+[data-theme="light"] .terms-text,
+[data-theme="light"] .terms-list li,
+[data-theme="light"] .policy-text,
+[data-theme="light"] .policy-list li {
+  color: var(--gray) !important;
+}
+
+[data-theme="light"] .terms-hero-description,
+[data-theme="light"] .policy-hero-description {
+  color: var(--gray) !important;
+}
+
+[data-theme="light"] .terms-section-header,
+[data-theme="light"] .policy-section-header {
+  border-bottom: 1px solid rgba(181, 138, 61, 0.18) !important;
+}
+
+[data-theme="light"] .policy-contact-email:hover,
+[data-theme="light"] .terms-contact-value:hover {
+  color: var(--gold-dark) !important;
+}
+
 /* Concierge Cards overrides */
 [data-theme="light"] .concierge-card {
   background: var(--card-pearl) !important;

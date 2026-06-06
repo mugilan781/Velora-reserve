@@ -634,71 +634,145 @@
       transition: background-color 0.5s cubic-bezier(0.22, 1, 0.36, 1), color 0.35s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.4s cubic-bezier(0.22, 1, 0.36, 1) !important;
     }
 
+    [data-theme="light"] {
+      /* Core variables for Light Theme */
+      --midnight: #FAF6EE;
+      --ivory: #161B26;
+      --charcoal: #F4EFE6;
+      --deep: #EAE4D9;
+      --gray: #404552;
+      --gold: #B58A3D;
+      --gold-light: #D4B06A;
+      --gold-dark: #8C6623;
+      --glass: rgba(255, 255, 255, 0.65);
+      --glass-border: rgba(181, 138, 61, 0.18);
+      --shadow-sm: 0 2px 10px rgba(40, 32, 20, 0.04);
+      --shadow-md: 0 10px 30px rgba(60, 50, 40, 0.06);
+      --shadow-lg: 0 25px 60px rgba(60, 50, 40, 0.08);
+      --shadow-gold: 0 0 40px rgba(181, 138, 61, 0.12);
+      --shadow-glow: 0 0 20px rgba(181, 138, 61, 0.18);
+    }
+
     [data-theme="light"] body {
-      background: #FAF6EE;
-      color: #161B26;
+      background: var(--midnight);
+      color: var(--ivory);
     }
 
     [data-theme="light"] .scene-overlay {
       background:
-        radial-gradient(ellipse at 50% 45%, rgba(18, 18, 21, 0.25) 0%, rgba(18, 18, 21, 0.15) 50%, rgba(18, 18, 21, 0.65) 100%),
-        linear-gradient(180deg, rgba(18, 18, 21, 0.3) 0%, rgba(18, 18, 21, 0.15) 40%, rgba(18, 18, 21, 0.5) 75%, rgba(18, 18, 21, 0.85) 100%);
+        radial-gradient(ellipse at 50% 45%, rgba(20, 20, 25, 0.35) 0%, rgba(20, 20, 25, 0.2) 50%, rgba(20, 20, 25, 0.7) 100%),
+        linear-gradient(180deg, rgba(20, 20, 25, 0.4) 0%, rgba(20, 20, 25, 0.25) 40%, rgba(20, 20, 25, 0.6) 75%, rgba(20, 20, 25, 0.9) 100%) !important;
+    }
+
+    [data-theme="light"] .brand-mark svg {
+      color: var(--gold-light) !important;
     }
 
     [data-theme="light"] .brand-mark-text {
-      color: #0A122C;
-      text-shadow: none !important;
+      color: #FAF6EE !important;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4) !important;
     }
 
     [data-theme="light"] .brand-mark-text span {
-      color: #C5A059;
+      color: var(--gold-light) !important;
+    }
+
+    /* Compass elements style overrides for proper contrast against cinematic overlay */
+    [data-theme="light"] .compass-ring {
+      border-color: rgba(212, 176, 106, 0.4) !important;
+    }
+
+    [data-theme="light"] .compass-ring::before {
+      border-color: rgba(212, 176, 106, 0.2) !important;
+    }
+
+    [data-theme="light"] .compass-needle svg {
+      color: var(--gold-light) !important;
+      filter: drop-shadow(0 0 8px rgba(212, 176, 106, 0.5)) !important;
+    }
+
+    [data-theme="light"] .compass-center {
+      background: var(--gold-light) !important;
+      box-shadow: 0 0 12px rgba(212, 176, 106, 0.8) !important;
+    }
+
+    [data-theme="light"] .compass-cardinal {
+      color: rgba(212, 176, 106, 0.6) !important;
+    }
+
+    [data-theme="light"] .label-404 {
+      color: var(--gold-light) !important;
+      text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6) !important;
+    }
+
+    [data-theme="light"] .number-404 {
+      background: linear-gradient(135deg, #D4B06A 0%, #F3DCA2 50%, #B58A3D 100%) !important;
+      -webkit-background-clip: text !important;
+      background-clip: text !important;
+      -webkit-text-fill-color: transparent !important;
+      color: transparent !important;
+      filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.35)) drop-shadow(0 0 22px rgba(243, 220, 162, 0.45)) !important;
+      text-shadow: none !important;
     }
 
     [data-theme="light"] .heading-404 {
-      color: #0A122C;
-      text-shadow: none !important;
+      color: #FAF6EE !important;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5) !important;
     }
 
     [data-theme="light"] .description-404 {
-      color: #FAF6EE;
+      color: rgba(250, 246, 238, 0.85) !important;
+      text-shadow: 0 1px 5px rgba(0, 0, 0, 0.4) !important;
     }
 
-    [data-theme="light"] .quote-text {
-      color: rgba(250, 246, 238, 0.7);
-      text-shadow: none !important;
+    [data-theme="light"] .divider-404 {
+      background: linear-gradient(90deg, transparent, var(--gold-light), transparent) !important;
     }
 
     [data-theme="light"] .btn-404--primary {
-      color: #0B0B0F;
-      background: var(--gold);
-      border-color: var(--gold);
+      background: var(--gold) !important;
+      color: #0B0B0F !important;
+      box-shadow: 0 4px 15px rgba(181, 138, 61, 0.25) !important;
       font-weight: 600;
     }
 
     [data-theme="light"] .btn-404--primary:hover {
-      background: var(--gold-dark);
-      border-color: var(--gold-dark);
-      color: #FAF6EE;
+      background: var(--gold-light) !important;
+      color: #0B0B0F !important;
+      box-shadow: 0 0 20px rgba(181, 138, 61, 0.35) !important;
     }
 
     [data-theme="light"] .btn-404--secondary {
-      border-color: rgba(181, 138, 61, 0.4);
-      color: #FAF6EE;
+      border: 1.5px solid rgba(212, 176, 106, 0.6) !important;
+      color: #FAF6EE !important;
+      background: rgba(250, 246, 238, 0.05) !important;
+      box-shadow: 0 0 15px rgba(181, 138, 61, 0.2), inset 0 0 12px rgba(212, 176, 106, 0.05) !important;
       font-weight: 600;
     }
 
     [data-theme="light"] .btn-404--secondary:hover {
-      background: var(--gold-dark);
-      border-color: var(--gold-dark);
-      color: #FAF6EE;
+      background: var(--gold-light) !important;
+      color: #0B0B0F !important;
+      border-color: var(--gold-light) !important;
+      box-shadow: 0 0 25px rgba(212, 176, 106, 0.55), 0 5px 15px rgba(0, 0, 0, 0.2) !important;
+    }
+
+    [data-theme="light"] .quote-text {
+      color: rgba(250, 246, 238, 0.6) !important;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4) !important;
+    }
+
+    [data-theme="light"] .quote-attribution {
+      color: var(--gold-light) !important;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4) !important;
     }
 
     [data-theme="light"] .corner-mark {
-      border-color: rgba(181, 138, 61, 0.25);
+      border-color: rgba(212, 176, 106, 0.3) !important;
     }
 
     [data-theme="light"] .particle {
-      background: var(--gold-dark);
+      background: var(--gold-light) !important;
     }
 
     /* Theme toggle for 404 page */
