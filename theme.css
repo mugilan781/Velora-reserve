@@ -239,24 +239,40 @@ html.theme-transition *::after {
 
 /* ---------- Hamburger ---------- */
 [data-theme="light"] .hamburger span {
-  background: var(--ivory);
+  background: var(--ivory) !important;
 }
 
 /* ---------- Mobile Nav ---------- */
 [data-theme="light"] .mobile-nav {
-  background: rgba(250, 246, 238, 0.98);
-  backdrop-filter: blur(30px);
-  -webkit-backdrop-filter: blur(30px);
-  border-bottom: 1px solid rgba(181, 138, 61, 0.15);
+  background: rgba(250, 246, 238, 0.98) !important;
+  backdrop-filter: blur(40px) !important;
+  -webkit-backdrop-filter: blur(40px) !important;
+  border-bottom: 1px solid rgba(181, 138, 61, 0.15) !important;
 }
 
 [data-theme="light"] .mobile-nav a {
-  color: var(--ivory);
+  color: var(--ivory) !important;
 }
 
 [data-theme="light"] .mobile-nav a:hover {
-  color: var(--gold-dark);
+  color: var(--gold-dark) !important;
 }
+
+[data-theme="light"] .mobile-nav a:hover svg.mobile-icon {
+  color: var(--gold-dark) !important;
+  stroke: var(--gold-dark) !important;
+}
+
+[data-theme="light"] .mobile-nav a.active span {
+  color: var(--gold-dark) !important;
+}
+
+[data-theme="light"] .mobile-nav a.active svg.mobile-icon {
+  color: var(--gold-dark) !important;
+  stroke: var(--gold-dark) !important;
+}
+
+
 
 /* ---------- Dropdown Menu ---------- */
 [data-theme="light"] .nav-dropdown-menu {
@@ -310,9 +326,6 @@ html.theme-transition *::after {
   background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
   color: transparent !important;
-  display: inline-block !important;
-  padding: 0.1em 0.15em 0.15em 0.05em !important;
-  margin: -0.1em -0.15em -0.15em -0.05em !important;
   text-shadow: none !important;
   filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.35)) drop-shadow(0 0 22px rgba(243, 220, 162, 0.55)) drop-shadow(0 0 8px rgba(212, 176, 106, 0.35)) !important;
 }
@@ -345,7 +358,6 @@ html.theme-transition *::after {
   color: #0B0B0F !important;
   border-color: var(--gold-light) !important;
   box-shadow: 0 0 25px rgba(212, 176, 106, 0.55), 0 5px 15px rgba(0, 0, 0, 0.2) !important; /* Elegant hover glow */
-  transform: translateY(-1px) !important;
 }
 
 [data-theme="light"] .hero .btn-gold,
@@ -363,7 +375,6 @@ html.theme-transition *::after {
   color: #FAF6EE !important;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4), 0 0 10px rgba(212, 176, 106, 0.2) !important; /* Subtle luxury glow */
   opacity: 0.9 !important;
-  font-weight: 500 !important;
 }
 
 [data-theme="light"] .scroll-line {
@@ -454,7 +465,6 @@ html.theme-transition *::after {
 [data-theme="light"] .review-card,
 [data-theme="light"] .testimonial-card,
 [data-theme="light"] .memoir-quote-card,
-[data-theme="light"] .team-card,
 [data-theme="light"] .concierge-card,
 [data-theme="light"] .couple-card {
   background: var(--card-pearl) !important;
@@ -496,7 +506,6 @@ html.theme-transition *::after {
 [data-theme="light"] .review-card:hover,
 [data-theme="light"] .testimonial-card:hover,
 [data-theme="light"] .memoir-quote-card:hover,
-[data-theme="light"] .team-card:hover,
 [data-theme="light"] .concierge-card:hover,
 [data-theme="light"] .couple-card:hover,
 [data-theme="light"] .guide-route-card:hover,
@@ -505,7 +514,6 @@ html.theme-transition *::after {
 [data-theme="light"] .whatsapp-cta:hover {
   border-color: rgba(181, 138, 61, 0.35) !important;
   box-shadow: 0 20px 50px rgba(142, 126, 95, 0.08), var(--shadow-gold) !important;
-  transform: translateY(-4px) !important;
 }
 
 [data-theme="light"] .card-body {
@@ -513,10 +521,6 @@ html.theme-transition *::after {
 }
 
 /* Specific Card Overrides & Refinements */
-[data-theme="light"] .team-card {
-  padding: var(--space-lg) var(--space-md) !important;
-  border-radius: var(--radius-md) !important;
-}
 
 /* Featured card in wedding.html (override inline dark background) */
 [data-theme="light"] .weddings-page .card[style*="rgba(24,24,27,0.85)"] {
@@ -540,11 +544,6 @@ html.theme-transition *::after {
   background: var(--card-champagne) !important;
   border: 1px solid rgba(181, 138, 61, 0.25) !important;
   color: var(--ivory) !important;
-  border-radius: var(--radius-sm) !important;
-  padding: 12px 16px !important;
-  font-family: var(--font-ui) !important;
-  font-size: var(--text-sm) !important;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
 
 [data-theme="light"] .form-input:focus,
@@ -568,9 +567,6 @@ html.theme-transition *::after {
 [data-theme="light"] .form-label,
 [data-theme="light"] .auth-remember label {
   color: var(--ivory) !important;
-  font-weight: 500 !important;
-  font-size: var(--text-xs) !important;
-  letter-spacing: 0.05em !important;
 }
 
 [data-theme="light"] select.form-input option,
@@ -699,7 +695,6 @@ html.theme-transition *::after {
 
 [data-theme="light"] .booking-field-label {
   color: var(--gold-dark) !important;
-  font-weight: 600 !important;
 }
 
 [data-theme="light"] .booking-field-select {
@@ -830,7 +825,6 @@ html.theme-transition *::after {
 
 [data-theme="light"] .pricing-row-luxury .pricing-suite-price {
   color: var(--gold-dark) !important;
-  font-weight: 600 !important;
 }
 
 [data-theme="light"] .pricing-total-luxury {
@@ -842,8 +836,6 @@ html.theme-transition *::after {
 
 [data-theme="light"] .pricing-total-luxury .pricing-grand-total {
   color: var(--gold-dark) !important;
-  font-weight: 700 !important;
-  font-size: var(--text-2xl) !important;
 }
 
 [data-theme="light"] .pricing-summary-luxury .flex.flex-col.gap-sm p {
@@ -1306,9 +1298,7 @@ html.theme-transition *::after {
   display: block !important;
 }
 
-[data-theme="light"] .mobile-theme-toggle {
-  border-top-color: rgba(181, 138, 61, 0.15) !important;
-}
+
 
 /* ---------- CTA Buttons ---------- */
 
@@ -1333,6 +1323,76 @@ html.theme-transition *::after {
 [data-theme="light"] .terms-page,
 [data-theme="light"] .policy-page {
   background: var(--midnight) !important;
+}
+
+/* Solid, visible unscrolled header styling on terms/privacy pages in Light Mode */
+[data-theme="light"] .terms-page .nav:not(.scrolled),
+[data-theme="light"] .policy-page .nav:not(.scrolled) {
+  background: rgba(250, 246, 238, 0.95) !important;
+  backdrop-filter: blur(25px) !important;
+  -webkit-backdrop-filter: blur(25px) !important;
+  border-bottom: 1px solid rgba(181, 138, 61, 0.25) !important;
+  box-shadow: 0 4px 30px rgba(142, 126, 95, 0.05) !important;
+}
+
+[data-theme="light"] .terms-page .nav:not(.scrolled) .brand-text-velora,
+[data-theme="light"] .policy-page .nav:not(.scrolled) .brand-text-velora {
+  color: var(--ivory) !important;
+}
+
+[data-theme="light"] .terms-page .nav:not(.scrolled) .brand-text-reserve,
+[data-theme="light"] .policy-page .nav:not(.scrolled) .brand-text-reserve {
+  color: var(--gold-dark) !important;
+}
+
+[data-theme="light"] .terms-page .nav:not(.scrolled) .brand-logo-svg,
+[data-theme="light"] .policy-page .nav:not(.scrolled) .brand-logo-svg {
+  color: var(--gold-dark) !important;
+}
+
+[data-theme="light"] .terms-page .nav:not(.scrolled) .nav-links a,
+[data-theme="light"] .policy-page .nav:not(.scrolled) .nav-links a {
+  color: var(--ivory) !important;
+}
+
+[data-theme="light"] .terms-page .nav:not(.scrolled) .nav-links a:hover,
+[data-theme="light"] .policy-page .nav:not(.scrolled) .nav-links a:hover,
+[data-theme="light"] .terms-page .nav:not(.scrolled) .nav-links a.active,
+[data-theme="light"] .policy-page .nav:not(.scrolled) .nav-links a.active {
+  color: var(--gold-dark) !important;
+}
+
+[data-theme="light"] .terms-page .nav:not(.scrolled) .theme-toggle-btn,
+[data-theme="light"] .policy-page .nav:not(.scrolled) .theme-toggle-btn {
+  color: var(--ivory) !important;
+  border-color: rgba(181, 138, 61, 0.25) !important;
+  background: rgba(255, 255, 255, 0.4) !important;
+}
+
+[data-theme="light"] .terms-page .nav:not(.scrolled) .theme-toggle-btn:hover,
+[data-theme="light"] .policy-page .nav:not(.scrolled) .theme-toggle-btn:hover {
+  border-color: var(--gold) !important;
+  color: var(--gold-dark) !important;
+  background: rgba(181, 138, 61, 0.08) !important;
+}
+
+[data-theme="light"] .terms-page .nav:not(.scrolled) .nav-profile-btn,
+[data-theme="light"] .policy-page .nav:not(.scrolled) .nav-profile-btn {
+  color: var(--ivory) !important;
+  border-color: rgba(181, 138, 61, 0.25) !important;
+  background: rgba(255, 255, 255, 0.4) !important;
+}
+
+[data-theme="light"] .terms-page .nav:not(.scrolled) .nav-profile-btn:hover,
+[data-theme="light"] .policy-page .nav:not(.scrolled) .nav-profile-btn:hover {
+  border-color: var(--gold) !important;
+  color: var(--gold-dark) !important;
+  background: rgba(181, 138, 61, 0.08) !important;
+}
+
+[data-theme="light"] .terms-page .nav:not(.scrolled) .hamburger span,
+[data-theme="light"] .policy-page .nav:not(.scrolled) .hamburger span {
+  background: var(--ivory) !important;
 }
 
 /* Whatsapp CTA */
@@ -1502,7 +1562,6 @@ html.theme-transition *::after {
   -webkit-text-fill-color: transparent !important;
   color: transparent !important;
   filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.05)) !important;
-  display: inline-block !important;
 }
 
 /* Metallic Champagne Background Gradient for btn-gold */
@@ -1578,7 +1637,6 @@ html.theme-transition *::after {
   background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
   color: transparent !important;
-  display: inline-block !important;
   text-shadow: none !important;
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3)) drop-shadow(0 0 15px rgba(243, 220, 162, 0.4)) !important;
 }
@@ -1696,7 +1754,6 @@ html.theme-transition *::after {
 [data-theme="light"] .sunset-warm .feature-card:hover {
   border-color: rgba(181, 138, 61, 0.35) !important;
   box-shadow: 0 20px 50px rgba(142, 126, 95, 0.08), var(--shadow-gold) !important;
-  transform: translateY(-4px) !important;
 }
 
 [data-theme="light"] .sunset-warm .feature-card-title {

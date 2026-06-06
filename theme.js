@@ -84,30 +84,7 @@
       }
     }
 
-    // Mobile: append to mobile-nav
-    const mobileNav = document.querySelector('.mobile-nav');
-    if (mobileNav) {
-      const wrapper = document.createElement('div');
-      wrapper.className = 'mobile-theme-toggle';
 
-      const mobileBtn = document.createElement('button');
-      mobileBtn.className = 'theme-toggle-btn';
-      mobileBtn.setAttribute('aria-label', getPreferredTheme() === 'light' ? 'Switch to dark mode' : 'Switch to light mode');
-      mobileBtn.innerHTML = toggleHTML;
-      mobileBtn.addEventListener('click', function(e) {
-        e.preventDefault();
-        e.stopPropagation();
-        toggleTheme();
-      });
-
-      const label = document.createElement('span');
-      label.className = 'mobile-theme-label';
-      label.textContent = getPreferredTheme() === 'light' ? 'Dark Mode' : 'Light Mode';
-
-      wrapper.appendChild(mobileBtn);
-      wrapper.appendChild(label);
-      mobileNav.appendChild(wrapper);
-    }
 
     // Dashboard sidebar: no toggle needed (uses the main nav toggle)
   }

@@ -301,6 +301,26 @@ function initNavigation() {
       }
     });
   }
+
+  // Handle viewport changes: close mobile menu when crossing to desktop breakpoint
+  const mediaQuery = window.matchMedia('(max-width: 1024px)');
+  function handleBreakpointChange(e) {
+    if (!e.matches) {
+      if (mobileNav && mobileNav.classList.contains('active')) {
+        if (hamburger) hamburger.classList.remove('active');
+        mobileNav.classList.remove('active');
+        if (nav) {
+          nav.classList.remove('mobile-menu-open');
+        }
+        document.body.style.overflow = '';
+      }
+    }
+  }
+  if (mediaQuery.addEventListener) {
+    mediaQuery.addEventListener('change', handleBreakpointChange);
+  } else {
+    mediaQuery.addListener(handleBreakpointChange);
+  }
 }
 
 /* ============================================================
