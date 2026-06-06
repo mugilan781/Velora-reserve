@@ -272,6 +272,15 @@ html.theme-transition *::after {
   stroke: var(--gold-dark) !important;
 }
 
+/* Enforce specific Light Theme branding colors for hamburger menu logo */
+[data-theme="light"] .mobile-nav .mobile-brand-logo .brand-text-velora {
+  color: var(--ivory) !important; /* Resolves to Black / Deep Navy */
+}
+
+[data-theme="light"] .mobile-nav .mobile-brand-logo .brand-text-reserve {
+  color: var(--gold) !important; /* Resolves to Gold */
+}
+
 
 
 /* ---------- Dropdown Menu ---------- */

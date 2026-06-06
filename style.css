@@ -5809,14 +5809,14 @@ html, body {
     gap: 10px !important;
   }
 
-  .mobile-brand-logo .brand-logo-svg {
+  .mobile-nav .mobile-brand-logo .brand-logo-svg {
     width: 24px !important;
     height: 24px !important;
     color: var(--gold) !important;
     stroke-width: 1.2 !important;
   }
 
-  .mobile-brand-logo .brand-text-velora {
+  .mobile-nav .mobile-brand-logo .brand-text-velora {
     font-family: var(--font-display) !important;
     font-size: 1.1rem !important;
     font-weight: 700 !important;
@@ -5824,7 +5824,7 @@ html, body {
     color: var(--ivory) !important;
   }
 
-  .mobile-brand-logo .brand-text-reserve {
+  .mobile-nav .mobile-brand-logo .brand-text-reserve {
     font-family: var(--font-display) !important;
     font-size: 1.1rem !important;
     font-weight: 300 !important;
@@ -6244,13 +6244,13 @@ html, body {
     }
     
     /* Slightly reduce branding size to ensure zero clipping on compact displays */
-    .mobile-brand-logo .brand-text-velora,
-    .mobile-brand-logo .brand-text-reserve {
+    .mobile-nav .mobile-brand-logo .brand-text-velora,
+    .mobile-nav .mobile-brand-logo .brand-text-reserve {
       font-size: 0.95rem !important;
       letter-spacing: 0.12em !important;
     }
     
-    .mobile-brand-logo .brand-logo-svg {
+    .mobile-nav .mobile-brand-logo .brand-logo-svg {
       width: 20px !important;
       height: 20px !important;
     }
@@ -6971,6 +6971,13 @@ html, body {
     opacity: 0 !important;
     visibility: hidden !important;
     pointer-events: none !important;
+  }
+}
+
+/* Tablet & Landscape Menu Header Logo Alignment Fix */
+@media (min-width: 768px) {
+  .mobile-nav-logo {
+    justify-content: center !important;
   }
 }
 
