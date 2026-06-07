@@ -585,3 +585,79 @@ html[dir="rtl"] .dash-toggle.active::after {
   }
 }
 
+/* ==========================================================
+   18. SPLIT SECTIONS (IMAGE + TEXT) MIRRORING
+   ========================================================== */
+
+/* Mirror split-reverse sections: LTR is [Content][Image], RTL must be [Image][Content] */
+html[dir="rtl"] .split-reverse {
+  direction: ltr;
+}
+
+html[dir="rtl"] .split-reverse > * {
+  direction: rtl;
+}
+
+/* On mobile/tablet (max-width: 768px), override split-reverse layout flow to remain stacked */
+@media (max-width: 768px) {
+  html[dir="rtl"] .split-reverse {
+    direction: ltr;
+  }
+}
+
+/* Right-align all text content within split layout sections in RTL */
+html[dir="rtl"] .split-content .section-title,
+html[dir="rtl"] .split-content .section-description {
+  text-align: right;
+}
+
+/* ==========================================================
+   19. TESTIMONIAL & REVIEW SLIDERS (LTR TRANSITION COMPATIBILITY)
+   ========================================================== */
+
+/* Force testimonial carousels to lay out in LTR so translation calculations remain correct */
+html[dir="rtl"] .testimonial-carousel {
+  direction: ltr;
+}
+
+/* Ensure slides text direction matches standard RTL page text flow */
+html[dir="rtl"] .testimonial-slide {
+  direction: rtl;
+}
+
+/* Specific overrides for Reviews Page Featured Slider */
+html[dir="rtl"] .reviews-slider-section .testimonial-slide {
+  text-align: right;
+  direction: rtl;
+}
+
+/* Mirror Quote Marks on Reviews Page */
+html[dir="rtl"] .reviews-slider-section .testimonial-quote::before {
+  left: auto !important;
+  right: 0 !important;
+}
+
+/* Align dots and arrows to the right of the text block in RTL */
+html[dir="rtl"] .reviews-slider-section .carousel-dots,
+html[dir="rtl"] .reviews-slider-section .carousel-arrows {
+  justify-content: flex-end !important;
+}
+
+/* Ensure mobile overrides are preserved (centering text) */
+@media (max-width: 767px) {
+  html[dir="rtl"] .reviews-page .reviews-slider-section .testimonial-slide {
+    text-align: center !important;
+    align-items: center !important;
+  }
+  html[dir="rtl"] .reviews-page .reviews-slider-section .testimonial-quote {
+    text-align: center !important;
+  }
+  html[dir="rtl"] .reviews-slider-section .carousel-dots,
+  html[dir="rtl"] .reviews-slider-section .carousel-arrows {
+    justify-content: center !important;
+  }
+}
+
+
+
+
