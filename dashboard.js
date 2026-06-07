@@ -31,11 +31,11 @@ document.addEventListener('DOMContentLoaded', () => {
       const bellWrap = document.createElement('div');
       bellWrap.id = 'nav-notif-bell-wrap';
       bellWrap.className = 'nav-notif-wrap';
-      bellWrap.style.cssText = 'position: relative; margin-right: 12px; display: flex; align-items: center;';
+      bellWrap.style.cssText = 'position: relative; margin-inline-end: 12px; display: flex; align-items: center;';
       bellWrap.innerHTML = `
         <button class="nav-profile-btn" id="nav-notif-bell" aria-label="Notifications" style="position: relative;">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 18px; height: 18px;"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
-          <span class="nav-notif-badge" id="nav-notif-count" style="position: absolute; top: -4px; right: -4px; background: var(--gold); color: var(--midnight); font-size: 0.55rem; font-weight: bold; width: 14px; height: 14px; border-radius: 50%; display: none; align-items: center; justify-content: center; font-family: var(--font-ui); border: 1px solid var(--midnight); z-index: 2;">0</span>
+          <span class="nav-notif-badge" id="nav-notif-count" style="position: absolute; top: -4px; inset-inline-end: -4px; background: var(--gold); color: var(--midnight); font-size: 0.55rem; font-weight: bold; width: 14px; height: 14px; border-radius: 50%; display: none; align-items: center; justify-content: center; font-family: var(--font-ui); border: 1px solid var(--midnight); z-index: 2;">0</span>
         </button>
       `;
       profileWrap.parentNode.insertBefore(bellWrap, profileWrap);
@@ -346,7 +346,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <div class="dash-notification-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">${notifIcons[n.icon] || notifIcons.star}</svg>
         </div>
-        <div class="dash-notification-content" style="padding-right: 40px;">
+        <div class="dash-notification-content" style="padding-inline-end: 40px;">
           <div class="dash-notification-title">${n.title}</div>
           <div class="dash-notification-desc">${n.desc}</div>
         </div>
@@ -2308,9 +2308,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
           <div>
             <h4 style="font-family: var(--font-ui); font-size: var(--text-xs); color: var(--gold); letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: var(--space-xs);">Curation Timeline History</h4>
-            <div style="display: flex; flex-direction: column; gap: 4px; max-height: 120px; overflow-y: auto; padding-left: var(--space-xs);">
+            <div style="display: flex; flex-direction: column; gap: 4px; max-height: 120px; overflow-y: auto; padding-inline-start: var(--space-xs);">
               ${b.trackingHistory ? b.trackingHistory.slice().reverse().map(h => `
-                <div style="display: flex; justify-content: space-between; font-family: var(--font-ui); font-size: 0.65rem; border-left: 1px solid var(--gold); padding-left: var(--space-sm); margin-bottom: 2px;">
+                <div style="display: flex; justify-content: space-between; font-family: var(--font-ui); font-size: 0.65rem; border-inline-start: 1px solid var(--gold); padding-inline-start: var(--space-sm); margin-bottom: 2px;">
                   <span style="color: var(--ivory); font-weight: 500;">${h.status}</span>
                   <span style="color: var(--gray);">${h.date} at ${h.time}</span>
                 </div>
@@ -2692,12 +2692,12 @@ document.addEventListener('DOMContentLoaded', () => {
         activitiesList.innerHTML = adminNotifications.map(n => `
           <div class="dash-notification-item ${n.read ? '' : 'unread'}" style="padding: 10px; margin-bottom: 8px; border-radius: 6px; cursor: pointer; position: relative;" data-admin-notif-id="${n.id}">
             <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: var(--space-xs);">
-              <div style="flex: 1; padding-right: 24px;">
+              <div style="flex: 1; padding-inline-end: 24px;">
                 <div style="font-weight: 600; color: var(--ivory); font-size: 0.65rem;">${n.title}</div>
                 <div style="color: var(--gray); font-size: 0.6rem; margin-top: 2px;">${n.desc}</div>
                 <div style="color: var(--gold); font-size: 0.55rem; margin-top: 4px;">${timeAgo(n.time)}</div>
               </div>
-              <button class="dash-delete-btn" style="padding: 2px 6px; font-size: 0.55rem; background: none; border: 1px solid rgba(239, 68, 68, 0.15); color: var(--error); border-radius: 4px; z-index: 10; position: absolute; top: 10px; right: 10px;" data-admin-delete-notif="${n.id}">Delete</button>
+              <button class="dash-delete-btn" style="padding: 2px 6px; font-size: 0.55rem; background: none; border: 1px solid rgba(239, 68, 68, 0.15); color: var(--error); border-radius: 4px; z-index: 10; position: absolute; top: 10px; inset-inline-end: 10px;" data-admin-delete-notif="${n.id}">Delete</button>
             </div>
           </div>
         `).join('');

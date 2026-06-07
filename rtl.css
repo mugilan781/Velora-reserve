@@ -1,0 +1,587 @@
+/* ============================================================
+   VÉLORA RESERVE — Enterprise RTL (Right-To-Left) Support
+   ============================================================
+   All rules scoped behind html[dir="rtl"].
+   LTR layout remains completely unchanged.
+   RTL activates ONLY when dir="rtl" is on <html>.
+   ============================================================ */
+
+/* ==========================================================
+   1. GLOBAL DIRECTION & TEXT ALIGNMENT
+   ========================================================== */
+
+html[dir="rtl"] {
+  direction: rtl;
+}
+
+html[dir="rtl"] body {
+  text-align: right;
+}
+
+/* ==========================================================
+   2. NAVIGATION & NAVBAR
+   ========================================================== */
+
+/* Ensure all brand logos preserve correct LTR direction throughout the entire site */
+html[dir="rtl"] .nav-logo,
+html[dir="rtl"] .mobile-brand-logo,
+html[dir="rtl"] .auth-brand-logo {
+  direction: ltr !important;
+}
+
+/* Flip nav links order — flexbox auto-reverses in RTL */
+html[dir="rtl"] .nav-links {
+  direction: rtl;
+}
+
+/* Dropdown menu link hover nudge: flip direction */
+html[dir="rtl"] .nav-dropdown-menu a:hover,
+html[dir="rtl"] .nav-dropdown-menu a.active {
+  transform: translateX(-6px);
+}
+
+/* Dropdown caret arrow — keep centered */
+html[dir="rtl"] .nav-dropdown-menu::before {
+  left: auto;
+  right: 50%;
+  transform: translateX(50%) rotate(45deg);
+  border-left: none;
+  border-right: 1px solid var(--glass-border);
+  border-top: 1px solid var(--glass-border);
+}
+
+/* Nav dropdown hover bridge */
+html[dir="rtl"] .nav-dropdown-menu::after {
+  left: auto;
+  right: 0;
+}
+
+/* ==========================================================
+   3. MOBILE NAVIGATION
+   ========================================================== */
+
+/* Mobile nav slides from LEFT in RTL (mirrored from right) */
+html[dir="rtl"] .mobile-nav {
+  right: auto;
+  left: -100%;
+  transition: left var(--duration-normal) var(--ease-smooth), visibility var(--duration-normal) var(--ease-smooth);
+}
+
+html[dir="rtl"] .mobile-nav.active {
+  right: auto;
+  left: 0;
+}
+
+/* Mobile nav link entry animation — flip direction */
+html[dir="rtl"] .mobile-nav a {
+  transform: translateX(-30px);
+}
+
+html[dir="rtl"] .mobile-nav.active a {
+  transform: translateX(0);
+}
+
+/* ==========================================================
+   4. HAMBURGER MENU
+   ========================================================== */
+/* Hamburger is symmetric — no overrides needed */
+
+/* ==========================================================
+   5. FLOATING BOOKING WIDGET
+   ========================================================== */
+
+html[dir="rtl"] .floating-book {
+  right: auto;
+  left: 30px;
+}
+
+/* ==========================================================
+   6. SELECT DROPDOWN ARROW
+   ========================================================== */
+
+html[dir="rtl"] select.form-input {
+  background-position: left 16px center;
+  padding-right: 16px;
+  padding-left: 40px;
+}
+
+/* ==========================================================
+   7. TEXT ALIGNMENT OVERRIDES
+   ========================================================== */
+
+/* Accordion headers */
+html[dir="rtl"] .accordion-header {
+  text-align: right;
+}
+
+/* Footer link hover nudge */
+html[dir="rtl"] .footer-links a:hover {
+  transform: translateX(-4px);
+}
+
+/* Timeline even items — flip alignment */
+html[dir="rtl"] .timeline-item:nth-child(even) {
+  text-align: left;
+}
+
+/* Utility class override */
+html[dir="rtl"] .text-left {
+  text-align: right;
+}
+
+/* ==========================================================
+   8. BORDER & PADDING DIRECTION FLIPS
+   ========================================================== */
+
+/* Founder quote blockquote — flip border and padding */
+html[dir="rtl"] .founder-quote {
+  padding-left: 0;
+  padding-right: var(--space-lg);
+  border-left: none;
+  border-right: 2px solid var(--gold);
+}
+
+/* Season columns (booking/suites) */
+html[dir="rtl"] .season-column {
+  border-left: none;
+  border-right: 1px solid var(--glass-border);
+  padding-left: 0;
+  padding-right: var(--space-md);
+}
+
+/* Nav separator borders */
+html[dir="rtl"] .nav-dropdown-menu::before {
+  border-left: none;
+  border-right: 1px solid var(--glass-border);
+}
+
+/* Booking field select padding */
+html[dir="rtl"] .booking-field-select {
+  padding-right: 0;
+  padding-left: 15px;
+}
+
+/* ==========================================================
+   9. TIMELINE LAYOUT (ABOUT PAGE)
+   ========================================================== */
+
+/* On desktop, the timeline center line uses left:50% + translateX(-50%)
+   which is already centered — no flip needed.
+   Even/odd item text alignment needs swapping. */
+
+html[dir="rtl"] .timeline-item:nth-child(even) {
+  text-align: left;
+}
+
+/* ==========================================================
+   10. AUTH PAGES
+   ========================================================== */
+
+/* Back button — flip from left to right */
+html[dir="rtl"] .auth-back-btn {
+  left: auto;
+  right: 40px;
+}
+
+/* Back button hover SVG arrow — flip direction */
+html[dir="rtl"] .auth-back-btn:hover svg {
+  transform: translateX(3px);
+}
+
+/* Password toggle — flip from right to left */
+html[dir="rtl"] .auth-password-toggle {
+  right: auto;
+  left: 14px;
+}
+
+/* Auth decorative gradient — flip positions */
+html[dir="rtl"] .auth-page::before {
+  right: auto;
+  left: -20%;
+}
+
+html[dir="rtl"] .auth-page::after {
+  left: auto;
+  right: -10%;
+}
+
+/* Checkbox checkmark positioning */
+html[dir="rtl"] .auth-remember input[type="checkbox"]:checked::after {
+  left: auto;
+  right: 5px;
+}
+
+/* Remember me row — flip alignment */
+html[dir="rtl"] .auth-remember-row {
+  direction: rtl;
+}
+
+/* Auth error message alignment */
+html[dir="rtl"] .auth-error-msg {
+  text-align: right;
+}
+
+/* Dropdown item text alignment */
+html[dir="rtl"] .nav-dropdown-item {
+  text-align: right;
+}
+
+/* Profile dropdown position — flip from right to left */
+html[dir="rtl"] .nav-profile-dropdown {
+  right: auto;
+  left: 0;
+}
+
+/* Profile dropdown caret — flip from right to left */
+html[dir="rtl"] .nav-profile-dropdown::before {
+  right: auto;
+  left: 14px;
+  border-left: none;
+  border-right: 1px solid var(--glass-border);
+}
+
+/* Logged-in indicator dot — flip from right to left */
+html[dir="rtl"] .nav-profile-btn.logged-in::after {
+  right: auto;
+  left: 0;
+}
+
+/* ==========================================================
+   11. DASHBOARD LAYOUT
+   ========================================================== */
+
+/* Sidebar — flip from left to right */
+html[dir="rtl"] .dash-sidebar {
+  border-right: none;
+  border-left: 1px solid var(--glass-border);
+}
+
+/* Nav item text alignment */
+html[dir="rtl"] .dash-nav-item {
+  text-align: right;
+}
+
+/* Active indicator bar — flip from left to right */
+html[dir="rtl"] .dash-nav-item.active::before {
+  left: auto;
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* Nav badge — flip margin from left to right */
+html[dir="rtl"] .dash-nav-badge {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+/* Welcome hero decorative gradient — flip */
+html[dir="rtl"] .dash-welcome-hero::before {
+  right: auto;
+  left: -20%;
+}
+
+/* Overview card corner gradient — flip */
+html[dir="rtl"] .dash-overview-card::after {
+  right: auto;
+  left: 0;
+  background: radial-gradient(circle at top left, rgba(214, 179, 106, 0.06), transparent 70%);
+}
+
+/* Wishlist heart position — flip */
+html[dir="rtl"] .dash-wishlist-heart {
+  right: auto;
+  left: var(--space-sm);
+}
+
+/* Data table text alignment */
+html[dir="rtl"] .dash-data-table {
+  text-align: right;
+}
+
+html[dir="rtl"] .dash-data-table th {
+  text-align: right;
+}
+
+/* Sidebar toggle button — flip from right to left */
+html[dir="rtl"] .dash-sidebar-toggle {
+  right: auto;
+  left: var(--space-lg);
+}
+
+/* Toast notification — centered, no flip needed */
+
+/* ==========================================================
+   12. REVEAL / SCROLL ANIMATIONS
+   ========================================================== */
+
+/* Flip reveal-left and reveal-right in RTL */
+html[dir="rtl"] .reveal-left {
+  transform: translateX(40px);
+}
+
+html[dir="rtl"] .reveal-left.revealed {
+  transform: translateX(0);
+}
+
+html[dir="rtl"] .reveal-right {
+  transform: translateX(-40px);
+}
+
+html[dir="rtl"] .reveal-right.revealed {
+  transform: translateX(0);
+}
+
+/* ==========================================================
+   13. LIGHT MODE RTL PASSTHROUGH
+   ========================================================== */
+
+/* Light mode directional borders — flip */
+html[dir="rtl"][data-theme="light"] .season-column {
+  border-left: none;
+  border-right: 1px solid rgba(181, 138, 61, 0.18);
+}
+
+html[dir="rtl"][data-theme="light"] .founder-quote {
+  border-left: none;
+  border-right: 2px solid var(--gold);
+}
+
+/* Light mode dashboard sidebar border flip */
+html[dir="rtl"][data-theme="light"] .dash-sidebar {
+  border-right: none;
+  border-left: 1px solid rgba(181, 138, 61, 0.12);
+}
+
+/* ==========================================================
+   14. RESPONSIVE RTL OVERRIDES — MOBILE
+   ========================================================== */
+
+@media (max-width: 768px) {
+  /* Auth back button mobile position flip */
+  html[dir="rtl"] .auth-back-btn {
+    right: 20px;
+    left: auto;
+  }
+
+  /* Timeline mobile — flip side */
+  html[dir="rtl"] .timeline::before {
+    left: auto;
+    right: 20px;
+  }
+
+  html[dir="rtl"] .timeline-item,
+  html[dir="rtl"] .timeline-item:nth-child(even) {
+    padding-left: 0;
+    padding-right: 50px;
+    text-align: right;
+  }
+
+  html[dir="rtl"] .timeline-dot {
+    left: auto;
+    right: 20px;
+  }
+
+  /* Floating booking widget mobile */
+  html[dir="rtl"] .floating-book {
+    left: 20px;
+    right: auto;
+  }
+}
+
+/* Dashboard sidebar mobile drawer — flip from left to right */
+@media (max-width: 767px) {
+  html[dir="rtl"] .dash-sidebar {
+    left: auto;
+    right: -300px;
+    transition: right var(--duration-normal) var(--ease-smooth), visibility var(--duration-normal) var(--ease-smooth);
+  }
+
+  html[dir="rtl"] .dash-sidebar.open {
+    right: 0;
+    left: auto;
+  }
+
+  /* Sidebar toggle — flip to left side */
+  html[dir="rtl"] .dash-sidebar-toggle {
+    right: auto;
+    left: var(--space-lg);
+  }
+}
+
+/* ==========================================================
+   15. RESPONSIVE RTL OVERRIDES — TABLET
+   ========================================================== */
+
+@media (max-width: 1024px) {
+  /* Tracking steps on tablet — already stacked vertically,
+     just ensure text alignment is correct */
+  html[dir="rtl"] .dash-tracking-step {
+    text-align: right;
+  }
+}
+
+/* ==========================================================
+   16. MISCELLANEOUS COMPONENT FLIPS
+   ========================================================== */
+
+/* Lightbox navigation buttons — flip positions */
+html[dir="rtl"] .lightbox-prev {
+  left: auto;
+  right: 30px;
+}
+
+html[dir="rtl"] .lightbox-next {
+  right: auto;
+  left: 30px;
+}
+
+/* Star rating — ensure natural RTL flow */
+html[dir="rtl"] .star-rating,
+html[dir="rtl"] .dash-star-rating {
+  direction: ltr; /* Stars should always render left-to-right (1→5) */
+}
+
+/* Pricing summary layout — ensure labels align right */
+html[dir="rtl"] .pricing-row-luxury {
+  direction: rtl;
+}
+
+/* Form groups — natural RTL alignment */
+html[dir="rtl"] .form-group label,
+html[dir="rtl"] .dash-settings-label {
+  text-align: right;
+}
+
+/* Booking panel steps — wizard indicator dots remain centered */
+
+/* Auth form group labels */
+html[dir="rtl"] .auth-form-label {
+  text-align: right;
+}
+
+/* Footer contact info — flip icon+text alignment */
+html[dir="rtl"] .footer-contact-info p,
+html[dir="rtl"] .footer-contact-info a {
+  direction: rtl;
+}
+
+/* Newsletter input wrap — ensure button stays at inline-end */
+html[dir="rtl"] .newsletter-input-wrap {
+  direction: rtl;
+}
+
+/* Booking bar mobile — already stacked, just ensure RTL text */
+html[dir="rtl"] .booking-bar {
+  direction: rtl;
+}
+
+/* Privacy / Terms policy cards — text alignment */
+html[dir="rtl"] .policy-content,
+html[dir="rtl"] .terms-content {
+  text-align: right;
+}
+
+html[dir="rtl"] .policy-content ul,
+html[dir="rtl"] .terms-content ul,
+html[dir="rtl"] .policy-content ol,
+html[dir="rtl"] .terms-content ol {
+  padding-left: 0;
+  padding-right: 1.5em;
+}
+
+/* Toggle switch knob — flip animation direction */
+html[dir="rtl"] .dash-toggle.active::after {
+  transform: translateX(-20px);
+}
+
+/* ==========================================================
+   17. RESPONSIVE RTL HEADER & NAVBAR OVERRIDES
+   ========================================================== */
+
+@media (max-width: 1024px) {
+  /* Lock brand typography and logo icon layout order to read correctly LTR */
+  html[dir="rtl"] .nav-logo {
+    direction: ltr !important;
+  }
+
+  /* Center-align branding block in RTL mobile/tablet hamburger menu drawer */
+  html[dir="rtl"] .mobile-nav-logo {
+    justify-content: center !important;
+  }
+
+  /* Keep brand typography and star logo flow LTR inside mobile menu drawer */
+  html[dir="rtl"] .mobile-brand-logo {
+    direction: ltr !important;
+  }
+
+  /* Flip horizontal margins and gaps on the tablet/mobile toggles container */
+  html[dir="rtl"] .nav-links {
+    margin-left: 8px !important;   /* Spacing between toggles and hamburger menu */
+    margin-right: auto !important;  /* Luxury whitespace between logo and toggles */
+    gap: 8px !important;            /* Equal spacing between RTL toggle and Theme toggle */
+  }
+
+  /* Force hamburger button to behave as a single aligned control with equal sizing/alignment */
+  html[dir="rtl"] .hamburger {
+    width: 36px !important;
+    height: 36px !important;
+    padding: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin: 0 !important;
+  }
+}
+
+@media (max-width: 767px) {
+  html[dir="rtl"] .nav-links {
+    margin-left: 8px !important;
+    margin-right: auto !important;
+    gap: 8px !important;
+  }
+  
+  html[dir="rtl"] .hamburger {
+    width: 36px !important;
+    height: 36px !important;
+  }
+}
+
+@media (max-width: 360px) {
+  html[dir="rtl"] .nav-links {
+    margin-left: 6px !important;
+    margin-right: auto !important;
+    gap: 6px !important;
+  }
+
+  html[dir="rtl"] .theme-toggle-btn,
+  html[dir="rtl"] .rtl-toggle-btn {
+    width: 32px !important;
+    height: 32px !important;
+  }
+
+  html[dir="rtl"] .hamburger {
+    width: 32px !important;
+    height: 32px !important;
+  }
+}
+
+@media (max-width: 320px) {
+  html[dir="rtl"] .nav-links {
+    margin-left: 4px !important;
+    margin-right: auto !important;
+    gap: 4px !important;
+  }
+
+  html[dir="rtl"] .theme-toggle-btn,
+  html[dir="rtl"] .rtl-toggle-btn {
+    width: 30px !important;
+    height: 30px !important;
+  }
+
+  html[dir="rtl"] .hamburger {
+    width: 30px !important;
+    height: 30px !important;
+  }
+}
+

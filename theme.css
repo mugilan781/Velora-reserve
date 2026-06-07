@@ -133,6 +133,18 @@ html.theme-transition *::after {
   color: #D4B06A !important;
 }
 
+[data-theme="light"] .nav:not(.scrolled) .rtl-toggle-btn {
+  border-color: rgba(250, 246, 238, 0.25) !important;
+  background: rgba(255, 255, 255, 0.05) !important;
+  color: #FAF6EE !important;
+}
+
+[data-theme="light"] .nav:not(.scrolled) .rtl-toggle-btn:hover {
+  border-color: #D4B06A !important;
+  background: rgba(212, 176, 106, 0.1) !important;
+  color: #D4B06A !important;
+}
+
 [data-theme="light"] .nav:not(.scrolled) .nav-profile-btn {
   border-color: rgba(250, 246, 238, 0.25) !important;
   background: rgba(255, 255, 255, 0.05) !important;
@@ -191,6 +203,18 @@ html.theme-transition *::after {
 }
 
 [data-theme="light"] .nav.scrolled .theme-toggle-btn:hover {
+  border-color: var(--gold) !important;
+  color: var(--gold-dark) !important;
+  background: rgba(181, 138, 61, 0.08) !important;
+}
+
+[data-theme="light"] .nav.scrolled .rtl-toggle-btn {
+  border-color: rgba(181, 138, 61, 0.25) !important;
+  background: rgba(255, 255, 255, 0.4) !important;
+  color: #161B26 !important;
+}
+
+[data-theme="light"] .nav.scrolled .rtl-toggle-btn:hover {
   border-color: var(--gold) !important;
   color: var(--gold-dark) !important;
   background: rgba(181, 138, 61, 0.08) !important;
@@ -1307,6 +1331,84 @@ html.theme-transition *::after {
   display: block !important;
 }
 
+/* ============================================================
+   RTL DIRECTION TOGGLE BUTTON
+   ============================================================ */
+
+.rtl-toggle-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--ivory);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.rtl-toggle-btn svg {
+  width: 18px;
+  height: 18px;
+  stroke-width: 1.5;
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.3s;
+}
+
+.rtl-toggle-btn:hover svg {
+  transform: rotate(30deg);
+}
+
+/* Default (LTR): Show globe icon normally */
+.rtl-toggle-btn .icon-ltr {
+  display: block !important;
+}
+.rtl-toggle-btn .icon-rtl {
+  display: none !important;
+}
+
+/* RTL active state: Show RTL icon with gold accent */
+.rtl-toggle-btn.rtl-active .icon-ltr {
+  display: none !important;
+}
+.rtl-toggle-btn.rtl-active .icon-rtl {
+  display: block !important;
+}
+
+.rtl-toggle-btn.rtl-active {
+  border-color: rgba(214, 179, 106, 0.4) !important;
+  color: var(--gold) !important;
+  background: rgba(214, 179, 106, 0.08) !important;
+}
+
+/* Direction transition */
+.dir-transition * {
+  transition: margin 0.35s ease, padding 0.35s ease, border 0.35s ease !important;
+}
+
+/* Light Mode overrides */
+[data-theme="light"] .rtl-toggle-btn {
+  border-color: rgba(181, 138, 61, 0.25) !important;
+  background: rgba(255, 255, 255, 0.4) !important;
+  color: var(--ivory) !important;
+}
+
+[data-theme="light"] .rtl-toggle-btn:hover {
+  border-color: var(--gold) !important;
+  color: var(--gold-dark) !important;
+  background: rgba(181, 138, 61, 0.08) !important;
+}
+
+[data-theme="light"] .rtl-toggle-btn.rtl-active {
+  border-color: var(--gold) !important;
+  color: var(--gold-dark) !important;
+  background: rgba(181, 138, 61, 0.12) !important;
+}
+
 
 
 /* ---------- CTA Buttons ---------- */
@@ -1380,6 +1482,20 @@ html.theme-transition *::after {
 
 [data-theme="light"] .terms-page .nav:not(.scrolled) .theme-toggle-btn:hover,
 [data-theme="light"] .policy-page .nav:not(.scrolled) .theme-toggle-btn:hover {
+  border-color: var(--gold) !important;
+  color: var(--gold-dark) !important;
+  background: rgba(181, 138, 61, 0.08) !important;
+}
+
+[data-theme="light"] .terms-page .nav:not(.scrolled) .rtl-toggle-btn,
+[data-theme="light"] .policy-page .nav:not(.scrolled) .rtl-toggle-btn {
+  color: var(--ivory) !important;
+  border-color: rgba(181, 138, 61, 0.25) !important;
+  background: rgba(255, 255, 255, 0.4) !important;
+}
+
+[data-theme="light"] .terms-page .nav:not(.scrolled) .rtl-toggle-btn:hover,
+[data-theme="light"] .policy-page .nav:not(.scrolled) .rtl-toggle-btn:hover {
   border-color: var(--gold) !important;
   color: var(--gold-dark) !important;
   background: rgba(181, 138, 61, 0.08) !important;
@@ -1889,6 +2005,10 @@ html.theme-transition *::after {
 }
 
 [data-theme="light"] body:has(.dashboard-layout) .nav .theme-toggle-btn {
+  color: var(--ivory) !important;
+}
+
+[data-theme="light"] body:has(.dashboard-layout) .nav .rtl-toggle-btn {
   color: var(--ivory) !important;
 }
 

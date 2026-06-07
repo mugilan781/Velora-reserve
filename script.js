@@ -1510,7 +1510,7 @@ function showLuxuryToast(message) {
     toast.className = 'luxury-toast';
     document.body.appendChild(toast);
   }
-  toast.innerHTML = `<span style="color: var(--gold); margin-right: 8px;">✦</span> ${message}`;
+  toast.innerHTML = `<span style="color: var(--gold); margin-inline-end: 8px;">✦</span> ${message}`;
   toast.classList.add('visible');
   
   // Clear previous timeout if any
@@ -1532,7 +1532,7 @@ function showLuxuryConfirmation(title, description, confirmText, onConfirm) {
   dialog.innerHTML = `
     <div style="font-size: 2rem; color: var(--gold); margin-bottom: 0.5rem; animation: float 3s ease-in-out infinite;">✦</div>
     <h3 style="font-family: var(--font-display); font-size: var(--text-xl); color: var(--ivory); margin-bottom: 1rem; letter-spacing: 0.05em; text-transform: uppercase;">${title}</h3>
-    <p style="font-size: var(--text-sm); color: var(--gray); line-height: 1.8; margin-bottom: 2rem; max-width: 400px; margin-left: auto; margin-right: auto;">${description}</p>
+    <p style="font-size: var(--text-sm); color: var(--gray); line-height: 1.8; margin-bottom: 2rem; max-width: 400px; margin-inline: auto;">${description}</p>
     <div style="display: flex; gap: var(--space-md); justify-content: center; width: 100%;">
       <button class="btn btn-outline btn-sm cancel-btn" style="flex: 1;">Cancel</button>
       <button class="btn btn-gold btn-sm confirm-btn" style="flex: 1.5;">${confirmText}</button>

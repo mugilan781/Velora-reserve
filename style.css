@@ -6009,12 +6009,12 @@ html, body {
   /* Hamburger Menu Header Close (X) Button Refinements — Tablet & Mobile */
   .hamburger {
     display: flex !important;
-    width: 48px !important;
-    height: 48px !important;
+    width: 36px !important;
+    height: 36px !important;
     padding: 0 !important;
-    border-radius: var(--radius-full) !important;
-    background: rgba(255, 255, 255, 0.05) !important;
-    border: 1px solid var(--glass-border) !important;
+    border-radius: 50% !important;
+    background: rgba(255, 255, 255, 0.04) !important;
+    border: 1.5px solid rgba(255, 255, 255, 0.15) !important;
     justify-content: center !important;
     align-items: center !important;
     transition: all var(--duration-fast) var(--ease-luxury) !important;
@@ -6024,21 +6024,26 @@ html, body {
 
   .hamburger span {
     position: absolute !important;
-    width: 20px !important;
+    width: 18px !important;
     height: 1.5px !important;
     background: var(--ivory) !important;
     transition: all var(--duration-fast) var(--ease-luxury) !important;
   }
 
   .hamburger span:nth-child(1) {
-    transform: translateY(-6px) !important;
+    transform: translateY(-5px) !important;
   }
   .hamburger span:nth-child(2) {
     opacity: 1 !important;
     transform: scaleX(1) !important;
   }
   .hamburger span:nth-child(3) {
-    transform: translateY(6px) !important;
+    transform: translateY(5px) !important;
+  }
+
+  [data-theme="light"] .hamburger {
+    border-color: rgba(181, 138, 61, 0.25) !important;
+    background: rgba(255, 255, 255, 0.4) !important;
   }
 
   .hamburger.active {
@@ -6884,28 +6889,32 @@ html, body {
 
 /* ---------- Mobile Header & Logo Refinement ---------- */
 @media (max-width: 1024px) {
-  /* Make theme-toggle-btn visible in the header on tablet and mobile */
+  /* Repurpose nav-links container for toggle buttons on tablet and mobile */
   .nav-links {
     display: flex !important;
+    align-items: center !important;
     margin-left: auto !important;
     margin-right: 12px !important;
-    gap: 0 !important;
+    gap: 8px !important;
     border: none !important;
     background: transparent !important;
     padding: 0 !important;
     box-shadow: none !important;
     width: auto !important;
     height: auto !important;
+    flex-shrink: 0 !important;
   }
 
-  /* Hide all links/buttons except the theme toggle button inside nav-links */
-  .nav-links > *:not(.theme-toggle-btn) {
+  /* Hide all links/buttons except the RTL toggle and theme toggle buttons */
+  .nav-links > *:not(.theme-toggle-btn):not(.rtl-toggle-btn) {
     display: none !important;
   }
 
-  /* Align theme-toggle-btn in the header */
-  .theme-toggle-btn {
+  /* Ensure toggle buttons have zero extra margin */
+  .theme-toggle-btn,
+  .rtl-toggle-btn {
     margin: 0 !important;
+    flex-shrink: 0 !important;
   }
 }
 
@@ -6931,14 +6940,15 @@ html, body {
     letter-spacing: 0.12em !important;
   }
 
-  /* Ensure the theme toggle has comfortable spacing next to hamburger */
+  /* Tighten spacing between toggles and hamburger */
   .nav-links {
     margin-right: 8px !important;
+    gap: 6px !important;
   }
 }
 
 @media (max-width: 360px) {
-  /* Further micro-optimizations for extremely narrow screens (e.g. 320px) */
+  /* Micro-optimizations for narrow screens (320px–360px) */
   .nav-logo {
     gap: 4px !important;
   }
@@ -6956,27 +6966,87 @@ html, body {
 
   .nav-links {
     margin-right: 4px !important;
+    gap: 4px !important;
   }
 
   .hamburger {
-    width: 40px !important;
-    height: 40px !important;
+    width: 32px !important;
+    height: 32px !important;
+  }
+
+  .hamburger span {
+    width: 16px !important;
+  }
+
+  .hamburger span:nth-child(1) {
+    transform: translateY(-4.5px) !important;
+  }
+
+  .hamburger span:nth-child(3) {
+    transform: translateY(4.5px) !important;
   }
   
-  .theme-toggle-btn {
+  .theme-toggle-btn,
+  .rtl-toggle-btn {
     width: 32px !important;
     height: 32px !important;
   }
   
-  .theme-toggle-btn svg {
+  .theme-toggle-btn svg,
+  .rtl-toggle-btn svg {
     width: 16px !important;
     height: 16px !important;
   }
 }
 
-/* Hide header theme toggle when mobile menu is open to prevent visual overlap */
+@media (max-width: 320px) {
+  /* Ultra-narrow screens (iPhone SE 1st gen / 320px) */
+  .nav-logo .brand-text-velora,
+  .nav-logo .brand-text-reserve {
+    font-size: 0.78rem !important;
+    letter-spacing: 0.08em !important;
+  }
+
+  .nav-links {
+    gap: 3px !important;
+    margin-right: 3px !important;
+  }
+
+  .theme-toggle-btn,
+  .rtl-toggle-btn {
+    width: 30px !important;
+    height: 30px !important;
+  }
+
+  .theme-toggle-btn svg,
+  .rtl-toggle-btn svg {
+    width: 14px !important;
+    height: 14px !important;
+  }
+
+  .hamburger {
+    width: 30px !important;
+    height: 30px !important;
+    padding: 0 !important;
+  }
+
+  .hamburger span {
+    width: 15px !important;
+  }
+
+  .hamburger span:nth-child(1) {
+    transform: translateY(-4px) !important;
+  }
+
+  .hamburger span:nth-child(3) {
+    transform: translateY(4px) !important;
+  }
+}
+
+/* Hide header toggles when mobile menu is open to prevent visual overlap */
 @media (max-width: 1024px) {
-  .nav.mobile-menu-open .theme-toggle-btn {
+  .nav.mobile-menu-open .theme-toggle-btn,
+  .nav.mobile-menu-open .rtl-toggle-btn {
     opacity: 0 !important;
     visibility: hidden !important;
     pointer-events: none !important;
@@ -6989,5 +7059,3 @@ html, body {
     justify-content: center !important;
   }
 }
-
-
